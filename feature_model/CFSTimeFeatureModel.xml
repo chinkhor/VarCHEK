@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="1223,200"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="CFS_Time">
+		<description>Requirements: ['TIME-1', 'TIME-2', 'TIME-3', 'TIME-4', 'TIME-5', 'TIME-6', 'TIME-7', 'TIME-8']</description>
+		<alt abstract="true" mandatory="true" name="Time_Format">
+		<description>Requirements: ['TIME-1', 'TIME-1.1']</description>
+			<feature name="CFE_MISSION_TIME_CFG_DEFAULT_TAI">
+			<description>Requirements: ['TIME-1.1']</description>
+			</feature>
+			<feature name="CFE_MISSION_TIME_CFG_DEFAULT_UTC">
+			<description>Requirements: ['TIME-1.1']</description>
+			</feature>
+		</alt>
+			<feature name="CFE_PLATFORM_TIME_CFG_BIGENDIAN">
+			<description>Requirements: ['TIME-2']</description>
+			</feature>
+		<alt abstract="true" mandatory="true" name="Tone_Data_Order">
+		<description>Requirements: ['TIME-3', 'TIME-3.1']</description>
+			<feature name="CFE_MISSION_TIME_AT_TONE_WILL_BE">
+			<description>Requirements: ['TIME-3.1']</description>
+			</feature>
+			<feature name="CFE_MISSION_TIME_AT_TONE_WAS">
+			<description>Requirements: ['TIME-3.1', 'TIME-9']</description>
+			</feature>
+		</alt>
+			<feature name="CFE_MISSION_TIME_CFG_FAKE_TONE">
+			<description>Requirements: ['TIME-4', 'TIME-4.1', 'TIME-4.2', 'TIME-9']</description>
+			</feature>
+		<alt abstract="true" mandatory="true" name="Time_Operation_Mode">
+		<description>Requirements: ['TIME-5', 'TIME-5.1']</description>
+			<feature name="CFE_PLATFORM_TIME_CFG_SERVER">
+			<description>Requirements: ['TIME-5.1', 'TIME-5.2', 'TIME-7.1']</description>
+			</feature>
+			<feature name="CFE_PLATFORM_TIME_CFG_CLIENT">
+			<description>Requirements: ['TIME-5.1', 'TIME-6.1']</description>
+			</feature>
+		</alt>
+			<feature name="CFE_PLATFORM_TIME_CFG_VIRTUAL">
+			<description>Requirements: ['TIME-4.1', 'TIME-6', 'TIME-6.1', 'TIME-10']</description>
+			</feature>
+		<alt name="CFE_PLATFORM_TIME_CFG_SOURCE">
+		<description>Requirements: ['TIME-4.2', 'TIME-7', 'TIME-7.1', 'TIME-7.2', 'TIME-10']</description>
+			<feature name="CFE_PLATFORM_TIME_CFG_SRC_MET">
+			<description>Requirements: ['TIME-7.2']</description>
+			</feature>
+			<feature name="CFE_PLATFORM_TIME_CFG_SRC_GPS">
+			<description>Requirements: ['TIME-7.2']</description>
+			</feature>
+			<feature name="CFE_PLATFORM_TIME_CFG_SRC_TIME">
+			<description>Requirements: ['TIME-7.2']</description>
+			</feature>
+		</alt>
+			<feature name="CFE_PLATFORM_TIME_CFG_SIGNAL">
+			<description>Requirements: ['TIME-8']</description>
+			</feature>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+		<description>Constraint Requirement: TIME-4.1</description>
+			<imp>
+				<var>CFE_MISSION_TIME_CFG_FAKE_TONE</var>
+				<var>CFE_PLATFORM_TIME_CFG_VIRTUAL</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: TIME-4.2</description>
+			<imp>
+				<var>CFE_MISSION_TIME_CFG_FAKE_TONE</var>
+				<not>
+				<var>CFE_PLATFORM_TIME_CFG_SOURCE</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: TIME-6.1</description>
+			<imp>
+				<var>CFE_PLATFORM_TIME_CFG_CLIENT</var>
+				<var>CFE_PLATFORM_TIME_CFG_VIRTUAL</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: TIME-7.1</description>
+			<imp>
+				<var>CFE_PLATFORM_TIME_CFG_SOURCE</var>
+				<var>CFE_PLATFORM_TIME_CFG_SERVER</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: TIME-9</description>
+			<imp>
+				<var>CFE_MISSION_TIME_CFG_FAKE_TONE</var>
+				<var>CFE_MISSION_TIME_AT_TONE_WAS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: TIME-10</description>
+			<imp>
+				<var>CFE_PLATFORM_TIME_CFG_SOURCE</var>
+				<var>CFE_PLATFORM_TIME_CFG_VIRTUAL</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

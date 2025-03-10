@@ -1,0 +1,167 @@
+ID --> TIME-0
+Valid --> 1
+Rule --> R1
+Parent --> root
+Child --> CFS_Time
+Req --> The core Flight System Time (cFS Time) is the time management service module 
+Source --> cfe-userguide, section: 1.22.4 Time Configuration
+
+ID --> TIME-1 
+Valid --> 1
+Rule --> R2
+Parent --> CFS_Time
+Child --> Time_Format
+Req --> The "cFS Time" shall select the "time format"
+Source --> cfe-userguide, section: 1.22.4 Time Configuration
+
+ID --> TIME-1.1
+Valid --> 1
+Rule --> R4
+Parent --> Time_Format
+Child --> TAI_Format, UTC_Format
+Req --> The "time format" shall use one and only one of the "TAI format" or the "UTC format"
+Source --> cfe-userguide, section: 1.22.4.1 Time Format Selection
+
+ID --> TIME-2 
+Valid --> 1
+Rule --> R3
+Parent --> CFS_Time
+Child --> Big_Endian_Byte_Order
+Req --> The "cFS Time" may use the "big endian byte order"
+Source --> cfe-userguide, section: 1.22.4.6 Specifying Time Tone Byte Order 
+
+ID --> TIME-3 
+Valid --> 1
+Rule --> R2
+Parent --> CFS_Time
+Child --> Tone_Data_Order
+Req --> The "cFS Time" shall select the "tone and data order"
+Source --> cfe-userguide, section: 1.22.4 Time Configuration
+
+ID --> TIME-3.1
+Valid --> 1
+Rule --> R4
+Parent --> Tone_Data_Order
+Child --> Data_Preceding_Tone, Data_Following_Tone
+Req --> The "tone and data order" shall use one and only one of the "data preceding tone order" or the "data following tone order"
+Source --> cfe-userguide, section: 1.22.4.3 Selecting Tone and Data Ordering
+
+ID --> TIME-4 
+Valid --> 1
+Rule --> R3
+Parent --> CFS_Time
+Child --> Fake_Tone
+Req --> The "cFS Time" may use the "fake tone"
+Source --> cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal
+
+ID --> TIME-4.1
+Valid --> 1
+Rule --> R7
+Parent --> Fake_Tone
+Child --> Virtual_MET
+Req --> The "fake tone" requires the "virtual MET"
+Source --> cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal
+
+ID --> TIME-4.2
+Valid --> 1
+Rule --> R7
+Parent --> Fake_Tone
+Child --> External_Time_Source
+Req --> The "fake tone" excludes the "external time source"
+Source --> cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal
+
+ID --> TIME-5 
+Valid --> 1
+Rule --> R2
+Parent --> CFS_Time
+Child --> Time_Operation_Mode
+Req --> The "cFS Time" shall select the "time operation mode"
+Source --> cfe-userguide, section: 1.22.4 Time Configuration
+
+ID --> TIME-5.1
+Valid --> 1
+Rule --> R4
+Parent --> Time_Operation_Mode
+Child --> Time_Server, Time_Client
+Req --> The "time operation mode" shall use one and only one of the "time server" or the "time client"
+Source --> cfe-userguide, section: 1.22.4.5 Specifying Time Server/Client
+
+ID --> TIME-5.2
+Valid --> 1
+Rule --> R7
+Parent --> Single_Processor
+Child --> Time_Server
+Req --> The "single processor" requires the "timer server"
+Source --> cfe-userguide, section: 1.22.4.5 Specifying Time Server/Client
+
+ID --> TIME-6 
+Valid --> 1
+Rule --> R3
+Parent --> CFS_Time
+Child --> Virtual_MET
+Req --> The "cFS Time" may use the "virtual MET"
+Source --> cfe-userguide, section: 1.22.4.7 Virtual MET
+
+ID --> TIME-6.1 
+Valid --> 1
+Rule --> R7
+Parent --> Time_Client
+Child --> Virtual_MET
+Req --> The "time client" requires the "virtual MET"
+Source --> cfe-userguide, section: 1.22.4.7 Virtual MET
+
+ID --> TIME-6.2 
+Valid --> 0
+Rule --> R7
+Parent --> Time_Server
+Child --> Virtual_MET
+Req --> The "time server" requires the "virtual MET"
+Source --> cfe-userguide, section: 1.22.4.7 Virtual MET
+
+ID --> TIME-7 
+Valid --> 1
+Rule --> R3
+Parent --> CFS_Time
+Child --> External_Time_Source
+Req --> The "cFS Time" may use the "external time source"
+Source --> cfe-userguide, section: 1.22.4.8 Specifying Time Source
+
+ID --> TIME-7.1 
+Valid --> 1
+Rule --> R7
+Parent --> External_Time_Source
+Child --> Time_Server
+Req --> The "external time source" requires the "time server"
+Source --> cfe-userguide, section: 1.22.4.8 Specifying Time Source
+
+ID --> TIME-7.2 
+Valid --> 1
+Rule --> R4
+Parent --> External_Time_Source
+Child --> MET, GPS, Spacecraft_Time
+Req --> The "external time source" shall use one and only one of the external time data: "MET", "GPS" or "spacecraft time"
+Source --> cfe-userguide, section: 1.22.4.8 Specifying Time Source
+
+ID --> TIME-8
+Valid --> 1
+Rule --> R3
+Parent --> CFS_Time
+Child --> Active_Tone_Signal
+Req --> The "cFS Time" may select the "active tone signal" 
+Source --> cfe-userguide, section: 1.22.4.9 Specifying Time Signal 
+
+ID --> TIME-9
+Valid --> 1
+Rule --> R7
+Parent --> Fake_Tone
+Child --> Data_Following_Tone
+Req --> The "fake tone" requires the "data following tone order"
+Source --> cfe-userguide, section: 11.97.2.1 CFE_MISSION_TIME_AT_TONE_WAS
+
+ID --> TIME-10
+Valid --> 1
+Rule --> R7
+Parent --> External_Time_Source
+Child --> Virtual_MET
+Req --> The "external time source" requires the "virtual MET"
+Source --> cfe-userguide, section: 11.98.2.13 CFE_PLATFORM_TIME_CFG_VIRTUAL

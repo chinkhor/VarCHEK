@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="1223,200"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="axTLS">
+		<description>Requirements: ['AXTLS-1', 'AXTLS-2', 'AXTLS-3', 'AXTLS-4', 'AXTLS-5', 'AXTLS-6', 'AXTLS-7', 'AXTLS-8', 'AXTLS-9']</description>
+		<alt abstract="true" mandatory="true" name="OS_Platform">
+		<description>Requirements: ['AXTLS-1', 'AXTLS-1.1']</description>
+			<feature name="CONFIG_PLATFORM_LINUX">
+			<description>Requirements: ['AXTLS-1.1']</description>
+			</feature>
+			<feature name="CONFIG_PLATFORM_CYGWIN">
+			<description>Requirements: ['AXTLS-1.1']</description>
+			</feature>
+		<and name="CONFIG_PLATFORM_WIN32">
+		<description>Requirements: ['AXTLS-1.1', 'AXTLS-1.1.1', 'AXTLS-1.1.2', 'AXTLS-10', 'AXTLS-11', 'AXTLS-12', 'AXTLS-13', 'AXTLS-14', 'AXTLS-15', 'AXTLS-16']</description>
+			<feature name="CONFIG_WIN32_USE_CRYPTO_LIB">
+			<description>Requirements: ['AXTLS-1.1.1']</description>
+			</feature>
+		<alt abstract="true" mandatory="true" name="Visual_Studio_Compiler">
+		<description>Requirements: ['AXTLS-1.1.2', 'AXTLS-1.1.2.1']</description>
+			<feature name="CONFIG_VISUAL_STUDIO_7_0">
+			<description>Requirements: ['AXTLS-1.1.2.1']</description>
+			</feature>
+			<feature name="CONFIG_VISUAL_STUDIO_8_0">
+			<description>Requirements: ['AXTLS-1.1.2.1']</description>
+			</feature>
+			<feature name="CONFIG_VISUAL_STUDIO_10_0">
+			<description>Requirements: ['AXTLS-1.1.2.1']</description>
+			</feature>
+		</alt>
+		</and>
+		</alt>
+			<feature name="CONFIG_DEBUG">
+			<description>Requirements: ['AXTLS-2', 'AXTLS-21']</description>
+			</feature>
+			<feature name="CONFIG_STRIP_UNWANTED_SECTIONS">
+			<description>Requirements: ['AXTLS-3', 'AXTLS-21']</description>
+			</feature>
+		<and abstract="true" mandatory="true" name="SSL_Library">
+		<description>Requirements: ['AXTLS-4', 'AXTLS-4.1', 'AXTLS-4.2', 'AXTLS-4.3', 'AXTLS-4.4', 'AXTLS-4.5', 'AXTLS-4.6', 'AXTLS-4.7', 'AXTLS-4.8', 'AXTLS-4.9']</description>
+		<or abstract="true" mandatory="true" name="SSL_Mode">
+		<description>Requirements: ['AXTLS-4.1', 'AXTLS-4.1.1']</description>
+			<feature name="CONFIG_SSL_SERVER_ONLY">
+			<description>Requirements: ['AXTLS-4.1.1', 'AXTLS-4.1.1.8', 'AXTLS-4.1.1.10', 'AXTLS-4.1.1.11', 'AXTLS-4.1.1.12', 'AXTLS-4.1.1.13']</description>
+			</feature>
+		<and name="CONFIG_SSL_CERT_VERIFICATION">
+		<description>Requirements: ['AXTLS-4.1.1', 'AXTLS-4.1.1.1', 'AXTLS-4.1.1.4', 'AXTLS-4.1.1.5', 'AXTLS-4.1.1.6', 'AXTLS-4.1.1.10']</description>
+			<feature name="CONFIG_PERFORMANCE_TESTING">
+			<description>Requirements: ['AXTLS-4.1.1.1']</description>
+			</feature>
+		</and>
+			<feature name="CONFIG_SSL_ENABLE_CLIENT">
+			<description>Requirements: ['AXTLS-4.1.1', 'AXTLS-4.1.1.3', 'AXTLS-4.1.1.5', 'AXTLS-4.1.1.9', 'AXTLS-4.1.1.12']</description>
+			</feature>
+		<and name="CONFIG_SSL_FULL_MODE">
+		<description>Requirements: ['AXTLS-4.1.1', 'AXTLS-4.1.1.2', 'AXTLS-4.1.1.3', 'AXTLS-4.1.1.4', 'AXTLS-4.1.1.7', 'AXTLS-4.1.1.11']</description>
+			<feature name="CONFIG_SSL_TEST">
+			<description>Requirements: ['AXTLS-4.1.1.2', 'AXTLS-27']</description>
+			</feature>
+		</and>
+			<feature name="CONFIG_SSL_SKELETON_MODE">
+			<description>Requirements: ['AXTLS-4.1.1', 'AXTLS-4.1.1.6', 'AXTLS-4.1.1.7', 'AXTLS-4.1.1.8', 'AXTLS-4.1.1.9', 'AXTLS-4.1.1.13', 'AXTLS-17', 'AXTLS-18', 'AXTLS-19', 'AXTLS-20']</description>
+			</feature>
+		</or>
+		<alt abstract="true" name="SSL_Protocol">
+		<description>Requirements: ['AXTLS-4.2', 'AXTLS-4.2.1', 'AXTLS-20']</description>
+			<feature name="CONFIG_SSL_PROT_LOW">
+			<description>Requirements: ['AXTLS-4.2.1']</description>
+			</feature>
+			<feature name="CONFIG_SSL_PROT_MEDIUM">
+			<description>Requirements: ['AXTLS-4.2.1']</description>
+			</feature>
+			<feature name="CONFIG_SSL_PROT_HIGH">
+			<description>Requirements: ['AXTLS-4.2.1']</description>
+			</feature>
+		</alt>
+			<feature name="CONFIG_SSL_USE_DEFAULT_KEY">
+			<description>Requirements: ['AXTLS-4.3']</description>
+			</feature>
+			<feature name="CONFIG_SSL_GENERATE_X509_CERT">
+			<description>Requirements: ['AXTLS-4.4', 'AXTLS-27']</description>
+			</feature>
+			<feature name="CONFIG_SSL_HAS_PEM">
+			<description>Requirements: ['AXTLS-4.5', 'AXTLS-17']</description>
+			</feature>
+			<feature name="CONFIG_SSL_USE_PKCS12">
+			<description>Requirements: ['AXTLS-4.6', 'AXTLS-18']</description>
+			</feature>
+			<feature name="CONFIG_SSL_CTX_MUTEXING">
+			<description>Requirements: ['AXTLS-4.7']</description>
+			</feature>
+			<feature name="CONFIG_USE_DEV_URANDOM">
+			<description>Requirements: ['AXTLS-4.8', 'AXTLS-15']</description>
+			</feature>
+			<feature name="CONFIG_OPENSSL_COMPATIBLE">
+			<description>Requirements: ['AXTLS-4.9']</description>
+			</feature>
+		</and>
+			<feature name="CONFIG_AXTLSWRAP">
+			<description>Requirements: ['AXTLS-5', 'AXTLS-13']</description>
+			</feature>
+		<and name="CONFIG_AXHTTPD">
+		<description>Requirements: ['AXTLS-6', 'AXTLS-6.1', 'AXTLS-6.2', 'AXTLS-6.3', 'AXTLS-6.4', 'AXTLS-6.5', 'AXTLS-6.6', 'AXTLS-6.7', 'AXTLS-6.8']</description>
+			<feature name="CONFIG_HTTP_STATIC_BUILD">
+			<description>Requirements: ['AXTLS-6.1']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_DIRECTORIES">
+			<description>Requirements: ['AXTLS-6.2']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_HAS_AUTHORIZATION">
+			<description>Requirements: ['AXTLS-6.3']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_HAS_IPV6">
+			<description>Requirements: ['AXTLS-6.4', 'AXTLS-11']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_ENABLE_DIFFERENT_USER">
+			<description>Requirements: ['AXTLS-6.5', 'AXTLS-16']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_VERBOSE">
+			<description>Requirements: ['AXTLS-6.6']</description>
+			</feature>
+			<feature name="CONFIG_HTTP_IS_DAEMON">
+			<description>Requirements: ['AXTLS-6.7', 'AXTLS-14']</description>
+			</feature>
+		<and name="CONFIG_HTTP_HAS_CGI">
+		<description>Requirements: ['AXTLS-6.8', 'AXTLS-6.8.1', 'AXTLS-10']</description>
+		<and name="CONFIG_HTTP_ENABLE_LUA">
+		<description>Requirements: ['AXTLS-6.8.1', 'AXTLS-6.8.1.1']</description>
+			<feature name="CONFIG_HTTP_BUILD_LUA">
+			<description>Requirements: ['AXTLS-6.8.1.1']</description>
+			</feature>
+		</and>
+		</and>
+		</and>
+		<and name="CONFIG_BINDINGS">
+		<description>Requirements: ['AXTLS-7', 'AXTLS-7.1', 'AXTLS-7.2', 'AXTLS-7.3', 'AXTLS-7.4', 'AXTLS-7.5']</description>
+			<feature name="CONFIG_CSHARP_BINDINGS">
+			<description>Requirements: ['AXTLS-7.1', 'AXTLS-22']</description>
+			</feature>
+			<feature name="CONFIG_VBNET_BINDINGS">
+			<description>Requirements: ['AXTLS-7.2', 'AXTLS-23']</description>
+			</feature>
+			<feature name="CONFIG_JAVA_BINDINGS">
+			<description>Requirements: ['AXTLS-7.3', 'AXTLS-24']</description>
+			</feature>
+			<feature name="CONFIG_PERL_BINDINGS">
+			<description>Requirements: ['AXTLS-7.4', 'AXTLS-25']</description>
+			</feature>
+			<feature name="CONFIG_LUA_BINDINGS">
+			<description>Requirements: ['AXTLS-7.5', 'AXTLS-12', 'AXTLS-26']</description>
+			</feature>
+		</and>
+		<and name="CONFIG_SAMPLES">
+		<description>Requirements: ['AXTLS-8', 'AXTLS-8.1', 'AXTLS-8.2', 'AXTLS-8.3', 'AXTLS-8.4', 'AXTLS-8.5', 'AXTLS-8.6']</description>
+			<feature name="CONFIG_C_SAMPLES">
+			<description>Requirements: ['AXTLS-8.1']</description>
+			</feature>
+			<feature name="CONFIG_CSHARP_SAMPLES">
+			<description>Requirements: ['AXTLS-8.2', 'AXTLS-22']</description>
+			</feature>
+			<feature name="CONFIG_VBNET_SAMPLES">
+			<description>Requirements: ['AXTLS-8.3', 'AXTLS-23']</description>
+			</feature>
+			<feature name="CONFIG_JAVA_SAMPLES">
+			<description>Requirements: ['AXTLS-8.4', 'AXTLS-24']</description>
+			</feature>
+			<feature name="CONFIG_PERL_SAMPLES">
+			<description>Requirements: ['AXTLS-8.5', 'AXTLS-25']</description>
+			</feature>
+			<feature name="CONFIG_LUA_SAMPLES">
+			<description>Requirements: ['AXTLS-8.6', 'AXTLS-26']</description>
+			</feature>
+		</and>
+		<and abstract="true" name="Big_Integer_Options">
+		<description>Requirements: ['AXTLS-9', 'AXTLS-9.1', 'AXTLS-9.2', 'AXTLS-9.3', 'AXTLS-9.4', 'AXTLS-9.5', 'AXTLS-9.6', 'AXTLS-9.7', 'AXTLS-19']</description>
+		<alt abstract="true" mandatory="true" name="Reduction_Algorithm">
+		<description>Requirements: ['AXTLS-9.1', 'AXTLS-9.1.1']</description>
+			<feature name="CONFIG_BIGINT_CLASSICAL">
+			<description>Requirements: ['AXTLS-9.1.1']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_MONTGOMERY">
+			<description>Requirements: ['AXTLS-9.1.1']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_BARRETT">
+			<description>Requirements: ['AXTLS-9.1.1']</description>
+			</feature>
+		</alt>
+			<feature name="CONFIG_BIGINT_CRT">
+			<description>Requirements: ['AXTLS-9.2']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_KARATSUBA">
+			<description>Requirements: ['AXTLS-9.3']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_SLIDING_WINDOW">
+			<description>Requirements: ['AXTLS-9.4']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_SQUARE">
+			<description>Requirements: ['AXTLS-9.5']</description>
+			</feature>
+			<feature name="CONFIG_BIGINT_CHECK_ON">
+			<description>Requirements: ['AXTLS-9.6']</description>
+			</feature>
+		<alt abstract="true" mandatory="true" name="Big_Integer_Size">
+		<description>Requirements: ['AXTLS-9.7', 'AXTLS-9.7.1']</description>
+			<feature name="CONFIG_INTEGER_8BIT">
+			<description>Requirements: ['AXTLS-9.7.1']</description>
+			</feature>
+			<feature name="CONFIG_INTEGER_16BIT">
+			<description>Requirements: ['AXTLS-9.7.1']</description>
+			</feature>
+			<feature name="CONFIG_INTEGER_32BIT">
+			<description>Requirements: ['AXTLS-9.7.1']</description>
+			</feature>
+		</alt>
+		</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.3</description>
+			<imp>
+				<var>CONFIG_SSL_FULL_MODE</var>
+				<var>CONFIG_SSL_ENABLE_CLIENT</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.4</description>
+			<imp>
+				<var>CONFIG_SSL_FULL_MODE</var>
+				<var>CONFIG_SSL_CERT_VERIFICATION</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.5</description>
+			<imp>
+				<var>CONFIG_SSL_ENABLE_CLIENT</var>
+				<var>CONFIG_SSL_CERT_VERIFICATION</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.6</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_CERT_VERIFICATION</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.7</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_FULL_MODE</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.8</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_SERVER_ONLY</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.9</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_ENABLE_CLIENT</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.10</description>
+			<imp>
+				<var>CONFIG_SSL_SERVER_ONLY</var>
+				<not>
+				<var>CONFIG_SSL_CERT_VERIFICATION</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.11</description>
+			<imp>
+				<var>CONFIG_SSL_SERVER_ONLY</var>
+				<not>
+				<var>CONFIG_SSL_FULL_MODE</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.12</description>
+			<imp>
+				<var>CONFIG_SSL_SERVER_ONLY</var>
+				<not>
+				<var>CONFIG_SSL_ENABLE_CLIENT</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-4.1.1.13</description>
+			<imp>
+				<var>CONFIG_SSL_SERVER_ONLY</var>
+				<not>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-10</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_HTTP_HAS_CGI</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-11</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_HTTP_HAS_IPV6</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-12</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_LUA_BINDINGS</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-13</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_AXTLSWRAP</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-14</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_HTTP_IS_DAEMON</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-15</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_USE_DEV_URANDOM</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-16</description>
+			<imp>
+				<var>CONFIG_PLATFORM_WIN32</var>
+				<not>
+				<var>CONFIG_HTTP_ENABLE_DIFFERENT_USER</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-17</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_HAS_PEM</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-18</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>CONFIG_SSL_USE_PKCS12</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-19</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>Big_Integer_Options</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-20</description>
+			<imp>
+				<var>CONFIG_SSL_SKELETON_MODE</var>
+				<not>
+				<var>SSL_Protocol</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-21</description>
+			<imp>
+				<var>CONFIG_DEBUG</var>
+				<not>
+				<var>CONFIG_STRIP_UNWANTED_SECTIONS</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-22</description>
+			<imp>
+				<var>CONFIG_CSHARP_SAMPLES</var>
+				<var>CONFIG_CSHARP_BINDINGS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-23</description>
+			<imp>
+				<var>CONFIG_VBNET_SAMPLES</var>
+				<var>CONFIG_VBNET_BINDINGS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-24</description>
+			<imp>
+				<var>CONFIG_JAVA_SAMPLES</var>
+				<var>CONFIG_JAVA_BINDINGS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-25</description>
+			<imp>
+				<var>CONFIG_PERL_SAMPLES</var>
+				<var>CONFIG_PERL_BINDINGS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-26</description>
+			<imp>
+				<var>CONFIG_LUA_SAMPLES</var>
+				<var>CONFIG_LUA_BINDINGS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: AXTLS-27</description>
+			<imp>
+				<var>CONFIG_SSL_TEST</var>
+				<not>
+				<var>CONFIG_SSL_GENERATE_X509_CERT</var>
+				</not>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="1223,200"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Busybox">
+		<description>Requirements: ['Busybox-1', 'Busybox-Coreutils-1']</description>
+		<and abstract="true" mandatory="true" name="Settings">
+		<description>Requirements: ['Busybox-1', 'Busybox-1.1', 'Busybox-1.2', 'Busybox-1.3', 'Busybox-1.4', 'Busybox-1.5', 'Busybox-1.6', 'Busybox-1.7', 'Busybox-1.8']</description>
+			<feature name="ENABLE_DESKTOP">
+			<description>Requirements: ['Busybox-1.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_CLEAN_UP">
+			<description>Requirements: ['Busybox-1.2']</description>
+			</feature>
+			<feature name="ENABLE_LOCALE_SUPPORT">
+			<description>Requirements: ['Busybox-1.3']</description>
+			</feature>
+			<feature name="ENABLE_LONG_OPTS">
+			<description>Requirements: ['Busybox-1.4', 'Busybox-Coreutils-1.8.2', 'Busybox-Coreutils-1.13.1.2', 'Busybox-Coreutils-1.34.1.1', 'Busybox-Coreutils-1.38.8.2']</description>
+			</feature>
+			<feature name="ENABLE_FEDORA_COMPAT">
+			<description>Requirements: ['Busybox-1.5']</description>
+			</feature>
+			<feature name="ENABLE_INCLUDE_SUSv2">
+			<description>Requirements: ['Busybox-1.6']</description>
+			</feature>
+			<feature name="ENABLE_SELINUX">
+			<description>Requirements: ['Busybox-1.7']</description>
+			</feature>
+			<feature name="ENABLE_UNICODE_SUPPORT">
+			<description>Requirements: ['Busybox-1.8']</description>
+			</feature>
+		</and>
+		<and abstract="true" mandatory="true" name="Coreutils">
+		<description>Requirements: ['Busybox-Coreutils-1', 'Busybox-Coreutils-1.1', 'Busybox-Coreutils-1.2', 'Busybox-Coreutils-1.3', 'Busybox-Coreutils-1.4', 'Busybox-Coreutils-1.5', 'Busybox-Coreutils-1.6', 'Busybox-Coreutils-1.7', 'Busybox-Coreutils-1.8', 'Busybox-Coreutils-1.9', 'Busybox-Coreutils-1.10', 'Busybox-Coreutils-1.11', 'Busybox-Coreutils-1.12', 'Busybox-Coreutils-1.13', 'Busybox-Coreutils-1.14', 'Busybox-Coreutils-1.15', 'Busybox-Coreutils-1.16', 'Busybox-Coreutils-1.17', 'Busybox-Coreutils-1.18', 'Busybox-Coreutils-1.19', 'Busybox-Coreutils-1.20', 'Busybox-Coreutils-1.21', 'Busybox-Coreutils-1.22', 'Busybox-Coreutils-1.23', 'Busybox-Coreutils-1.24', 'Busybox-Coreutils-1.25', 'Busybox-Coreutils-1.26', 'Busybox-Coreutils-1.27', 'Busybox-Coreutils-1.28', 'Busybox-Coreutils-1.29', 'Busybox-Coreutils-1.30', 'Busybox-Coreutils-1.31', 'Busybox-Coreutils-1.32', 'Busybox-Coreutils-1.33', 'Busybox-Coreutils-1.34', 'Busybox-Coreutils-1.35', 'Busybox-Coreutils-1.36', 'Busybox-Coreutils-1.37', 'Busybox-Coreutils-1.38', 'Busybox-Coreutils-1.39', 'Busybox-Coreutils-1.40', 'Busybox-Coreutils-1.41', 'Busybox-Coreutils-1.42', 'Busybox-Coreutils-1.43', 'Busybox-Coreutils-1.44', 'Busybox-Coreutils-1.45', 'Busybox-Coreutils-1.46', 'Busybox-Coreutils-1.47', 'Busybox-Coreutils-1.48', 'Busybox-Coreutils-1.49', 'Busybox-Coreutils-1.50', 'Busybox-Coreutils-1.51', 'Busybox-Coreutils-1.52', 'Busybox-Coreutils-1.53', 'Busybox-Coreutils-1.54', 'Busybox-Coreutils-1.55', 'Busybox-Coreutils-1.56', 'Busybox-Coreutils-1.57', 'Busybox-Coreutils-1.58', 'Busybox-Coreutils-1.59', 'Busybox-Coreutils-1.60', 'Busybox-Coreutils-1.61', 'Busybox-Coreutils-1.62', 'Busybox-Coreutils-1.63', 'Busybox-Coreutils-1.64', 'Busybox-Coreutils-1.65', 'Busybox-Coreutils-1.66', 'Busybox-Coreutils-1.67', 'Busybox-Coreutils-1.68', 'Busybox-Coreutils-1.69', 'Busybox-Coreutils-1.70', 'Busybox-Coreutils-1.71', 'Busybox-Coreutils-1.72', 'Busybox-Coreutils-1.73', 'Busybox-Coreutils-1.74', 'Busybox-Coreutils-1.75', 'Busybox-Coreutils-1.76', 'Busybox-Coreutils-1.77', 'Busybox-Coreutils-1.78', 'Busybox-Coreutils-1.79', 'Busybox-Coreutils-1.80', 'Busybox-Coreutils-1.81', 'Busybox-Coreutils-1.82', 'Busybox-Coreutils-1.83', 'Busybox-Coreutils-1.84', 'Busybox-Coreutils-1.85', 'Busybox-Coreutils-1.86', 'Busybox-Coreutils-1.87', 'Busybox-Coreutils-1.88', 'Busybox-Coreutils-1.89', 'Busybox-Coreutils-1.90', 'Busybox-Coreutils-1.91', 'Busybox-Coreutils-1.92', 'Busybox-Coreutils-1.93', 'Busybox-Coreutils-1.94', 'Busybox-Coreutils-1.95', 'Busybox-Coreutils-1.96', 'Busybox-Coreutils-1.97', 'Busybox-Coreutils-1.98', 'Busybox-Coreutils-1.99', 'Busybox-Coreutils-1.100']</description>
+			<feature name="ENABLE_FEATURE_VERBOSE">
+			<description>Requirements: ['Busybox-Coreutils-1.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_PRESERVE_HARDLINKS">
+			<description>Requirements: ['Busybox-Coreutils-1.2', 'Busybox-Coreutils-1.2.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_HUMAN_READABLE">
+			<description>Requirements: ['Busybox-Coreutils-1.3', 'Busybox-Coreutils-1.3.1']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_BASENAME">
+			<description>Requirements: ['Busybox-Coreutils-1.4']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_CAT">
+		<description>Requirements: ['Busybox-Coreutils-1.5', 'Busybox-Coreutils-1.5.1', 'Busybox-Coreutils-1.5.2']</description>
+			<feature name="ENABLE_FEATURE_CATN">
+			<description>Requirements: ['Busybox-Coreutils-1.5.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_CATV">
+			<description>Requirements: ['Busybox-Coreutils-1.5.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_CHGRP">
+			<description>Requirements: ['Busybox-Coreutils-1.6']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_CHMOD">
+			<description>Requirements: ['Busybox-Coreutils-1.7']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_CHOWN">
+		<description>Requirements: ['Busybox-Coreutils-1.8', 'Busybox-Coreutils-1.8.1']</description>
+			<feature name="ENABLE_FEATURE_CHOWN_LONG_OPTIONS">
+			<description>Requirements: ['Busybox-Coreutils-1.8.1', 'Busybox-Coreutils-1.8.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_CHROOT">
+			<description>Requirements: ['Busybox-Coreutils-1.9']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_CKSUM">
+			<description>Requirements: ['Busybox-Coreutils-1.10']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_CRC32">
+			<description>Requirements: ['Busybox-Coreutils-1.11']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_COMM">
+			<description>Requirements: ['Busybox-Coreutils-1.12']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_CP">
+		<description>Requirements: ['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.13', 'Busybox-Coreutils-1.13.1']</description>
+		<and name="ENABLE_FEATURE_CP_LONG_OPTIONS">
+		<description>Requirements: ['Busybox-Coreutils-1.13.1', 'Busybox-Coreutils-1.13.1.1', 'Busybox-Coreutils-1.13.1.2']</description>
+			<feature name="ENABLE_FEATURE_CP_REFLINK">
+			<description>Requirements: ['Busybox-Coreutils-1.13.1.1']</description>
+			</feature>
+		</and>
+		</and>
+		<and mandatory="true" name="CONFIG_CUT">
+		<description>Requirements: ['Busybox-Coreutils-1.14', 'Busybox-Coreutils-1.14.1']</description>
+			<feature name="ENABLE_FEATURE_CUT_REGEX">
+			<description>Requirements: ['Busybox-Coreutils-1.14.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_DATE">
+		<description>Requirements: ['Busybox-Coreutils-1.15', 'Busybox-Coreutils-1.15.1', 'Busybox-Coreutils-1.15.2', 'Busybox-Coreutils-1.15.3']</description>
+			<feature name="ENABLE_FEATURE_DATE_ISOFMT">
+			<description>Requirements: ['Busybox-Coreutils-1.15.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_DATE_NANO">
+			<description>Requirements: ['Busybox-Coreutils-1.15.2']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_DATE_COMPAT">
+			<description>Requirements: ['Busybox-Coreutils-1.15.3']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_DD">
+		<description>Requirements: ['Busybox-Coreutils-1.16', 'Busybox-Coreutils-1.16.1', 'Busybox-Coreutils-1.16.2', 'Busybox-Coreutils-1.16.3']</description>
+		<and name="ENABLE_FEATURE_DD_SIGNAL_HANDLING">
+		<description>Requirements: ['Busybox-Coreutils-1.16.1', 'Busybox-Coreutils-1.16.1.1']</description>
+			<feature name="ENABLE_FEATURE_DD_THIRD_STATUS_LINE">
+			<description>Requirements: ['Busybox-Coreutils-1.16.1.1']</description>
+			</feature>
+		</and>
+			<feature name="ENABLE_FEATURE_DD_IBS_OBS">
+			<description>Requirements: ['Busybox-Coreutils-1.16.2']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_DD_STATUS">
+			<description>Requirements: ['Busybox-Coreutils-1.16.3']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_DF">
+		<description>Requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.17', 'Busybox-Coreutils-1.17.1', 'Busybox-Coreutils-1.17.2']</description>
+			<feature name="ENABLE_FEATURE_DF_FANCY">
+			<description>Requirements: ['Busybox-Coreutils-1.17.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_SKIP_ROOTFS">
+			<description>Requirements: ['Busybox-Coreutils-1.17.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_DIRNAME">
+			<description>Requirements: ['Busybox-Coreutils-1.18']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_DOS2UNIX">
+			<description>Requirements: ['Busybox-Coreutils-1.19']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_UNIX2DOS">
+			<description>Requirements: ['Busybox-Coreutils-1.20']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_DU">
+		<description>Requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.21', 'Busybox-Coreutils-1.21.1']</description>
+			<feature name="ENABLE_FEATURE_DU_DEFAULT_BLOCKSIZE_1K">
+			<description>Requirements: ['Busybox-Coreutils-1.21.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_ECHO">
+		<description>Requirements: ['Busybox-Coreutils-1.22', 'Busybox-Coreutils-1.22.1']</description>
+			<feature name="ENABLE_FEATURE_FANCY_ECHO">
+			<description>Requirements: ['Busybox-Coreutils-1.22.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_ENV">
+			<description>Requirements: ['Busybox-Coreutils-1.23']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_EXPAND">
+			<description>Requirements: ['Busybox-Coreutils-1.24']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_UNEXPAND">
+			<description>Requirements: ['Busybox-Coreutils-1.25']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_EXPR">
+		<description>Requirements: ['Busybox-Coreutils-1.26', 'Busybox-Coreutils-1.26.1']</description>
+			<feature name="ENABLE_EXPR_MATH_SUPPORT_64">
+			<description>Requirements: ['Busybox-Coreutils-1.26.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_FACTOR">
+			<description>Requirements: ['Busybox-Coreutils-1.27']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_FALSE">
+			<description>Requirements: ['Busybox-Coreutils-1.28']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_FOLD">
+			<description>Requirements: ['Busybox-Coreutils-1.29']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_HEAD">
+		<description>Requirements: ['Busybox-Coreutils-1.30', 'Busybox-Coreutils-1.30.1']</description>
+			<feature name="ENABLE_FEATURE_FANCY_HEAD">
+			<description>Requirements: ['Busybox-Coreutils-1.30.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_HOSTID">
+			<description>Requirements: ['Busybox-Coreutils-1.31']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_ID">
+			<description>Requirements: ['Busybox-Coreutils-1.32']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_GROUPS">
+			<description>Requirements: ['Busybox-Coreutils-1.33']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_INSTALL">
+		<description>Requirements: ['Busybox-Coreutils-1.34', 'Busybox-Coreutils-1.34.1']</description>
+			<feature name="ENABLE_FEATURE_INSTALL_LONG_OPTIONS">
+			<description>Requirements: ['Busybox-Coreutils-1.34.1', 'Busybox-Coreutils-1.34.1.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_LINK">
+			<description>Requirements: ['Busybox-Coreutils-1.35']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_LN">
+			<description>Requirements: ['Busybox-Coreutils-1.36']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_LOGNAME">
+			<description>Requirements: ['Busybox-Coreutils-1.37']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_LS">
+		<description>Requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.38', 'Busybox-Coreutils-1.38.1', 'Busybox-Coreutils-1.38.2', 'Busybox-Coreutils-1.38.3', 'Busybox-Coreutils-1.38.4', 'Busybox-Coreutils-1.38.5', 'Busybox-Coreutils-1.38.6', 'Busybox-Coreutils-1.38.7', 'Busybox-Coreutils-1.38.8']</description>
+			<feature name="ENABLE_FEATURE_LS_FILETYPES">
+			<description>Requirements: ['Busybox-Coreutils-1.38.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_FOLLOWLINKS">
+			<description>Requirements: ['Busybox-Coreutils-1.38.2']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_RECURSIVE">
+			<description>Requirements: ['Busybox-Coreutils-1.38.3']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_WIDTH">
+			<description>Requirements: ['Busybox-Coreutils-1.38.4']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_SORTFILES">
+			<description>Requirements: ['Busybox-Coreutils-1.38.5']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_TIMESTAMPS">
+			<description>Requirements: ['Busybox-Coreutils-1.38.6']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_LS_USERNAME">
+			<description>Requirements: ['Busybox-Coreutils-1.38.7']</description>
+			</feature>
+		<and name="ENABLE_FEATURE_LS_COLOR">
+		<description>Requirements: ['Busybox-Coreutils-1.38.8', 'Busybox-Coreutils-1.38.8.1', 'Busybox-Coreutils-1.38.8.2']</description>
+			<feature name="ENABLE_FEATURE_LS_COLOR_IS_DEFAULT">
+			<description>Requirements: ['Busybox-Coreutils-1.38.8.1']</description>
+			</feature>
+		</and>
+		</and>
+			<feature mandatory="true" name="CONFIG_MD5SUM">
+			<description>Requirements: ['Busybox-Coreutils-1.39', 'Busybox-Coreutils-1.43.1.1']</description>
+			</feature>
+			<feature name="CONFIG_SHA1SUM">
+			<description>Requirements: ['Busybox-Coreutils-1.40', 'Busybox-Coreutils-1.43.1.1']</description>
+			</feature>
+			<feature name="CONFIG_SHA256SUM">
+			<description>Requirements: ['Busybox-Coreutils-1.41', 'Busybox-Coreutils-1.43.1.1']</description>
+			</feature>
+			<feature name="CONFIG_SHA512SUM">
+			<description>Requirements: ['Busybox-Coreutils-1.42', 'Busybox-Coreutils-1.43.1.1']</description>
+			</feature>
+		<and name="ENABLE_SHA3SUM">
+		<description>Requirements: ['Busybox-Coreutils-1.43', 'Busybox-Coreutils-1.43.1', 'Busybox-Coreutils-1.43.1.1']</description>
+			<feature name="ENABLE_FEATURE_MD5_SHA1_SUM_CHECK">
+			<description>Requirements: ['Busybox-Coreutils-1.43.1', 'Busybox-Coreutils-1.43.1.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_MKDIR">
+			<description>Requirements: ['Busybox-Coreutils-1.44']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_MKFIFO">
+			<description>Requirements: ['Busybox-Coreutils-1.45']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_MKNOD">
+			<description>Requirements: ['Busybox-Coreutils-1.46']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_MKTEMP">
+			<description>Requirements: ['Busybox-Coreutils-1.47']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_MV">
+			<description>Requirements: ['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.48']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_NICE">
+			<description>Requirements: ['Busybox-Coreutils-1.49']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_NL">
+			<description>Requirements: ['Busybox-Coreutils-1.50']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_NOHUP">
+			<description>Requirements: ['Busybox-Coreutils-1.51']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_NPROC">
+			<description>Requirements: ['Busybox-Coreutils-1.52']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_OD">
+			<description>Requirements: ['Busybox-Coreutils-1.53']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_PASTE">
+			<description>Requirements: ['Busybox-Coreutils-1.54']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_PRINTENV">
+			<description>Requirements: ['Busybox-Coreutils-1.55']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_PRINTF">
+			<description>Requirements: ['Busybox-Coreutils-1.56']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_PWD">
+			<description>Requirements: ['Busybox-Coreutils-1.57']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_READLINK">
+		<description>Requirements: ['Busybox-Coreutils-1.58', 'Busybox-Coreutils-1.58.1']</description>
+			<feature name="ENABLE_FEATURE_READLINK_FOLLOW">
+			<description>Requirements: ['Busybox-Coreutils-1.58.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_REALPATH">
+			<description>Requirements: ['Busybox-Coreutils-1.59']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_RM">
+			<description>Requirements: ['Busybox-Coreutils-1.60']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_RMDIR">
+			<description>Requirements: ['Busybox-Coreutils-1.61']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_SEQ">
+			<description>Requirements: ['Busybox-Coreutils-1.62']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_SHRED">
+			<description>Requirements: ['Busybox-Coreutils-1.63']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_SHUF">
+			<description>Requirements: ['Busybox-Coreutils-1.64']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_SLEEP">
+		<description>Requirements: ['Busybox-Coreutils-1.65', 'Busybox-Coreutils-1.65.1']</description>
+			<feature name="ENABLE_FEATURE_FANCY_SLEEP">
+			<description>Requirements: ['Busybox-Coreutils-1.65.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_SORT">
+		<description>Requirements: ['Busybox-Coreutils-1.66', 'Busybox-Coreutils-1.66.1', 'Busybox-Coreutils-1.66.2']</description>
+			<feature name="ENABLE_FEATURE_SORT_BIG">
+			<description>Requirements: ['Busybox-Coreutils-1.66.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_SORT_OPTIMIZE_MEMORY">
+			<description>Requirements: ['Busybox-Coreutils-1.66.2']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_SPLIT">
+		<description>Requirements: ['Busybox-Coreutils-1.67', 'Busybox-Coreutils-1.67.1']</description>
+			<feature name="ENABLE_FEATURE_SPLIT_FANCY">
+			<description>Requirements: ['Busybox-Coreutils-1.67.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_STAT">
+		<description>Requirements: ['Busybox-Coreutils-1.68', 'Busybox-Coreutils-1.68.1', 'Busybox-Coreutils-1.68.2']</description>
+			<feature name="ENABLE_FEATURE_STAT_FORMAT">
+			<description>Requirements: ['Busybox-Coreutils-1.68.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_STAT_FILESYSTEM">
+			<description>Requirements: ['Busybox-Coreutils-1.68.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_STTY">
+			<description>Requirements: ['Busybox-Coreutils-1.69']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_SUM">
+			<description>Requirements: ['Busybox-Coreutils-1.70']</description>
+			</feature>
+		<and mandatory="true" name="ENABLE_SYNC">
+		<description>Requirements: ['Busybox-Coreutils-1.71', 'Busybox-Coreutils-1.71.1']</description>
+			<feature name="ENABLE_FEATURE_SYNC_FANCY">
+			<description>Requirements: ['Busybox-Coreutils-1.71.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="ENABLE_FSYNC">
+			<description>Requirements: ['Busybox-Coreutils-1.72']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_TAC">
+			<description>Requirements: ['Busybox-Coreutils-1.73']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_TAIL">
+		<description>Requirements: ['Busybox-Coreutils-1.74', 'Busybox-Coreutils-1.74.1']</description>
+			<feature name="ENABLE_FEATURE_FANCY_TAIL">
+			<description>Requirements: ['Busybox-Coreutils-1.74.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_TEE">
+		<description>Requirements: ['Busybox-Coreutils-1.75', 'Busybox-Coreutils-1.75.1']</description>
+			<feature name="ENABLE_FEATURE_TEE_USE_BLOCK_IO">
+			<description>Requirements: ['Busybox-Coreutils-1.75.1']</description>
+			</feature>
+		</and>
+			<feature name="CONFIG_TEST">
+			<description>Requirements: ['Busybox-Coreutils-1.76', 'Busybox-Coreutils-1.78.2']</description>
+			</feature>
+			<feature name="CONFIG_TEST1">
+			<description>Requirements: ['Busybox-Coreutils-1.77', 'Busybox-Coreutils-1.78.2']</description>
+			</feature>
+		<and name="ENABLE_TEST2">
+		<description>Requirements: ['Busybox-Coreutils-1.78', 'Busybox-Coreutils-1.78.1', 'Busybox-Coreutils-1.78.2']</description>
+			<feature name="ENABLE_FEATURE_TEST_64">
+			<description>Requirements: ['Busybox-Coreutils-1.78.1', 'Busybox-Coreutils-1.78.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_TIMEOUT">
+			<description>Requirements: ['Busybox-Coreutils-1.79']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_TOUCH">
+		<description>Requirements: ['Busybox-Coreutils-1.80', 'Busybox-Coreutils-1.80.1']</description>
+			<feature name="ENABLE_FEATURE_TOUCH_SUSV3">
+			<description>Requirements: ['Busybox-Coreutils-1.80.1']</description>
+			</feature>
+		</and>
+		<and mandatory="true" name="CONFIG_TR">
+		<description>Requirements: ['Busybox-Coreutils-1.81', 'Busybox-Coreutils-1.81.1', 'Busybox-Coreutils-1.81.2']</description>
+			<feature name="ENABLE_FEATURE_TR_CLASSES">
+			<description>Requirements: ['Busybox-Coreutils-1.81.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_TR_EQUIV">
+			<description>Requirements: ['Busybox-Coreutils-1.81.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_TRUE">
+			<description>Requirements: ['Busybox-Coreutils-1.82']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_TRUNCATE">
+			<description>Requirements: ['Busybox-Coreutils-1.83']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_TSORT">
+			<description>Requirements: ['Busybox-Coreutils-1.84']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_TTY">
+			<description>Requirements: ['Busybox-Coreutils-1.85']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_UNAME">
+			<description>Requirements: ['Busybox-Coreutils-1.86']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_BB_ARCH">
+			<description>Requirements: ['Busybox-Coreutils-1.87']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_UNIQ">
+			<description>Requirements: ['Busybox-Coreutils-1.88']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_UNLINK">
+			<description>Requirements: ['Busybox-Coreutils-1.89']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_USLEEP">
+			<description>Requirements: ['Busybox-Coreutils-1.90']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_UUDECODE">
+			<description>Requirements: ['Busybox-Coreutils-1.91']</description>
+			</feature>
+			<feature name="ENABLE_BASE32">
+			<description>Requirements: ['Busybox-Coreutils-1.92']</description>
+			</feature>
+			<feature name="ENABLE_BASE64">
+			<description>Requirements: ['Busybox-Coreutils-1.93']</description>
+			</feature>
+			<feature mandatory="true" name="ENABLE_UUENCODE">
+			<description>Requirements: ['Busybox-Coreutils-1.94']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_WC">
+		<description>Requirements: ['Busybox-Coreutils-1.95', 'Busybox-Coreutils-1.95.1']</description>
+			<feature name="ENABLE_FEATURE_WC_LARGE">
+			<description>Requirements: ['Busybox-Coreutils-1.95.1']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_WHO">
+			<description>Requirements: ['Busybox-Coreutils-1.96']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_W">
+			<description>Requirements: ['Busybox-Coreutils-1.97']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_USERS">
+			<description>Requirements: ['Busybox-Coreutils-1.98']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_WHOAMI">
+			<description>Requirements: ['Busybox-Coreutils-1.99']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_YES">
+			<description>Requirements: ['Busybox-Coreutils-1.100']</description>
+			</feature>
+		</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.2.1</description>
+			<imp>
+				<var>ENABLE_FEATURE_PRESERVE_HARDLINKS</var>
+				<disj>
+					<var>CONFIG_CP</var>
+					<var>CONFIG_MV</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.3.1</description>
+			<imp>
+				<var>ENABLE_FEATURE_HUMAN_READABLE</var>
+				<disj>
+					<var>CONFIG_DF</var>
+					<var>CONFIG_DU</var>
+					<var>CONFIG_LS</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.8.2</description>
+			<imp>
+				<var>ENABLE_FEATURE_CHOWN_LONG_OPTIONS</var>
+				<var>ENABLE_LONG_OPTS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.13.1.2</description>
+			<imp>
+				<var>ENABLE_FEATURE_CP_LONG_OPTIONS</var>
+				<var>ENABLE_LONG_OPTS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.34.1.1</description>
+			<imp>
+				<var>ENABLE_FEATURE_INSTALL_LONG_OPTIONS</var>
+				<var>ENABLE_LONG_OPTS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.38.8.2</description>
+			<imp>
+				<var>ENABLE_FEATURE_LS_COLOR</var>
+				<var>ENABLE_LONG_OPTS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.43.1.1</description>
+			<imp>
+				<var>ENABLE_FEATURE_MD5_SHA1_SUM_CHECK</var>
+				<disj>
+					<var>CONFIG_MD5SUM</var>
+					<var>CONFIG_SHA1SUM</var>
+					<var>CONFIG_SHA256SUM</var>
+					<var>CONFIG_SHA512SUM</var>
+					<var>ENABLE_SHA3SUM</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-Coreutils-1.78.2</description>
+			<imp>
+				<var>ENABLE_FEATURE_TEST_64</var>
+				<disj>
+					<var>CONFIG_TEST</var>
+					<var>CONFIG_TEST1</var>
+					<var>ENABLE_TEST2</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

@@ -1,0 +1,1311 @@
+ID --> Busybox-0 
+Valid --> 1
+Rule --> R1
+Parent --> root
+Child --> Busybox
+Req --> 
+Source --> 
+
+ID --> Busybox-1
+Valid --> 1
+Rule --> R2
+Parent --> Busybox
+Child --> Settings
+Req --> The Busybox shall select Settings
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.1
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> DESKTOP
+Req --> The Settings may select DESKTOP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.2
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> FEATURE_CLEAN_UP
+Req --> The Settings may select FEATURE_CLEAN_UP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.3
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> LOCALE_SUPPORT
+Req --> The Settings may select LOCALE_SUPPORT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.4
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> LONG_OPTS
+Req --> The Settings may select LONG_OPTS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.5
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> FEDORA_COMPAT
+Req --> The Settings may select FEDORA_COMPAT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.6
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> INCLUDE_SUSv2
+Req --> The Settings may select INCLUDE_SUSv2
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.7
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> SELINUX
+Req --> The Settings may select SELINUX
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-1.8
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> UNICODE_SUPPORT
+Req --> The Settings may select UNICODE_SUPPORT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1
+Valid --> 1
+Rule --> R2
+Parent --> Busybox
+Child --> Coreutils
+Req --> The Busybox shall select Coreutils
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.1
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> FEATURE_VERBOSE
+Req --> The Coreutils may select FEATURE_VERBOSE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.2
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> FEATURE_PRESERVE_HARDLINKS
+Req --> The Coreutils may select FEATURE_PRESERVE_HARDLINKS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.2.1
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_PRESERVE_HARDLINKS
+Child --> CP, MV
+Req --> The FEATURE_PRESERVE_HARDLINKS requires CP or MV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.3
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> FEATURE_HUMAN_READABLE
+Req --> The Coreutils may select FEATURE_HUMAN_READABLE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.3.1
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_HUMAN_READABLE
+Child --> DF, DU, LS
+Req --> The FEATURE_HUMAN_READABLE requires DF, DU or LS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.4
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> BASENAME
+Req --> The Coreutils shall select BASENAME
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.5
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CAT
+Req --> The Coreutils shall select CAT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.5.1
+Valid --> 1
+Rule --> R3
+Parent --> CAT
+Child --> FEATURE_CATN
+Req --> The CAT may select FEATURE_CATN
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.5.2
+Valid --> 1
+Rule --> R3
+Parent --> CAT
+Child --> FEATURE_CATV
+Req --> The CAT may select FEATURE_CATV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.6
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CHGRP
+Req --> The Coreutils shall select CHGRP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.7
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CHMOD
+Req --> The Coreutils shall select CHMOD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.8
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CHOWN
+Req --> The Coreutils shall select CHOWN
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.8.1
+Valid --> 1
+Rule --> R3
+Parent --> CHOWN
+Child --> FEATURE_CHOWN_LONG_OPTIONS
+Req --> The CHOWN may select FEATURE_CHOWN_LONG_OPTIONS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.8.2
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_CHOWN_LONG_OPTIONS
+Child --> LONG_OPTS
+Req --> The FEATURE_CHOWN_LONG_OPTIONS requires LONG_OPTS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.9
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CHROOT
+Req --> The Coreutils shall select CHROOT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.10
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CKSUM 
+Req --> The Coreutils shall select CKSUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.11
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CRC32
+Req --> The Coreutils shall select CRC32
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.12
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> COMM
+Req --> The Coreutils shall select COMM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.13
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CP
+Req --> The Coreutils shall select CP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.13.1
+Valid --> 1
+Rule --> R3
+Parent --> CP
+Child --> FEATURE_CP_LONG_OPTIONS
+Req --> The CP may select FEATURE_CP_LONG_OPTIONS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.13.1.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_CP_LONG_OPTIONS
+Child --> FEATURE_CP_REFLINK
+Req --> The FEATURE_CP_LONG_OPTIONS may select FEATURE_CP_REFLINK
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.13.1.2
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_CP_LONG_OPTIONS
+Child --> LONG_OPTS
+Req --> The FEATURE_CP_LONG_OPTIONS requires LONG_OPTS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.14
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> CUT
+Req --> The Coreutils shall select CUT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.14.1
+Valid --> 1
+Rule --> R3
+Parent --> CUT
+Child --> FEATURE_CUT_REGEX
+Req --> The CUT may select FEATURE_CUT_REGEX
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.15
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DATE
+Req --> The Coreutils shall select DATE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.15.1
+Valid --> 1
+Rule --> R3
+Parent --> DATE
+Child --> FEATURE_DATE_ISOFMT
+Req --> The DATE may select FEATURE_DATE_ISOFMT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.15.2
+Valid --> 1
+Rule --> R3
+Parent --> DATE
+Child --> FEATURE_DATE_NANO
+Req --> The DATE may select FEATURE_DATE_NANO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.15.3
+Valid --> 1
+Rule --> R3
+Parent --> DATE
+Child --> FEATURE_DATE_COMPAT
+Req --> The DATE may select FEATURE_DATE_COMPAT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.16
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DD
+Req --> The Coreutils shall select DD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.16.1
+Valid --> 1
+Rule --> R3
+Parent --> DD
+Child --> FEATURE_DD_SIGNAL_HANDLING
+Req --> The DD may select FEATURE_DD_SIGNAL_HANDLING
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.16.1.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_DD_SIGNAL_HANDLING
+Child --> FEATURE_DD_THIRD_STATUS_LINE
+Req --> The FEATURE_DD_SIGNAL_HANDLING may select FEATURE_DD_THIRD_STATUS_LINE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.16.2
+Valid --> 1
+Rule --> R3
+Parent --> DD
+Child --> FEATURE_DD_IBS_OBS
+Req --> The DD may select FEATURE_DD_IBS_OBS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.16.3
+Valid --> 1
+Rule --> R3
+Parent --> DD
+Child --> FEATURE_DD_STATUS
+Req --> The DD may select FEATURE_DD_STATUS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.17
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DF
+Req --> The Coreutils shall select DF
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.17.1
+Valid --> 1
+Rule --> R3
+Parent --> DF
+Child --> FEATURE_DF_FANCY
+Req --> The DF may select FEATURE_DF_FANCY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.17.2
+Valid --> 1
+Rule --> R3
+Parent --> DF
+Child --> FEATURE_SKIP_ROOTFS
+Req --> The DF may select FEATURE_SKIP_ROOTFS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.18
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DIRNAME
+Req --> The Coreutils shall select DIRNAME
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.19
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DOS2UNIX
+Req --> The Coreutils shall select DOS2UNIX
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.20
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UNIX2DOS
+Req --> The Coreutils shall select UNIX2DOS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.21
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> DU
+Req --> The Coreutils shall select DU
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.21.1
+Valid --> 1
+Rule --> R3
+Parent --> DU
+Child --> FEATURE_DU_DEFAULT_BLOCKSIZE_1K
+Req --> The DU may select FEATURE_DU_DEFAULT_BLOCKSIZE_1K
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.22
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> ECHO
+Req --> The Coreutils shall select ECHO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.22.1
+Valid --> 1
+Rule --> R3
+Parent --> ECHO
+Child --> FEATURE_FANCY_ECHO
+Req --> The ECHO may select FEATURE_FANCY_ECHO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.23
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> ENV
+Req --> The Coreutils shall select ENV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.24
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> EXPAND
+Req --> The Coreutils shall select EXPAND
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.25
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UNEXPAND
+Req --> The Coreutils shall select UNEXPAND
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.26
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> EXPR
+Req --> The Coreutils shall select EXPR
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.26.1
+Valid --> 1
+Rule --> R3
+Parent --> EXPR
+Child --> EXPR_MATH_SUPPORT_64
+Req --> The EXPR may select EXPR_MATH_SUPPORT_64
+Source --> synthesized from busybox-1.37.0 Config.in
+
+ID --> Busybox-Coreutils-1.27
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> FACTOR
+Req --> The Coreutils shall select FACTOR
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.28
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> FALSE
+Req --> The Coreutils shall select FALSE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.29
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> FOLD
+Req --> The Coreutils shall select FOLD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.30
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> HEAD
+Req --> The Coreutils shall select HEAD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.30.1
+Valid --> 1
+Rule --> R3
+Parent --> HEAD
+Child --> FEATURE_FANCY_HEAD
+Req --> The HEAD may select FEATURE_FANCY_HEAD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.31
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> HOSTID
+Req --> The Coreutils shall select HOSTID
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.32
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> ID
+Req --> The Coreutils shall select ID
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.33
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> GROUPS
+Req --> The Coreutils shall select GROUPS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.34
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> INSTALL
+Req --> The Coreutils shall select INSTALL
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.34.1
+Valid --> 1
+Rule --> R3
+Parent --> INSTALL
+Child --> FEATURE_INSTALL_LONG_OPTIONS
+Req --> The INSTALL may select FEATURE_INSTALL_LONG_OPTIONS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.34.1.1
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_INSTALL_LONG_OPTIONS
+Child --> LONG_OPTS
+Req --> The FEATURE_INSTALL_LONG_OPTIONS requires LONG_OPTS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.35
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> LINK
+Req --> The Coreutils shall select LINK
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.36
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> LN
+Req --> The Coreutils shall select LN
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.37
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> LOGNAME
+Req --> The Coreutils shall select LOGNAME
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> LS
+Req --> The Coreutils shall select LS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.1
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_FILETYPES
+Req --> The LS may select FEATURE_LS_FILETYPES
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.2
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_FOLLOWLINKS
+Req --> The LS may select FEATURE_LS_FOLLOWLINKS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.3
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_RECURSIVE
+Req --> The LS may select FEATURE_LS_RECURSIVE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.4
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_WIDTH
+Req --> The LS may select FEATURE_LS_WIDTH
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.5
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_SORTFILES
+Req --> The LS may select FEATURE_LS_SORTFILES
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.6
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_TIMESTAMPS
+Req --> The LS may select FEATURE_LS_TIMESTAMPS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.7
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_USERNAME
+Req --> The LS may select FEATURE_LS_USERNAME
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.8
+Valid --> 1
+Rule --> R3
+Parent --> LS
+Child --> FEATURE_LS_COLOR
+Req --> The LS may select FEATURE_LS_COLOR
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.8.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_LS_COLOR
+Child --> FEATURE_LS_COLOR_IS_DEFAULT
+Req --> The FEATURE_LS_COLOR may select FEATURE_LS_COLOR_IS_DEFAULT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.38.8.2
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_LS_COLOR
+Child --> LONG_OPTS
+Req --> The FEATURE_LS_COLOR requires LONG_OPTS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.39
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MD5SUM
+Req --> The Coreutils shall select MD5SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.40
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> SHA1SUM
+Req --> The Coreutils may select SHA1SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.41
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> SHA256SUM
+Req --> The Coreutils may select SHA256SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.42
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> SHA512SUM
+Req --> The Coreutils may select SHA512SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.43
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> SHA3SUM
+Req --> The Coreutils may select SHA3SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.43.1
+Valid --> 1
+Rule --> R3
+Parent --> SHA3SUM
+Child --> FEATURE_MD5_SHA1_SUM_CHECK
+Req --> The SHA3SUM may select FEATURE_MD5_SHA1_SUM_CHECK
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.43.1.1
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_MD5_SHA1_SUM_CHECK
+Child --> MD5SUM, SHA1SUM, SHA256SUM, SHA512SUM, SHA3SUM
+Req --> The FEATURE_MD5_SHA1_SUM_CHECK requires MD5SUM, SHA1SUM, SHA256SUM, SHA512SUM OR SHA3SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.44
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MKDIR
+Req --> The Coreutils shall select MKDIR 
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.45
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MKFIFO
+Req --> The Coreutils shall select MKFIFO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.46
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MKNOD
+Req --> The Coreutils shall select MKNOD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.47
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MKTEMP
+Req --> The Coreutils shall select MKTEMP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.48
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> MV
+Req --> The Coreutils shall select MV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.49
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> NICE
+Req --> The Coreutils shall select NICE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.50
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> NL
+Req --> The Coreutils shall select NL
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.51
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> NOHUP
+Req --> The Coreutils shall select NOHUP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.52
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> NPROC
+Req --> The Coreutils shall select NPROC
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.53
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> OD
+Req --> The Coreutils shall select OD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.54
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> PASTE
+Req --> The Coreutils shall select PASTE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.55
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> PRINTENV
+Req --> The Coreutils shall select PRINTENV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.56
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> PRINTF
+Req --> The Coreutils shall select PRINTF
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.57
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> PWD
+Req --> The Coreutils shall select PWD
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.58
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> READLINK
+Req --> The Coreutils shall select READLINK
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.58.1
+Valid --> 1
+Rule --> R3
+Parent --> READLINK
+Child --> FEATURE_READLINK_FOLLOW
+Req --> The READLINK may select FEATURE_READLINK_FOLLOW
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.59
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> REALPATH
+Req --> The Coreutils shall select REALPTH
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.60
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> RM
+Req --> The Coreutils shall select RM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.61
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> RMDIR
+Req --> The Coreutils shall select RMDIR
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.62
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SEQ
+Req --> The Coreutils shall select SEQ
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.63
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SHRED
+Req --> The Coreutils shall select SHRED
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.64
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SHUF
+Req --> The Coreutils shall select SHUF
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.65
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SLEEP
+Req --> The Coreutils shall select SLEEP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.65.1
+Valid --> 1
+Rule --> R3
+Parent --> SLEEP
+Child --> FEATURE_FANCY_SLEEP
+Req --> The SLEEP may select FEATURE_FANCY_SLEEP
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.66
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SORT
+Req --> The Coreutils shall select SORT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.66.1
+Valid --> 1
+Rule --> R3
+Parent --> SORT
+Child --> FEATURE_SORT_BIG
+Req --> The SORT may select FEATURE_SORT_BIG
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.66.2
+Valid --> 1
+Rule --> R3
+Parent --> SORT
+Child --> FEATURE_SORT_OPTIMIZE_MEMORY
+Req --> The SORT may select FEATURE_SORT_OPTIMIZE_MEMORY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.67
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SPLIT
+Req --> The Coreutils shall select SPLIT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.67.1
+Valid --> 1
+Rule --> R3
+Parent --> SPLIT
+Child --> FEATURE_SPLIT_FANCY
+Req --> The SPLIT may select FEATURE_SPLIT_FANCY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.68
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> STAT
+Req --> The Coreutils shall select STAT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.68.1
+Valid --> 1
+Rule --> R3
+Parent --> STAT
+Child --> FEATURE_STAT_FORMAT
+Req --> The STAT may select FEATURE_STAT_FORMAT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.68.2
+Valid --> 1
+Rule --> R3
+Parent --> STAT
+Child --> FEATURE_STAT_FILESYSTEM
+Req --> The STAT may select FEATURE_STAT_FILESYSTEM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.69
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> STTY
+Req --> The Coreutils shall select STTY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.70
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SUM
+Req --> The Coreutils shall select SUM
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.71
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> SYNC
+Req --> The Coreutils shall select SYNC
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.71.1
+Valid --> 1
+Rule --> R3
+Parent --> SYNC
+Child --> FEATURE_SYNC_FANCY
+Req --> The SYNC may select FEATURE_SYNC_FANCY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.72
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> FSYNC
+Req --> The Coreutils shall select FSYNC
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.73
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TAC
+Req --> The Coreutils shall select TAC
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.74
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TAIL
+Req --> The Coreutils shall select TAIL
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.74.1
+Valid --> 1
+Rule --> R3
+Parent --> TAIL
+Child --> FEATURE_FANCY_TAIL
+Req --> The TAIL may select FEATURE_FANCY_TAIL
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.75
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TEE
+Req --> The Coreutils shall select TEE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.75.1
+Valid --> 1
+Rule --> R3
+Parent --> TEE
+Child --> FEATURE_TEE_USE_BLOCK_IO
+Req --> The TEE may select FEATURE_TEE_USE_BLOCK_IO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.76
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> TEST
+Req --> The Coreutils may select TEST
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.77
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> TEST1
+Req --> The Coreutils may select TEST1
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.78
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> TEST2
+Req --> The Coreutils may select TEST2
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.78.1
+Valid --> 1
+Rule --> R3
+Parent --> TEST2
+Child --> FEATURE_TEST_64
+Req --> The TEST2 may select FEATURE_TEST_64
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.78.2
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_TEST_64
+Child --> TEST, TEST1, TEST2
+Req --> The FEATURE_TEST_64 requires TEST, TEST1 or TEST2
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.79
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TIMEOUT
+Req --> The Coreutils shall select TIMEOUT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.80
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TOUCH
+Req --> The Coreutils shall select TOUCH
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.80.1
+Valid --> 1
+Rule --> R3
+Parent --> TOUCH
+Child --> FEATURE_TOUCH_SUSV3
+Req --> The TOUCH may select FEATURE_TOUCH_SUSV3
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.81
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TR
+Req --> The Coreutils shall select TR
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.81.1
+Valid --> 1
+Rule --> R3
+Parent --> TR
+Child --> FEATURE_TR_CLASSES
+Req --> The TR may select FEATURE_TR_CLASSES
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.81.2
+Valid --> 1
+Rule --> R3
+Parent --> TR
+Child --> FEATURE_TR_EQUIV
+Req --> The TR may select FEATURE_TR_EQUIV
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.82
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TRUE
+Req --> The Coreutils shall select TRUE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.83
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TRUNCATE
+Req --> The Coreutils shall select TRUNCATE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.84
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TSORT
+Req --> The Coreutils shall select TSORT
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.85
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> TTY
+Req --> The Coreutils shall select TTY
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.86
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UNAME
+Req --> The Coreutils shall select UNAME
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.87
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> BB_ARCH
+Req --> The Coreutils shall select BB_ARCH
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.88
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UNIQ
+Req --> The Coreutils shall select UNIQ
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.89
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UNLINK
+Req --> The Coreutils shall select UNLINK
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.90
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> USLEEP
+Req --> The Coreutils shall select USLEEP 
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.91
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UUDECODE
+Req --> The Coreutils shall select UUDECODE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.92
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> BASE32
+Req --> The Coreutils may select BASE32
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.93
+Valid --> 1
+Rule --> R3
+Parent --> Coreutils
+Child --> BASE64
+Req --> The Coreutils may select BASE64
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.94
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> UUENCODE
+Req --> The Coreutils shall select UUENCODE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.95
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> WC
+Req --> The Coreutils shall select WC
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.95.1
+Valid --> 1
+Rule --> R3
+Parent --> WC
+Child --> FEATURE_WC_LARGE
+Req --> The WC may select FEATURE_WC_LARGE
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.96
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> WHO
+Req --> The Coreutils shall select WHO
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.97
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> W
+Req --> The Coreutils shall select W
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.98
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> USERS
+Req --> The Coreutils shall select USERS
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.99
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> WHOAMI
+Req --> The Coreutils shall select WHOAMI
+Source --> synthesized from busybox-1.37.0 menuconfig
+
+ID --> Busybox-Coreutils-1.100
+Valid --> 1
+Rule --> R2
+Parent --> Coreutils
+Child --> YES
+Req --> The Coreutils shall select YES
+Source --> synthesized from busybox-1.37.0 menuconfig

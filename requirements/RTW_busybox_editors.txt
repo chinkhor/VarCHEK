@@ -1,0 +1,296 @@
+ID --> Busybox-0 
+Valid --> 1
+Rule --> R1
+Parent --> root
+Child --> Busybox
+Req --> 
+Source --> 
+
+ID --> Busybox-1
+Valid --> 1
+Rule --> R2
+Parent --> Busybox
+Child --> Settings
+Req --> The Busybox shall select Settings
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-1.1
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> DESKTOP
+Req --> The Settings may select DESKTOP
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-1.2
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> FEATURE_CLEAN_UP
+Req --> The Settings may select FEATURE_CLEAN_UP
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-1.3
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> LOCALE_SUPPORT
+Req --> The Settings may select LOCALE_SUPPORT
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-1.4
+Valid --> 1
+Rule --> R3
+Parent --> Settings
+Child --> LONG_OPTS
+Req --> The Settings may select LONG_OPTS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2
+Valid --> 1
+Rule --> R2
+Parent --> Busybox
+Child --> Editors
+Req --> The Busybox shall select Editors
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.1
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> AWK
+Req --> The Editors shall select AWK
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.1.1
+Valid --> 1
+Rule --> R3
+Parent --> AWK
+Child --> FEATURE_AWK_LIBM
+Req --> The AWK may select FEATURE_AWK_LIBM
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.1.2
+Valid --> 1
+Rule --> R3
+Parent --> AWK
+Child --> FEATURE_AWK_GNU_EXTENSIONS
+Req --> The AWK may select FEATURE_AWK_GNU_EXTENSIONS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.2
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> CMP
+Req --> The Editors shall select CMP
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.3
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> DIFF
+Req --> The Editors shall select DIFF
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.3.1
+Valid --> 1
+Rule --> R3
+Parent --> DIFF
+Child --> FEATURE_DIFF_DIR
+Req --> The DIFF may select FEATURE_DIFF_DIR
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.3.2
+Valid --> 1
+Rule --> R3
+Parent --> DIFF
+Child --> FEATURE_DIFF_LONG_OPTIONS
+Req --> The DIFF may select FEATURE_DIFF_LONG_OPTIONS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.4
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> ED
+Req --> The Editors shall select ED
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.5
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> PATCH
+Req --> The Editors shall select PATCH
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.6
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> SED
+Req --> The Editors shall select SED
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7
+Valid --> 1
+Rule --> R2
+Parent --> Editors
+Child --> VI
+Req --> The Editors shall select VI
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.1
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_8BIT
+Req --> The VI may select FEATURE_VI_8BIT
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.2
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_COLON
+Req --> The VI may select FEATURE_VI_COLON
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.2.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_VI_COLON
+Child --> FEATURE_VI_COLON_EXPAND
+Req --> The FEATURE_VI_COLON may select FEATURE_VI_COLON_EXPAND
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.3
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_YANKMARK
+Req --> The VI may select FEATURE_VI_YANKMARK
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.4
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_SEARCH
+Req --> The VI may select FEATURE_VI_SEARCH
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.4.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_VI_SEARCH
+Child --> FEATURE_VI_REGEX_SEARCH
+Req --> The FEATURE_VI_SEARCH may select FEATURE_VI_REGEX_SEARCH
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.5
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_USE_SIGNALS
+Req --> The VI may select FEATURE_VI_USE_SIGNALS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.6
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_DOT_CMD
+Req --> The VI may select FEATURE_VI_DOT_CMD
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.7
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_READONLY
+Req --> The VI may select FEATURE_VI_READONLY
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.8
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_SETOPTS
+Req --> The VI may select FEATURE_VI_SETOPTS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.9
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_SET
+Req --> The VI may select FEATURE_VI_SET
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.10
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_WIN_RESIZE
+Req --> The VI may select FEATURE_VI_WIN_RESIZE
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.11
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_ASK_TERMINAL
+Req --> The VI may select FEATURE_VI_ASK_TERMINAL
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.12
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_UNDO
+Req --> The VI may select FEATURE_VI_UNDO
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.12.1
+Valid --> 1
+Rule --> R3
+Parent --> FEATURE_VI_UNDO
+Child --> FEATURE_VI_UNDO_QUEUE
+Req --> The FEATURE_VI_UNDO may select FEATURE_VI_UNDO_QUEUE
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.7.13
+Valid --> 1
+Rule --> R3
+Parent --> VI
+Child --> FEATURE_VI_VERBOSE_STATUS
+Req --> The VI may select FEATURE_VI_VERBOSE_STATUS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.8
+Valid --> 1
+Rule --> R3
+Parent --> Editors
+Child --> FEATURE_ALLOW_EXEC
+Req --> The Editors may select FEATURE_ALLOW_EXEC
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.9
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_DIFF_LONG_OPTIONS
+Child --> LONG_OPTS
+Req --> The FEATURE_DIFF_LONG_OPTIONS requires LONG_OPTS
+Source --> synthesized from busybox-1.36.1 menuconfig
+
+ID --> Busybox-2.10
+Valid --> 1
+Rule --> R7
+Parent --> FEATURE_ALLOW_EXEC
+Child --> VI, AWK
+Req --> The FEATURE_ALLOW_EXEC requires VI or AWK
+Source --> synthesized from busybox-1.36.1 menuconfig
+

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="1223,200"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Busybox">
+		<description>Requirements: ['Busybox-1', 'Busybox-2']</description>
+		<and abstract="true" mandatory="true" name="Settings">
+		<description>Requirements: ['Busybox-1', 'Busybox-1.1', 'Busybox-1.2', 'Busybox-1.3', 'Busybox-1.4']</description>
+			<feature name="ENABLE_DESKTOP">
+			<description>Requirements: ['Busybox-1.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_CLEAN_UP">
+			<description>Requirements: ['Busybox-1.2']</description>
+			</feature>
+			<feature name="ENABLE_LOCALE_SUPPORT">
+			<description>Requirements: ['Busybox-1.3']</description>
+			</feature>
+			<feature name="ENABLE_LONG_OPTS">
+			<description>Requirements: ['Busybox-1.4', 'Busybox-2.9']</description>
+			</feature>
+		</and>
+		<and abstract="true" mandatory="true" name="Editors">
+		<description>Requirements: ['Busybox-2', 'Busybox-2.1', 'Busybox-2.2', 'Busybox-2.3', 'Busybox-2.4', 'Busybox-2.5', 'Busybox-2.6', 'Busybox-2.7', 'Busybox-2.8']</description>
+		<and mandatory="true" name="CONFIG_AWK">
+		<description>Requirements: ['Busybox-2.1', 'Busybox-2.1.1', 'Busybox-2.1.2', 'Busybox-2.10']</description>
+			<feature name="ENABLE_FEATURE_AWK_LIBM">
+			<description>Requirements: ['Busybox-2.1.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_AWK_GNU_EXTENSIONS">
+			<description>Requirements: ['Busybox-2.1.2']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_CMP">
+			<description>Requirements: ['Busybox-2.2']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_DIFF">
+		<description>Requirements: ['Busybox-2.3', 'Busybox-2.3.1', 'Busybox-2.3.2']</description>
+			<feature name="ENABLE_FEATURE_DIFF_DIR">
+			<description>Requirements: ['Busybox-2.3.1']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_DIFF_LONG_OPTIONS">
+			<description>Requirements: ['Busybox-2.3.2', 'Busybox-2.9']</description>
+			</feature>
+		</and>
+			<feature mandatory="true" name="CONFIG_ED">
+			<description>Requirements: ['Busybox-2.4']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_PATCH">
+			<description>Requirements: ['Busybox-2.5']</description>
+			</feature>
+			<feature mandatory="true" name="CONFIG_SED">
+			<description>Requirements: ['Busybox-2.6']</description>
+			</feature>
+		<and mandatory="true" name="CONFIG_VI">
+		<description>Requirements: ['Busybox-2.7', 'Busybox-2.7.1', 'Busybox-2.7.2', 'Busybox-2.7.3', 'Busybox-2.7.4', 'Busybox-2.7.5', 'Busybox-2.7.6', 'Busybox-2.7.7', 'Busybox-2.7.8', 'Busybox-2.7.9', 'Busybox-2.7.10', 'Busybox-2.7.11', 'Busybox-2.7.12', 'Busybox-2.7.13', 'Busybox-2.10']</description>
+			<feature name="ENABLE_FEATURE_VI_8BIT">
+			<description>Requirements: ['Busybox-2.7.1']</description>
+			</feature>
+		<and name="ENABLE_FEATURE_VI_COLON">
+		<description>Requirements: ['Busybox-2.7.2', 'Busybox-2.7.2.1']</description>
+			<feature name="ENABLE_FEATURE_VI_COLON_EXPAND">
+			<description>Requirements: ['Busybox-2.7.2.1']</description>
+			</feature>
+		</and>
+			<feature name="ENABLE_FEATURE_VI_YANKMARK">
+			<description>Requirements: ['Busybox-2.7.3']</description>
+			</feature>
+		<and name="ENABLE_FEATURE_VI_SEARCH">
+		<description>Requirements: ['Busybox-2.7.4', 'Busybox-2.7.4.1']</description>
+			<feature name="ENABLE_FEATURE_VI_REGEX_SEARCH">
+			<description>Requirements: ['Busybox-2.7.4.1']</description>
+			</feature>
+		</and>
+			<feature name="ENABLE_FEATURE_VI_USE_SIGNALS">
+			<description>Requirements: ['Busybox-2.7.5']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_DOT_CMD">
+			<description>Requirements: ['Busybox-2.7.6']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_READONLY">
+			<description>Requirements: ['Busybox-2.7.7']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_SETOPTS">
+			<description>Requirements: ['Busybox-2.7.8']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_SET">
+			<description>Requirements: ['Busybox-2.7.9']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_WIN_RESIZE">
+			<description>Requirements: ['Busybox-2.7.10']</description>
+			</feature>
+			<feature name="ENABLE_FEATURE_VI_ASK_TERMINAL">
+			<description>Requirements: ['Busybox-2.7.11']</description>
+			</feature>
+		<and name="ENABLE_FEATURE_VI_UNDO">
+		<description>Requirements: ['Busybox-2.7.12', 'Busybox-2.7.12.1']</description>
+			<feature name="ENABLE_FEATURE_VI_UNDO_QUEUE">
+			<description>Requirements: ['Busybox-2.7.12.1']</description>
+			</feature>
+		</and>
+			<feature name="ENABLE_FEATURE_VI_VERBOSE_STATUS">
+			<description>Requirements: ['Busybox-2.7.13']</description>
+			</feature>
+		</and>
+			<feature name="ENABLE_FEATURE_ALLOW_EXEC">
+			<description>Requirements: ['Busybox-2.8', 'Busybox-2.10']</description>
+			</feature>
+		</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+		<description>Constraint Requirement: Busybox-2.9</description>
+			<imp>
+				<var>ENABLE_FEATURE_DIFF_LONG_OPTIONS</var>
+				<var>ENABLE_LONG_OPTS</var>
+			</imp>
+		</rule>
+		<rule>
+		<description>Constraint Requirement: Busybox-2.10</description>
+			<imp>
+				<var>ENABLE_FEATURE_ALLOW_EXEC</var>
+				<disj>
+					<var>CONFIG_VI</var>
+					<var>CONFIG_AWK</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

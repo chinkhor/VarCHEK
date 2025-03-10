@@ -1,0 +1,600 @@
+ID --> AXTLS-0 
+Valid --> 1
+Rule --> R1
+Parent --> root
+Child --> axTLS
+Req --> The axTLS is a highly configurable Transport Layer Security (TLS) version 1 SSL library for embedded devices
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-1 
+Valid --> 1
+Rule --> R2
+Parent --> axTLS
+Child --> OS_Platform
+Req --> The "axTLS" shall select the "OS platform"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-1.1
+Valid --> 1
+Rule --> R4
+Parent --> OS_Platform
+Child --> Linux_OS, CygWin_OS, Win32_OS
+Req --> The "OS Platform" shall use one and only one of the "Linux OS", "CygWin OS" or "Win32 OS"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-1.1.1
+Valid --> 1
+Rule --> R3
+Parent --> Win32_OS
+Child --> Win32_Crypto_Library
+Req --> The "Win32 OS" may use the "Win32 crypto library"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-1.1.2
+Valid --> 1
+Rule --> R2
+Parent --> Win32_OS
+Child --> Visual_Studio_Compiler
+Req --> The "Win32 OS" shall use the "Visual Studio compiler"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-1.1.2.1
+Valid --> 1
+Rule --> R4
+Parent --> Visual_Studio_Compiler
+Child --> Version_7_0, Version_8_0, Version_10_0
+Req --> The "Visual Studio compiler" shall use one and only one of the "compiler version 7.0", "compiler version 8.0" or "compiler version 10.0"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-2
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> Debug_Mode
+Req --> The "axTLS" may select the "debug mode"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-3
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> Unwanted_Section_Stripping
+Req --> The "axTLS" may select the "unwanted section stripping"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4
+Valid --> 1
+Rule --> R2
+Parent --> axTLS
+Child --> SSL_Library
+Req --> The "axTLS" shall use the "Secure Sockets Layer (SSL) library"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.1
+Valid --> 1
+Rule --> R2
+Parent --> SSL_Library
+Child --> SSL_Mode
+Req --> The "SSL library" shall select "SSL mode"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.1.1
+Valid --> 1
+Rule --> R4
+Parent --> SSL_Mode
+Child --> Server_Only, Server_Only_Verify, Server_Client, Server_Client_Full_Diagnostic, Skeleton_Mode
+Req --> The "SSL mode" shall use one and only one of the "Server Only", the "Server Only with Verify", the "Server and Client", the "Server and Client with Full Diagnostic" or the "Skeleton" mode
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.1.1.1
+Valid --> 1
+Rule --> R3
+Parent --> Server_Only_Verify
+Child --> Performance_Testing
+Req --> The "server only with verify" mode may select the "performance testing"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.1.1.2
+Valid --> 1
+Rule --> R3
+Parent --> Server_Client_Full_Diagnostic
+Child --> SSL_Testing
+Req --> The "server and client full diagnostic" mode may select the "SSL testing"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.2
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> SSL_Protocol
+Req --> The "SSL library" may select "SSL protocol"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.2.1
+Valid --> 1
+Rule --> R4
+Parent --> SSL_Protocol
+Child --> Low_Security, Medium_Security, High_Security
+Req --> The "SSL protocol" shall use one and only one of the "low security" protocol, the "medium security" protocol or the "high security" protocol
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.3
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> Default_Key
+Req -->  The "SSL library" may use "default key"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.4
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> X509_Cert_Generation
+Req -->  The "SSL library" may select "X.509 certificate generation"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.5
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> PEM_Format
+Req -->  The "SSL library" may use "Privacy Enhanced Mail (PEM) format"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.6
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> PKCS12_Format
+Req -->  The "SSL library" may use "Public Key Cryptography Standard (PKCS) 12 format"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.7
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> SSL_Context_Mutex
+Req -->  The "SSL library" may use the "SSL context mutex"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.8
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> dev_urandom
+Req -->  The "SSL library" may use the "/dev/urandom"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-4.9
+Valid --> 1
+Rule --> R3
+Parent --> SSL_Library
+Child --> OpenSSL_API_Compatibility
+Req --> The "SSL library" may select "OpenSSL Application Programming Interface (API) compatibility"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-5
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> axTLS_Wrap
+Req --> The "axTLS" may use the "axTLS wrap"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> HTTPS_Web_Server
+Req --> The "axTLS" may use the "Hypertext Transfer Protocol Secure (HTTPS) Web Server" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.1
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Static_Build
+Req --> The "HTTPS Web Server" may use the "static build"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.2
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Directory_Listing
+Req --> The "HTTPS Web Server" may select the "directory listing"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.3
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Authorization
+Req --> The "HTTPS Web Server" may use the "authorization"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.4
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> IPv6
+Req --> The "HTTPS Web Server" may use the "IPv6"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.5
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Different_User
+Req --> The "HTTPS Web Server" may select the "different user"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.6
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Verbose_Mode
+Req --> The "HTTPS Web Server" may use the "verbose mode"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.7
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> Daemon_Process
+Req --> The "HTTPS Web Server" may select the "daemon process"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.8
+Valid --> 1
+Rule --> R3
+Parent --> HTTPS_Web_Server
+Child --> CGI
+Req --> The "HTTPS Web Server" may use the "common gateway interface (CGI)"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.8.1
+Valid --> 1
+Rule --> R3
+Parent --> CGI
+Child --> HTTP_LUA
+Req --> The "common gateway interface (CGI)" may use the "HTTP library for LUA programming language"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-6.8.1.1
+Valid --> 1
+Rule --> R3
+Parent --> HTTP_LUA
+Child --> LUA_Build_Install
+Req --> The "HTTP library for LUA" may select the "LUA build and installation"
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> Language_Bindings
+Req --> The "axTLS" may select the "language bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7.1
+Valid --> 1
+Rule --> R3
+Parent --> Language_Bindings
+Child --> CSharp_Bindings
+Req --> The "language bindings" may use the "C# bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7.2
+Valid --> 1
+Rule --> R3
+Parent --> Language_Bindings
+Child --> VB_NET_Bindings
+Req --> The "language bindings" may use the "VB .NET bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7.3
+Valid --> 1
+Rule --> R3
+Parent --> Language_Bindings
+Child --> Java_Bindings
+Req --> The "language bindings" may use the "Java bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7.4
+Valid --> 1
+Rule --> R3
+Parent --> Language_Bindings
+Child --> Perl_Bindings
+Req --> The "language bindings" may use the "Perl bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-7.5
+Valid --> 1
+Rule --> R3
+Parent --> Language_Bindings
+Child --> LUA_Bindings
+Req --> The "language bindings" may use the "LUA bindings" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> axSSL_Sample_Generation
+Req --> The "axTLS" may select the "axSSL sample generation" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.1
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> C_Language_Sample
+Req --> The "axSSL sample generation" may select the "C language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.2
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> CSharp_Language_Sample
+Req --> The "axSSL sample generation" may select the "C# language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.3
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> VB_NET_Language_Sample
+Req --> The "axSSL sample generation" may select the "VB .NET language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.4
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> Java_Language_Sample
+Req --> The "axSSL sample generation" may select the "Jave language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.5
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> Perl_Language_Sample
+Req --> The "axSSL sample generation" may select the "Perl language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-8.6
+Valid --> 1
+Rule --> R3
+Parent --> axSSL_Sample_Generation
+Child --> LUA_Language_Sample
+Req --> The "axSSL sample generation" may select the "LUA language sample" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9
+Valid --> 1
+Rule --> R3
+Parent --> axTLS
+Child --> Big_Integer_Options
+Req --> The "axTLS" may use the "big-integer options" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.1
+Valid --> 1
+Rule --> R2
+Parent --> Big_Integer_Options
+Child --> Reduction_Algorithm
+Req --> The "big-integer options" may use the "reduction algorithm" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.1.1
+Valid --> 1
+Rule --> R4
+Parent --> Reduction_Algorithm
+Child --> Classical_Algo, Montgomery_Algo, Barrett_Algo
+Req --> The "reduction algorithm" shall use one and only one of the "Classical algorithm", the "Montgomery algorithm" or the "Barrett" algorithm 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.2
+Valid --> 1
+Rule --> R3
+Parent --> Big_Integer_Options
+Child --> Chinese_Remainder_Theorem
+Req --> The "big-integer options" may use the "Chinese_Remainder_Theorem (CRT)" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.3
+Valid --> 1
+Rule --> R3
+Parent --> Big_Integer_Options
+Child --> Karatsuba_Multiplication
+Req --> The "big-integer options" may use the "Karatsuba multiplication" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.4
+Valid --> 1
+Rule --> R3
+Parent --> Big_Integer_Options
+Child --> Sliding_Window_Exponentiation
+Req --> The "big-integer options" may use the "sliding window exponentiation" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.5
+Valid --> 1
+Rule --> R3
+Parent --> Big_Integer_Options
+Child --> Square_Algorithm
+Req --> The "big-integer options" may use the "square algorithm" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.6
+Valid --> 1
+Rule --> R3
+Parent --> Big_Integer_Options
+Child --> Big_Integer_Integrity_Check
+Req --> The "big-integer options" may use the "big-integer integrity check" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.7
+Valid --> 1
+Rule --> R2
+Parent --> Big_Integer_Options
+Child --> Big_Integer_Size
+Req --> The "big-integer options" shall define the "big-integer size" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-9.7.1
+Valid --> 1
+Rule --> R4
+Parent --> Big_Integer_Size
+Child --> Int_8_Bit, Int_16_Bit, Int_32_Bit
+Req --> The "big-integer size" shall select one and only one of the "8-bit integer", the "16-bit integer" or the "32-bit integer" 
+Source --> synthesized from axTLS-2.1.5 menuconfig
+
+ID --> AXTLS-10
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> CGI
+Req --> The "Win32 OS" excludes the "common gateway interface (CGI)"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-11
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> IPv6
+Req --> The "Win32 OS" excludes the "IPv6"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-12
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> LUA_Bindings
+Req --> The "Win32 OS" excludes the "LUA bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-13
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> axTLS_Wrap
+Req --> The "Win32 OS" excludes the "axTLS wrap"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-14
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> Daemon_Process
+Req --> The "Win32 OS" excludes the "daemon process"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-15
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> dev_urandom
+Req --> The "Win32 OS" excludes the "/dev/urandom"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-16
+Valid --> 1
+Rule --> R7
+Parent --> Win32_OS
+Child --> Different_User
+Req --> The "Win32 OS" excludes the "different user"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-17
+Valid --> 1
+Rule --> R7
+Parent --> Skeleton_Mode
+Child --> PEM_Format
+Req --> The "skeleton mode" excludes the "PEM format"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-18
+Valid --> 1
+Rule --> R7
+Parent --> Skeleton_Mode
+Child --> PKCS12_Format
+Req --> The "skeleton mode" excludes the "PKCS12 format"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-19
+Valid --> 1
+Rule --> R7
+Parent --> Skeleton_Mode
+Child --> Big_Integer_Options
+Req --> The "skeleton mode" excludes the "big-integer options"
+Source --> synthesized from axTLS-2.1.5 BigIntConfig.In
+
+ID --> AXTLS-20
+Valid --> 1
+Rule --> R7
+Parent --> Skeleton_Mode
+Child --> SSL_Protocol
+Req --> The "skeleton mode" excludes the "SSL protocol"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-21
+Valid --> 1
+Rule --> R7
+Parent --> Debug_Mode
+Child --> Unwanted_Section_Stripping
+Req --> The "debug mode" excludes the "unwanted section stripping"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-22
+Valid --> 1
+Rule --> R7
+Parent --> CSharp_Language_Sample
+Child --> CSharp_Bindings
+Req --> The "C# language sample" requires the "C# bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-23
+Valid --> 1
+Rule --> R7
+Parent --> VB_NET_Language_Sample
+Child --> VB_NET_Bindings
+Req --> The "VB .NET language sample" requires the "VB .NET bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-24
+Valid --> 1
+Rule --> R7
+Parent --> Java_Language_Sample
+Child --> Java_Bindings
+Req --> The "Java language sample" requires the "Java bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-25
+Valid --> 1
+Rule --> R7
+Parent --> Perl_Language_Sample
+Child --> Perl_Bindings
+Req --> The "Perl language sample" requires the "Perl bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-26
+Valid --> 1
+Rule --> R7
+Parent --> LUA_Language_Sample
+Child --> LUA_Bindings
+Req --> The "LUA language sample" requires the "LUA bindings"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
+ID --> AXTLS-27
+Valid --> 1
+Rule --> R7
+Parent --> SSL_Testing
+Child --> X509_Cert_Generation
+Req --> The "SSL_Testing" excludes the "X509_Cert_Generation"
+Source --> synthesized from axTLS-2.1.5 Config.In
+
