@@ -1,0 +1,46 @@
+Presence Conditions Statistics:
+total lines of code: 4584
+
+  Presence Conditions                                                                 Line Coverage       Line Coverage %
+  CFE_PLATFORM_TIME_CFG_SERVER                                                             421                 36.83
+  CFE_PLATFORM_TIME_CFG_SRC_TIME                                                           118                 10.32
+  CFE_PLATFORM_TIME_CFG_SRC_GPS                                                            117                 10.24
+  CFE_PLATFORM_TIME_CFG_SRC_MET                                                            111                  9.71
+  CFE_PLATFORM_TIME_CFG_CLIENT                                                              92                  8.05
+  !CFE_PLATFORM_TIME_CFG_SERVER                                                             48                  4.20
+  CFE_PLATFORM_TIME_CFG_SIGNAL                                                              30                  2.62
+  CFE_PLATFORM_TIME_CFG_SOURCE                                                              29                  2.54
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_BIGENDIAN                           17                  1.49
+  CFE_PLATFORM_TIME_CFG_SERVER && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                          13                  1.14
+  CFE_MISSION_TIME_CFG_FAKE_TONE                                                            12                  1.05
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_PLATFORM_TIME_CFG_BIGENDIAN                         12                  1.05
+  !CFE_MISSION_TIME_CFG_DEFAULT_TAI                                                         12                  1.05
+  CFE_PLATFORM_TIME_CFG_SRC_MET && CFE_PLATFORM_TIME_CFG_BIGENDIAN                          11                  0.96
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_PLATFORM_TIME_CFG_BIGENDIAN                          11                  0.96
+  CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                           11                  0.96
+  !CFE_PLATFORM_TIME_CFG_SOURCE                                                             9                   0.79
+  !CFE_PLATFORM_TIME_CFG_SIGNAL                                                             8                   0.70
+  !CFE_PLATFORM_TIME_CFG_CLIENT                                                             8                   0.70
+  CFE_PLATFORM_TIME_CFG_SRC_MET && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                         6                   0.52
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                         6                   0.52
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                        6                   0.52
+  !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                          6                   0.52
+  CFE_MISSION_TIME_CFG_DEFAULT_TAI                                                          6                   0.52
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_GPS                             4                   0.35
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_TIME                            3                   0.26
+  CFE_PLATFORM_TIME_CFG_SERVER && !CFE_PLATFORM_TIME_CFG_VIRTUAL                            2                   0.17
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_MET                             2                   0.17
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_VIRTUAL                             1                   0.09
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_MISSION_TIME_AT_TONE_WILL_BE                          1                   0.09
+  CFE_PLATFORM_TIME_CFG_SRC_MET && CFE_MISSION_TIME_AT_TONE_WILL_BE                         1                   0.09
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_MISSION_TIME_AT_TONE_WILL_BE                         1                   0.09
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_MISSION_TIME_CFG_DEFAULT_UTC                         1                   0.09
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_MISSION_TIME_AT_TONE_WILL_BE                        1                   0.09
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_MISSION_TIME_CFG_DEFAULT_UTC                        1                   0.09
+  CFE_MISSION_TIME_AT_TONE_WAS                                                              1                   0.09
+  CFE_MISSION_TIME_AT_TONE_WILL_BE                                                          1                   0.09
+  CFE_PLATFORM_TIME_CFG_VIRTUAL                                                             1                   0.09
+  !CFE_PLATFORM_TIME_CFG_VIRTUAL                                                            1                   0.09
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_MISSION_TIME_CFG_DEFAULT_UTC                          1                   0.09
+
+Total Presence Conditions: 40, total variability lines of code: 1143
