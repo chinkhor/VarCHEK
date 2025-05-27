@@ -64,6 +64,7 @@ class PresenceCondition:
                 os.system(command)
 
     def runPCLocator(self):
+        print(f"Variability source code:")
         for file in self.src_list:
             input_file = file.strip()
             if file[-2:].lower() == ".c":
@@ -76,7 +77,7 @@ class PresenceCondition:
             else:
                 raise Exception(f"runPCLocator: File extension of {file} is not supported")
             output_file = file.strip().replace(ext, f"{ext}.txt")
-            print(file)
+            print(f"   {file}")
             command = f"java -jar PCLocator/PCLocator.jar --annotator featurecopp --raw {input_file} > {output_file}"
             os.system(command)
 
@@ -378,19 +379,10 @@ class PresenceCondition:
             for pc in pc_copy:
                 for com in comparators:
                     if com in pc:
-                        print(f"Discard PC: {pc}")
+                        #print(f"Discard PC: {pc}")
                         pcs.remove(pc)
                         del self.presence_condition_dict[pc]
                         break
-                # if self.isHeader(pc):
-                #     print(f"Discard PC: {pc}")
-                #     pcs.remove(pc)
-                #     del self.presence_condition_dict[pc]
-                # if self.isInternalCodeVariables(pc):
-                #     print(f"Discard PC (internal code): {pc}")
-                #     if pc in pcs:
-                #         pcs.remove(pc)
-                #         del self.presence_condition_dict[pc]
             self.var_file_pc[filename] = pcs
         self.sortPresenceConditions()
 
@@ -418,16 +410,17 @@ class PresenceCondition:
                 print(f'    {line}')
                 
     def showPresenceConditionsStat(self):
-        print("\nPresence Conditions Statistics: ")
-        self.total_lines = 0
+        print("Presence Conditions Statistics: ")
+        self.var_total_lines = 0
         for pc in self.presence_condition_dict:
-            self.total_lines = self.total_lines + len(self.presence_condition_dict[pc])
-        print("total lines: {}".format(self.total_lines))
-        print("\n  {:80s} {:^20s} {:^20s}".format("Presence Conditions", "Line Coverage", "Line Coverage %"))
+            self.var_total_lines = self.var_total_lines + len(self.presence_condition_dict[pc])
+        print("  {:120s} {:^20s} {:^20s}".format("Presence Conditions", "Line Coverage", "Line Coverage %"))
         for pc in self.presence_condition_dict:
             lines = len(self.presence_condition_dict[pc])                     
-            print("  {:80s} {:^20d} {:^20.2f}".format(pc, lines, lines/self.total_lines*100))
-        print(f"Total PCs: {len(self.presence_condition_dict)}, total lines: {self.total_loc}")
+            print("  {:120s} {:^20d} {:^20.2f}".format(pc, lines, lines/self.var_total_lines*100))
+        print(f"Total Presence Conditions: {len(self.presence_condition_dict)}")
+        print(f"Total lines in variability source code: {self.var_total_lines}")
+        print(f"total lines in source code: {self.total_loc}")
 
     def discardNumericals(self):
         discard_pc = []
@@ -440,10 +433,6 @@ class PresenceCondition:
                     discard_pc.append(pc)
                     del self.presence_condition_dict[pc]
                     break
-
-        print("\nDiscarded PC:")
-        for pc in discard_pc:
-            print(f"   {pc}")   
 
     def showAssignments(self):
         print("\nAssignments for Presence Conditions")
@@ -587,7 +576,7 @@ class PresenceCondition:
             print(f"   {label} : {self.featuremodel_map_dict[label]}")
 
     def findFeaturesNotInFeatureModel(self):
-        print("\nFeatures not specified in Variability Model:")
+        print("\nFeatures in Source Code NOT specified in Requirements:")
         total_features = len(self.features_dict)
         total_features_not_in_fm = 0
         self.feature_not_in_code_coverage = {}
@@ -611,30 +600,26 @@ class PresenceCondition:
         self.feature_not_in_code_coverage = dict(sorted(x.items(), key=lambda item: item[1],reverse=True))
         total_lines = 0
         for feature in self.feature_not_in_code_coverage:
-            coverage = self.feature_not_in_code_coverage[feature]*100/self.total_lines
+            coverage = self.feature_not_in_code_coverage[feature]*100/self.var_total_lines
             print(f"     {feature:30s}: lines: {self.feature_not_in_code_coverage[feature]:^5d}, coverage: {coverage:<.2f}%")
             total_lines = total_lines + self.feature_not_in_code_coverage[feature]
-        print(f"Total features: {total_features}, total lines not covered by variability model: {total_lines}")
         if total_features == 0:
-            print(f"Total features not in variability model: {total_features_not_in_fm}")
+            print(f"Total Features in Source Code NOT specified in Requirements: {total_features_not_in_fm}")
         else:
-            print(f"Total features not in variability model: {total_features_not_in_fm} ({total_features_not_in_fm*100/total_features:<.2f}%)")
+            print(f"Total Features in Source Code NOT specified in Requirements: {total_features_not_in_fm} ({total_features_not_in_fm*100/total_features:<.2f}%)")
+        print(f"Total lines not covered by Requirements: {total_lines}")
+        print(f"Total Features in Source Code: {total_features}")
 
     def findFeaturesInFeatureModel(self):
-        print("\nCode Variables appear in Feature Model")
+        print("\nFeatures in Source Code specified in Requirements:")
         # total_features = len(self.features_dict)
-        # total_features_in_fm = 0
+        total_features_in_fm = 0
         for feature in self.features_dict:
             if feature in self.featuremodel_map_dict:
-                # total_features_in_fm += 1
+                total_features_in_fm += 1
                 print(f"    {feature}")
-        print()
-        # print(f"Total code variables: {total_features}")
-        # if total_features == 0:
-        #     print(f"Total code variables in feature model: {total_features_in_fm}")
-        # else:
-        #     print(f"Total code variables in feature model: {total_features_in_fm} ({total_features_in_fm*100/total_features}%)")
-                
+        print(f"Total Features in Source Code specified in Requirements: {total_features_in_fm}")
+               
     
     
 

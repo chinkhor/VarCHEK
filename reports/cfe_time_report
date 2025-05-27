@@ -1,0 +1,129 @@
+###########################################################
+Finding all c files in cFS time module
+
+Running ifnames tool to find c/cpp files that support variability. Please wait...
+Total time for finding cpp files and variability features: 0.23 seconds
+
+Running PCLocator tool to identify presence conditions from variability source code. Please wait...
+Variability source code:
+   ./cFS/cfe/modules/time/fsw/src/cfe_time_task.c
+   ./cFS/cfe/modules/time/fsw/src/cfe_time_tone.c
+   ./cFS/cfe/modules/time/fsw/src/cfe_time_utils.c
+   ./cFS/cfe/modules/time/fsw/src/cfe_time_dispatch.c
+   ./cFS/cfe/modules/time/fsw/src/cfe_time_api.c
+Total time for running PCLocator: 1.33 seconds
+
+Generating feature model. Please wait...
+Feature: Single_Processor is not defined
+Node: Single_Processor, valid 0, Abstract: True, Rule: , private:
+   Parent: None
+   Children: None
+   Requirements Traceability: ['TIME-5.2']
+Total time for feature model generation: 0.02 seconds
+
+Analyzing presence conditions. Please wait...
+Presence Conditions Statistics:
+  Presence Conditions                                                                                                         Line Coverage       Line Coverage %
+  CFE_PLATFORM_TIME_CFG_SERVER                                                                                                     421                 36.83 
+  CFE_PLATFORM_TIME_CFG_SRC_TIME                                                                                                   118                 10.32 
+  CFE_PLATFORM_TIME_CFG_SRC_GPS                                                                                                    117                 10.24 
+  CFE_PLATFORM_TIME_CFG_SRC_MET                                                                                                    111                  9.71 
+  CFE_PLATFORM_TIME_CFG_CLIENT                                                                                                      92                  8.05 
+  !CFE_PLATFORM_TIME_CFG_SERVER                                                                                                     48                  4.20 
+  CFE_PLATFORM_TIME_CFG_SIGNAL                                                                                                      30                  2.62 
+  CFE_PLATFORM_TIME_CFG_SOURCE                                                                                                      29                  2.54 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                   17                  1.49 
+  CFE_PLATFORM_TIME_CFG_SERVER && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                  13                  1.14 
+  CFE_MISSION_TIME_CFG_FAKE_TONE                                                                                                    12                  1.05 
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                 12                  1.05 
+  !CFE_MISSION_TIME_CFG_DEFAULT_TAI                                                                                                 12                  1.05 
+  CFE_PLATFORM_TIME_CFG_SRC_MET && CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                  11                  0.96 
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                  11                  0.96 
+  CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                                                   11                  0.96 
+  !CFE_PLATFORM_TIME_CFG_SOURCE                                                                                                     9                   0.79 
+  !CFE_PLATFORM_TIME_CFG_SIGNAL                                                                                                     8                   0.70 
+  !CFE_PLATFORM_TIME_CFG_CLIENT                                                                                                     8                   0.70 
+  CFE_PLATFORM_TIME_CFG_SRC_MET && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                 6                   0.52 
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                 6                   0.52 
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                6                   0.52 
+  !CFE_PLATFORM_TIME_CFG_BIGENDIAN                                                                                                  6                   0.52 
+  CFE_MISSION_TIME_CFG_DEFAULT_TAI                                                                                                  6                   0.52 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_GPS                                                                     4                   0.35 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_TIME                                                                    3                   0.26 
+  CFE_PLATFORM_TIME_CFG_SERVER && !CFE_PLATFORM_TIME_CFG_VIRTUAL                                                                    2                   0.17 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_SRC_MET                                                                     2                   0.17 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_PLATFORM_TIME_CFG_VIRTUAL                                                                     1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_MISSION_TIME_AT_TONE_WILL_BE                                                                  1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SRC_MET && CFE_MISSION_TIME_AT_TONE_WILL_BE                                                                 1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_MISSION_TIME_AT_TONE_WILL_BE                                                                 1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SRC_GPS && CFE_MISSION_TIME_CFG_DEFAULT_UTC                                                                 1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_MISSION_TIME_AT_TONE_WILL_BE                                                                1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SRC_TIME && CFE_MISSION_TIME_CFG_DEFAULT_UTC                                                                1                   0.09 
+  CFE_MISSION_TIME_AT_TONE_WAS                                                                                                      1                   0.09 
+  CFE_MISSION_TIME_AT_TONE_WILL_BE                                                                                                  1                   0.09 
+  CFE_PLATFORM_TIME_CFG_VIRTUAL                                                                                                     1                   0.09 
+  !CFE_PLATFORM_TIME_CFG_VIRTUAL                                                                                                    1                   0.09 
+  CFE_PLATFORM_TIME_CFG_SERVER && CFE_MISSION_TIME_CFG_DEFAULT_UTC                                                                  1                   0.09 
+Total Presence Conditions: 40
+Total lines in variability source code: 1143
+total lines in source code: 4584
+
+Features in Source Code NOT specified in Requirements:
+Total Features in Source Code NOT specified in Requirements: 0 (0.00%)
+Total lines not covered by Requirements: 0
+Total Features in Source Code: 14
+
+Features in Source Code specified in Requirements:
+    CFE_MISSION_TIME_CFG_FAKE_TONE
+    CFE_PLATFORM_TIME_CFG_CLIENT
+    CFE_PLATFORM_TIME_CFG_SERVER
+    CFE_PLATFORM_TIME_CFG_SIGNAL
+    CFE_PLATFORM_TIME_CFG_SOURCE
+    CFE_MISSION_TIME_AT_TONE_WAS
+    CFE_MISSION_TIME_AT_TONE_WILL_BE
+    CFE_MISSION_TIME_CFG_DEFAULT_TAI
+    CFE_MISSION_TIME_CFG_DEFAULT_UTC
+    CFE_PLATFORM_TIME_CFG_SRC_GPS
+    CFE_PLATFORM_TIME_CFG_SRC_MET
+    CFE_PLATFORM_TIME_CFG_SRC_TIME
+    CFE_PLATFORM_TIME_CFG_VIRTUAL
+    CFE_PLATFORM_TIME_CFG_BIGENDIAN
+Total Features in Source Code specified in Requirements: 14
+
+Consistency Checking:
+Presence Conditions are consistent with Variability Model
+
+
+Total time for presence condition identification and analysis: 0.25 seconds
+
+Required Features NOT in source code:
+Total Required Features in Variability Model: 14
+Total Required Feature NOT in source code: 0 (0.00%)
+
+Total textual requirements: 30
+Total textual requirements NOT implemented in source code: 0
+Textual requirements NOT implemented in source code:
+
+Finding min configuration sets. Please wait...
+
+                                   Feature     cfg1     cfg2     cfg3     cfg4     cfg5     cfg6     cfg7     cfg8
+          CFE_MISSION_TIME_CFG_DEFAULT_TAI    False     True     True     True    False     True    False     True
+              CFE_PLATFORM_TIME_CFG_CLIENT    False    False    False     True    False    False    False    False
+             CFE_PLATFORM_TIME_CFG_SRC_MET    False    False     True    False    False     True    False    False
+              CFE_PLATFORM_TIME_CFG_SERVER     True     True     True    False     True     True     True     True
+             CFE_PLATFORM_TIME_CFG_SRC_GPS    False     True    False    False     True    False    False    False
+          CFE_MISSION_TIME_CFG_DEFAULT_UTC     True    False    False    False     True    False     True    False
+          CFE_MISSION_TIME_AT_TONE_WILL_BE     True     True     True    False    False    False    False     True
+              CFE_MISSION_TIME_AT_TONE_WAS    False    False    False     True     True     True     True    False
+              CFE_PLATFORM_TIME_CFG_SOURCE     True     True     True    False     True     True     True    False
+           CFE_PLATFORM_TIME_CFG_BIGENDIAN     True    False     True      any     True    False    False      any
+            CFE_MISSION_TIME_CFG_FAKE_TONE    False    False    False     True    False    False    False    False
+             CFE_PLATFORM_TIME_CFG_VIRTUAL     True     True     True     True     True     True     True    False
+            CFE_PLATFORM_TIME_CFG_SRC_TIME     True    False    False    False    False    False     True    False
+              CFE_PLATFORM_TIME_CFG_SIGNAL     True    False      any      any      any      any      any      any
+
+Total time for min configuration sets finding: 0.70 seconds
+
+Total time for variability analysis: 2.31 seconds
+Completed analysis.
+###########################################################

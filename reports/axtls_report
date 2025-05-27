@@ -1,0 +1,664 @@
+###########################################################
+Finding all c files in axTLS
+
+Running ifnames tool to find c/cpp files that support variability. Please wait...
+Total time for finding cpp files and variability features: 1.94 seconds
+
+Running PCLocator tool to identify presence conditions from variability source code. Please wait...
+Variability source code:
+   ./axtls-code/samples/c/axssl.c
+   ./axtls-code/ssl/test/perf_bigint.c
+   ./axtls-code/ssl/asn1.c
+   ./axtls-code/ssl/x509.c
+   ./axtls-code/ssl/tls1.c
+   ./axtls-code/ssl/loader.c
+   ./axtls-code/ssl/tls1_svr.c
+   ./axtls-code/crypto/bigint.c
+   ./axtls-code/crypto/rsa.c
+   ./axtls-code/ssl/openssl.c
+   ./axtls-code/ssl/tls1_clnt.c
+   ./axtls-code/ssl/p12.c
+   ./axtls-code/crypto/crypto_misc.c
+   ./axtls-code/ssl/os_port.c
+   ./axtls-code/ssl/test/ssltest.c
+   ./axtls-code/httpd/htpasswd.c
+   ./axtls-code/httpd/proc.c
+   ./axtls-code/httpd/axhttpd.c
+   ./axtls-code/axtlswrap/axtlswrap.c
+   ./axtls-code/ssl/gen_cert.c
+   ./axtls-code/crypto/rc4.c
+   ./axtls-code/config/scripts/config/lex.zconf.c
+   ./axtls-code/config/scripts/config/zconf.tab.c
+   ./axtls-code/config/scripts/config/lxdialog/menubox.c
+   ./axtls-code/config/scripts/config/lxdialog/textbox.c
+Total time for running PCLocator: 7.54 seconds
+
+Generating feature model. Please wait...
+Total time for feature model generation: 0.04 seconds
+
+Analyzing presence conditions. Please wait...
+Presence Conditions Statistics:
+  Presence Conditions                                                                                                         Line Coverage       Line Coverage %
+  CONFIG_SSL_CERT_VERIFICATION                                                                                                     1295                17.81 
+  CONFIG_SSL_ENABLE_CLIENT                                                                                                         817                 11.24 
+  CONFIG_SSL_FULL_MODE                                                                                                             662                  9.11 
+  CONFIG_SSL_USE_PKCS12                                                                                                            472                  6.49 
+  CONFIG_SSL_GENERATE_X509_CERT                                                                                                    353                  4.86 
+  !CONFIG_SSL_SKELETON_MODE                                                                                                        290                  3.99 
+  CONFIG_OPENSSL_COMPATIBLE                                                                                                        261                  3.59 
+  CONFIG_SSL_HAS_PEM                                                                                                               230                  3.16 
+  CONFIG_HTTP_HAS_CGI                                                                                                              223                  3.07 
+  YYDEBUG                                                                                                                          173                  2.38 
+  !WIN32 && CONFIG_SSL_CTX_MUTEXING                                                                                                160                  2.20 
+  CONFIG_HTTP_HAS_CGI && !WIN32                                                                                                    137                  1.88 
+  CONFIG_HTTP_DIRECTORIES                                                                                                          130                  1.79 
+  WIN32                                                                                                                            128                  1.76 
+  CONFIG_HTTP_HAS_AUTHORIZATION                                                                                                    107                  1.47 
+  CONFIG_BIGINT_MONTGOMERY                                                                                                          91                  1.25 
+  !WIN32                                                                                                                            85                  1.17 
+  CONFIG_BIGINT_CRT                                                                                                                 80                  1.10 
+  CONFIG_SSL_HAS_PEM || CONFIG_HTTP_HAS_AUTHORIZATION                                                                               72                  0.99 
+  !YY_NO_INPUT                                                                                                                      72                  0.99 
+  CONFIG_BIGINT_SQUARE                                                                                                              67                  0.92 
+  CONFIG_BIGINT_BARRETT                                                                                                             63                  0.87 
+  CONFIG_SSL_FULL_MODE || CONFIG_DEBUG                                                                                              63                  0.87 
+  !YY_STRUCT_YY_BUFFER_STATE                                                                                                        62                  0.85 
+  CONFIG_BIGINT_KARATSUBA                                                                                                           60                  0.83 
+  CONFIG_BIGINT_KARATSUBA || CONFIG_BIGINT_BARRETT || CONFIG_BIGINT_MONTGOMERY                                                      57                  0.78 
+  CONFIG_HTTP_VERBOSE                                                                                                               56                  0.77 
+  YYERROR_VERBOSE                                                                                                                   54                  0.74 
+  CONFIG_SSL_CERT_VERIFICATION || CONFIG_SSL_GENERATE_X509_CERT                                                                     49                  0.67 
+  !YYTOKENTYPE                                                                                                                      44                  0.61 
+  (!yyoverflow && (!__cplusplus || YYSTYPE_IS_TRIVIAL))                                                                             40                  0.55 
+  !((!WIN32 && CONFIG_USE_DEV_URANDOM) || (WIN32 && CONFIG_WIN32_USE_CRYPTO_LIB))                                                   36                  0.50 
+  !CONFIG_INTEGER_8BIT && !CONFIG_INTEGER_16BIT                                                                                     33                  0.45 
+  CONFIG_BIGINT_SLIDING_WINDOW                                                                                                      32                  0.44 
+  HAVE_IPV6                                                                                                                         31                  0.43 
+  !FLEXINT_H                                                                                                                        28                  0.39 
+  CONFIG_SSL_ENABLE_CLIENT && !WIN32                                                                                                25                  0.34 
+  YYDEBUG || YYERROR_VERBOSE                                                                                                        21                  0.29 
+  yyoverflow                                                                                                                        21                  0.29 
+  !yyoverflow && YYSTACK_RELOCATE                                                                                                   20                  0.28 
+  CONFIG_BINDINGS && !CONFIG_SSL_CERT_VERIFICATION                                                                                  19                  0.26 
+  CONFIG_BIGINT_CHECK_ON                                                                                                            19                  0.26 
+  !HAVE_IPV6                                                                                                                        17                  0.23 
+  WIN32 && CONFIG_WIN32_USE_CRYPTO_LIB                                                                                              16                  0.22 
+  CONFIG_SSL_ENABLE_CLIENT && CONFIG_SSL_FULL_MODE                                                                                  15                  0.21 
+  YYERROR_VERBOSE && !yystpcpy && !(__GLIBC__ && _STRING_H && _GNU_SOURCE)                                                          15                  0.21 
+  !YY_INPUT                                                                                                                         14                  0.19 
+  CONFIG_HTTP_ENABLE_DIFFERENT_USER                                                                                                 13                  0.18 
+  !YYSTYPE && !YYSTYPE_IS_DECLARED                                                                                                  13                  0.18 
+  YYERROR_VERBOSE && !yystrlen && !(__GLIBC__ && _STRING_H)                                                                         13                  0.18 
+  CONFIG_HTTP_HAS_CGI && CONFIG_HTTP_HAS_CGI                                                                                        12                  0.17 
+  YYDEBUG && !(__STDC__ || __cplusplus)                                                                                             12                  0.17 
+  !CONFIG_SSL_GENERATE_X509_CERT                                                                                                    11                  0.15 
+  CONFIG_OPENSSL_COMPATIBLE && CONFIG_SSL_ENABLE_CLIENT                                                                             11                  0.15 
+  CONFIG_HTTP_DIRECTORIES && WIN32                                                                                                  10                  0.14 
+  !yyoverflow || YYERROR_VERBOSE                                                                                                    10                  0.14 
+  YYPRINT                                                                                                                           10                  0.14 
+  OLD_NCURSES                                                                                                                       10                  0.14 
+  CONFIG_HTTP_DIRECTORIES && !WIN32                                                                                                 9                   0.12 
+  CONFIG_HTTP_VERBOSE && CONFIG_HTTP_HAS_CGI                                                                                        9                   0.12 
+  YY_NEED_STRLEN                                                                                                                    9                   0.12 
+  !yyoverflow                                                                                                                       9                   0.12 
+  AXDEBUG                                                                                                                           8                   0.11 
+  CONFIG_SSL_CERT_VERIFICATION && CONFIG_SSL_FULL_MODE                                                                              7                   0.10 
+  CONFIG_BINDINGS && !CONFIG_SSL_ENABLE_CLIENT                                                                                      7                   0.10 
+  !yytext_ptr                                                                                                                       7                   0.10 
+  CONFIG_BINDINGS                                                                                                                   6                   0.08 
+  CONFIG_BIGINT_SQUARE && CONFIG_BIGINT_KARATSUBA                                                                                   6                   0.08 
+  CONFIG_HTTP_HAS_CGI && !WIN32 && CONFIG_HTTP_HAS_CGI                                                                              6                   0.08 
+  !YYDEBUG                                                                                                                          6                   0.08 
+  (YYDEBUG && __STDC__) || __cplusplus                                                                                              6                   0.08 
+  !CONFIG_BIGINT_CRT                                                                                                                5                   0.07 
+  CONFIG_SSL_USE_DEFAULT_KEY || CONFIG_SSL_SKELETON_MODE                                                                            5                   0.07 
+  (!CONFIG_USE_DEV_URANDOM && !CONFIG_WIN32_USE_CRYPTO_LIB)                                                                         5                   0.07 
+  CONFIG_HTTP_ENABLE_DIFFERENT_USER && CONFIG_HTTP_VERBOSE                                                                          5                   0.07 
+  CONFIG_HTTP_HAS_DIRECTORIES                                                                                                       5                   0.07 
+  !NOMMU                                                                                                                            5                   0.07 
+  !YY_DECL                                                                                                                          5                   0.07 
+  !(__STDC__ || __cplusplus)                                                                                                        5                   0.07 
+  !YYLLOC_DEFAULT                                                                                                                   5                   0.07 
+  CONFIG_SSL_SKELETON_MODE                                                                                                          4                   0.06 
+  !CONFIG_BIGINT_SLIDING_WINDOW                                                                                                     4                   0.06 
+  CONFIG_OPENSSL_COMPATIBLE && !CONFIG_SSL_SKELETON_MODE                                                                            4                   0.06 
+  !WIN32 && CONFIG_USE_DEV_URANDOM                                                                                                  4                   0.06 
+  WIN32 || CONFIG_WIN32_USE_CRYPTO_LIB                                                                                              4                   0.06 
+  WIN32 && !_WIN32_WCE                                                                                                              4                   0.06 
+  !WIN32 && CONFIG_HTTP_IS_DAEMON                                                                                                   4                   0.06 
+  __cplusplus                                                                                                                       4                   0.06 
+  !ECHO                                                                                                                             4                   0.06 
+  !YYPARSE_PARAM && !(__STDC__ || __cplusplus)                                                                                      4                   0.06 
+  !CONFIG_SSL_ENABLE_CLIENT                                                                                                         3                   0.04 
+  !CONFIG_SSL_CERT_VERIFICATION                                                                                                     3                   0.04 
+  !CONFIG_SSL_SKELETON_MODE && !CONFIG_SSL_HAS_PEM                                                                                  3                   0.04 
+  (!CONFIG_SSL_GENERATE_X509_CERT && CONFIG_SSL_USE_DEFAULT_KEY) || CONFIG_SSL_SKELETON_MODE                                        3                   0.04 
+  CONFIG_SSL_USE_PKCS12 && CONFIG_SSL_FULL_MODE                                                                                     3                   0.04 
+  CONFIG_WIN32_USE_CRYPTO_LIB                                                                                                       3                   0.04 
+  !__cplusplus                                                                                                                      3                   0.04 
+  !__cplusplus && __STDC__                                                                                                          3                   0.04 
+  !YY_NO_INPUT && __cplusplus                                                                                                       3                   0.04 
+  !YY_NO_INPUT && !__cplusplus                                                                                                      3                   0.04 
+  !yyoverflow || (YYERROR_VERBOSE && !YYSTACK_ALLOC)                                                                                3                   0.04 
+  __STDC__ || __cplusplus                                                                                                           3                   0.04 
+  YYPARSE_PARAM && !(__STDC__ || __cplusplus)                                                                                       3                   0.04 
+  (!YYPARSE_PARAM && __STDC__) || __cplusplus                                                                                       3                   0.04 
+  WIN32 && !CONFIG_SSL_FULL_MODE                                                                                                    2                   0.03 
+  CONFIG_ENABLE_VERIFICATION                                                                                                        2                   0.03 
+  CONFIG_SSL_HAS_PEM && CONFIG_SSL_FULL_MODE                                                                                        2                   0.03 
+  CONFIG_BIGINT_CRT && CONFIG_BIGINT_MONTGOMERY                                                                                     2                   0.03 
+  WIN32 && _WIN32_WCE                                                                                                               2                   0.03 
+  !AXDEBUG                                                                                                                          2                   0.03 
+  CONFIG_HTTP_HAS_CGI && CONFIG_HTTP_VERBOSE                                                                                        2                   0.03 
+  !YY_TYPEDEF_YY_BUFFER_STATE                                                                                                       2                   0.03 
+  !YY_TYPEDEF_YY_SIZE_T                                                                                                             2                   0.03 
+  YY_DECL_IS_OURS                                                                                                                   2                   0.03 
+  !yyoverflow || (YYERROR_VERBOSE && !YYSTACK_ALLOC && __STDC__) || __cplusplus                                                     2                   0.03 
+  (!YYSIZE_T && __STDC__) || __cplusplus                                                                                            2                   0.03 
+  YYDEBUG && !YYFPRINTF                                                                                                             2                   0.03 
+  YYERROR_VERBOSE && !yystpcpy && !(__GLIBC__ && _STRING_H && _GNU_SOURCE) && !(__STDC__ || __cplusplus)                            2                   0.03 
+  (YYPARSE_PARAM && __STDC__) || __cplusplus                                                                                        2                   0.03 
+  !OLD_NCURSES                                                                                                                      2                   0.03 
+  !STDIN_FILENO                                                                                                                     1                   0.01 
+  !CONFIG_PLATFORM_SOLARIS                                                                                                          1                   0.01 
+  CONFIG_SSL_PROT_LOW                                                                                                               1                   0.01 
+  CONFIG_SSL_PROT_MEDIUM                                                                                                            1                   0.01 
+  !(CONFIG_SSL_PROT_LOW || CONFIG_SSL_PROT_MEDIUM)                                                                                  1                   0.01 
+  CONFIG_SSL_SERVER_ONLY                                                                                                            1                   0.01 
+  !(CONFIG_SSL_FULL_MODE || CONFIG_SSL_ENABLE_CLIENT || CONFIG_ENABLE_VERIFICATION || CONFIG_SSL_SERVER_ONLY)                       1                   0.01 
+  !CONFIG_SSL_FULL_MODE                                                                                                             1                   0.01 
+  !CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_HAS_PEM                                                                                   1                   0.01 
+  !CONFIG_SSL_SKELETON_MODE && !CONFIG_SSL_HAS_PEM && CONFIG_SSL_FULL_MODE                                                          1                   0.01 
+  CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE                                                                                  1                   0.01 
+  !CONFIG_BIGINT_CHECK_ON                                                                                                           1                   0.01 
+  !CONFIG_BIGINT_KARATSUBA                                                                                                          1                   0.01 
+  CONFIG_BIGINT_SQUARE && !CONFIG_BIGINT_KARATSUBA                                                                                  1                   0.01 
+  !CONFIG_BIGINT_MONTGOMERY                                                                                                         1                   0.01 
+  !CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE                                                                                 1                   0.01 
+  (CONFIG_SSL_HAS_PEM || CONFIG_HTTP_HAS_AUTHORIZATION) && CONFIG_SSL_FULL_MODE                                                     1                   0.01 
+  CONFIG_SSL_HAS_PEM || (CONFIG_HTTP_HAS_AUTHORIZATION && CONFIG_SSL_FULL_MODE)                                                     1                   0.01 
+  !CONFIG_HTTP_HAS_CGI                                                                                                              1                   0.01 
+  CONFIG_HTTP_HAS_AUTHORIZATION && CONFIG_HTTP_VERBOSE                                                                              1                   0.01 
+  !CONFIG_HTTP_DIRECTORIES                                                                                                          1                   0.01 
+  WIN32 || CONFIG_PLATFORM_CYGWIN                                                                                                   1                   0.01 
+  CONFIG_HTTP_HAS_CGI && WIN32                                                                                                      1                   0.01 
+  (CONFIG_HTTP_HAS_CGI && !WIN32) && CONFIG_HTTP_HAS_AUTHORIZATION                                                                  1                   0.01 
+  CONFIG_HTTP_HAS_CGI && !WIN32 && CONFIG_HTTP_HAS_AUTHORIZATION                                                                    1                   0.01 
+  (CONFIG_HTTP_HAS_CGI && !WIN32) && CONFIG_HTTP_HAS_CGI                                                                            1                   0.01 
+  !WIN32 && CONFIG_HTTP_HAS_CGI                                                                                                     1                   0.01 
+  !WIN32 && CONFIG_HTTP_VERBOSE                                                                                                     1                   0.01 
+  CONFIG_HTTP_HAS_DIRECTORIES && WIN32                                                                                              1                   0.01 
+  CONFIG_HTTP_HAS_DIRECTORIES && !WIN32                                                                                             1                   0.01 
+  !FLEXINT_H && !INT8_MIN                                                                                                           1                   0.01 
+  !FLEXINT_H && !INT16_MIN                                                                                                          1                   0.01 
+  !FLEXINT_H && !INT32_MIN                                                                                                          1                   0.01 
+  !FLEXINT_H && !INT8_MAX                                                                                                           1                   0.01 
+  !FLEXINT_H && !INT16_MAX                                                                                                          1                   0.01 
+  !FLEXINT_H && !INT32_MAX                                                                                                          1                   0.01 
+  !FLEXINT_H && !UINT8_MAX                                                                                                          1                   0.01 
+  !FLEXINT_H && !UINT16_MAX                                                                                                         1                   0.01 
+  !FLEXINT_H && !UINT32_MAX                                                                                                         1                   0.01 
+  YY_USE_CONST                                                                                                                      1                   0.01 
+  !YY_USE_CONST                                                                                                                     1                   0.01 
+  !YY_BUF_SIZE                                                                                                                      1                   0.01 
+  !YY_EXTRA_TYPE                                                                                                                    1                   0.01 
+  !YY_SKIP_YYWRAP && __cplusplus                                                                                                    1                   0.01 
+  !YY_SKIP_YYWRAP && !__cplusplus                                                                                                   1                   0.01 
+  !YY_READ_BUF_SIZE                                                                                                                 1                   0.01 
+  !yyterminate                                                                                                                      1                   0.01 
+  !YY_START_STACK_INCR                                                                                                              1                   0.01 
+  !YY_FATAL_ERROR                                                                                                                   1                   0.01 
+  !YY_USER_ACTION                                                                                                                   1                   0.01 
+  !YY_BREAK                                                                                                                         1                   0.01 
+  YY_USER_INIT                                                                                                                      1                   0.01 
+  !YY_EXIT_FAILURE                                                                                                                  1                   0.01 
+  !YYERROR_VERBOSE                                                                                                                  1                   0.01 
+  (!yyoverflow || YYERROR_VERBOSE) && YYSTACK_USE_ALLOCA                                                                            1                   0.01 
+  !yyoverflow || (YYERROR_VERBOSE && !YYSTACK_USE_ALLOCA && !YYSTACK_USE_ALLOCA && alloca) || (_ALLOCA_H && __GNUC__)               1                   0.01 
+  !yyoverflow || (YYERROR_VERBOSE && !YYSTACK_USE_ALLOCA && !YYSTACK_USE_ALLOCA && !(alloca || (_ALLOCA_H && __GNUC__)) && __GNUC__)          1                   0.01
+  (!yyoverflow || YYERROR_VERBOSE) && YYSTACK_ALLOC                                                                                 1                   0.01 
+  !yyoverflow || (YYERROR_VERBOSE && YYSTACK_ALLOC)                                                                                 1                   0.01 
+  (!yyoverflow || YYERROR_VERBOSE) && !YYSTACK_ALLOC                                                                                1                   0.01 
+  !YYSIZE_T && __SIZE_TYPE__                                                                                                        1                   0.01 
+  !YYSIZE_T && size_t                                                                                                               1                   0.01 
+  !YYSIZE_T                                                                                                                         1                   0.01 
+  YYLEX_PARAM                                                                                                                       1                   0.01 
+  !YYLEX_PARAM                                                                                                                      1                   0.01 
+  !YYINITDEPTH                                                                                                                      1                   0.01 
+  !YYMAXDEPTH                                                                                                                       1                   0.01 
+  YYERROR_VERBOSE && !yystrlen && __GLIBC__ && _STRING_H                                                                            1                   0.01 
+  ((YYERROR_VERBOSE && !yystrlen && !(__GLIBC__ && _STRING_H)) && __STDC__) || __cplusplus                                          1                   0.01 
+  (YYERROR_VERBOSE && !yystrlen && !(__GLIBC__ && _STRING_H)) && !(__STDC__ || __cplusplus)                                         1                   0.01 
+  YYERROR_VERBOSE && !yystrlen && !(__GLIBC__ && _STRING_H) && !(__STDC__ || __cplusplus)                                           1                   0.01 
+  YYERROR_VERBOSE && !yystpcpy && __GLIBC__ && _STRING_H && _GNU_SOURCE                                                             1                   0.01 
+  ((YYERROR_VERBOSE && !yystpcpy && !(__GLIBC__ && _STRING_H && _GNU_SOURCE)) && __STDC__) || __cplusplus                           1                   0.01 
+  (YYERROR_VERBOSE && !yystpcpy && !(__GLIBC__ && _STRING_H && _GNU_SOURCE)) && !(__STDC__ || __cplusplus)                          1                   0.01 
+  YYDEBUG && YYPRINT                                                                                                                1                   0.01 
+  !yyoverflow && !YYSTACK_RELOCATE                                                                                                  1                   0.01 
+Total Presence Conditions: 196
+Total lines in variability source code: 7270
+total lines in source code: 22270
+
+Features in Source Code NOT specified in Requirements:
+     WIN32                         : lines:  649 , coverage: 8.93%
+     YYDEBUG                       : lines:  221 , coverage: 3.04%
+     YYERROR_VERBOSE               : lines:  134 , coverage: 1.84%
+     yyoverflow                    : lines:  112 , coverage: 1.54%
+     __cplusplus                   : lines:  107 , coverage: 1.47%
+     YY_NO_INPUT                   : lines:  78  , coverage: 1.07%
+     YY_STRUCT_YY_BUFFER_STATE     : lines:  62  , coverage: 0.85%
+     YYSTYPE                       : lines:  53  , coverage: 0.73%
+     __STDC__                      : lines:  52  , coverage: 0.72%
+     HAVE_IPV6                     : lines:  48  , coverage: 0.66%
+     YYTOKENTYPE                   : lines:  44  , coverage: 0.61%
+     YYSTYPE_IS_TRIVIAL            : lines:  40  , coverage: 0.55%
+     __GLIBC__                     : lines:  37  , coverage: 0.51%
+     YYSTACK_RELOCATE              : lines:  21  , coverage: 0.29%
+     _GNU_SOURCE                   : lines:  20  , coverage: 0.28%
+     yystpcpy                      : lines:  20  , coverage: 0.28%
+     yystrlen                      : lines:  17  , coverage: 0.23%
+     YY_INPUT                      : lines:  14  , coverage: 0.19%
+     YYSTYPE_IS_DECLARED           : lines:  13  , coverage: 0.18%
+     YYPARSE_PARAM                 : lines:  12  , coverage: 0.17%
+     OLD_NCURSES                   : lines:  12  , coverage: 0.17%
+     YYPRINT                       : lines:  11  , coverage: 0.15%
+     AXDEBUG                       : lines:  10  , coverage: 0.14%
+     YY_NEED_STRLEN                : lines:   9  , coverage: 0.12%
+     YYSTACK_ALLOC                 : lines:   8  , coverage: 0.11%
+     YY_DECL                       : lines:   7  , coverage: 0.10%
+     yytext_ptr                    : lines:   7  , coverage: 0.10%
+     CONFIG_HTTP_HAS_DIRECTORIES   : lines:   7  , coverage: 0.10%
+     _WIN32_WCE                    : lines:   6  , coverage: 0.08%
+     NOMMU                         : lines:   5  , coverage: 0.07%
+     YYLLOC_DEFAULT                : lines:   5  , coverage: 0.07%
+     YYSIZE_T                      : lines:   5  , coverage: 0.07%
+     ECHO                          : lines:   4  , coverage: 0.06%
+     CONFIG_ENABLE_VERIFICATION    : lines:   3  , coverage: 0.04%
+     YYSTACK_USE_ALLOCA            : lines:   3  , coverage: 0.04%
+     INT16_MAX                     : lines:   2  , coverage: 0.03%
+     INT32_MAX                     : lines:   2  , coverage: 0.03%
+     INT8_MAX                      : lines:   2  , coverage: 0.03%
+     YY_DECL_IS_OURS               : lines:   2  , coverage: 0.03%
+     YY_SKIP_YYWRAP                : lines:   2  , coverage: 0.03%
+     YY_TYPEDEF_YY_BUFFER_STATE    : lines:   2  , coverage: 0.03%
+     YY_TYPEDEF_YY_SIZE_T          : lines:   2  , coverage: 0.03%
+     YY_USE_CONST                  : lines:   2  , coverage: 0.03%
+     YYFPRINTF                     : lines:   2  , coverage: 0.03%
+     YYLEX_PARAM                   : lines:   2  , coverage: 0.03%
+     __GNUC__                      : lines:   2  , coverage: 0.03%
+     alloca                        : lines:   2  , coverage: 0.03%
+     CONFIG_PLATFORM_SOLARIS       : lines:   1  , coverage: 0.01%
+     STDIN_FILENO                  : lines:   1  , coverage: 0.01%
+     INT16_MIN                     : lines:   1  , coverage: 0.01%
+     INT32_MIN                     : lines:   1  , coverage: 0.01%
+     INT8_MIN                      : lines:   1  , coverage: 0.01%
+     UINT16_MAX                    : lines:   1  , coverage: 0.01%
+     UINT32_MAX                    : lines:   1  , coverage: 0.01%
+     UINT8_MAX                     : lines:   1  , coverage: 0.01%
+     YY_BREAK                      : lines:   1  , coverage: 0.01%
+     YY_BUF_SIZE                   : lines:   1  , coverage: 0.01%
+     YY_EXIT_FAILURE               : lines:   1  , coverage: 0.01%
+     YY_EXTRA_TYPE                 : lines:   1  , coverage: 0.01%
+     YY_FATAL_ERROR                : lines:   1  , coverage: 0.01%
+     YY_READ_BUF_SIZE              : lines:   1  , coverage: 0.01%
+     YY_START_STACK_INCR           : lines:   1  , coverage: 0.01%
+     YY_USER_ACTION                : lines:   1  , coverage: 0.01%
+     YY_USER_INIT                  : lines:   1  , coverage: 0.01%
+     yyterminate                   : lines:   1  , coverage: 0.01%
+     YYINITDEPTH                   : lines:   1  , coverage: 0.01%
+     YYMAXDEPTH                    : lines:   1  , coverage: 0.01%
+     __SIZE_TYPE__                 : lines:   1  , coverage: 0.01%
+     size_t                        : lines:   1  , coverage: 0.01%
+Total Features in Source Code NOT specified in Requirements: 69 (66.35%)
+Total lines not covered by Requirements: 1902
+Total Features in Source Code: 104
+
+Features in Source Code specified in Requirements:
+    CONFIG_SSL_CERT_VERIFICATION
+    CONFIG_SSL_ENABLE_CLIENT
+    CONFIG_SSL_FULL_MODE
+    CONFIG_SSL_SKELETON_MODE
+    CONFIG_SSL_GENERATE_X509_CERT
+    CONFIG_SSL_USE_PKCS12
+    CONFIG_OPENSSL_COMPATIBLE
+    CONFIG_SSL_CTX_MUTEXING
+    CONFIG_INTEGER_16BIT
+    CONFIG_INTEGER_8BIT
+    CONFIG_BIGINT_CRT
+    CONFIG_BINDINGS
+    CONFIG_SSL_HAS_PEM
+    CONFIG_SSL_PROT_LOW
+    CONFIG_SSL_PROT_MEDIUM
+    CONFIG_SSL_SERVER_ONLY
+    CONFIG_DEBUG
+    CONFIG_SSL_USE_DEFAULT_KEY
+    CONFIG_PLATFORM_LINUX
+    CONFIG_HTTP_DIRECTORIES
+    CONFIG_HTTP_HAS_AUTHORIZATION
+    CONFIG_HTTP_HAS_CGI
+    CONFIG_HTTP_VERBOSE
+    CONFIG_PLATFORM_CYGWIN
+    CONFIG_HTTP_HAS_IPV6
+    CONFIG_HTTP_ENABLE_DIFFERENT_USER
+    CONFIG_HTTP_IS_DAEMON
+    CONFIG_BIGINT_BARRETT
+    CONFIG_BIGINT_CHECK_ON
+    CONFIG_BIGINT_KARATSUBA
+    CONFIG_BIGINT_MONTGOMERY
+    CONFIG_BIGINT_SLIDING_WINDOW
+    CONFIG_BIGINT_SQUARE
+    CONFIG_USE_DEV_URANDOM
+    CONFIG_WIN32_USE_CRYPTO_LIB
+Total Features in Source Code specified in Requirements: 35
+
+Consistency Checking:
+Presence Condition: CONFIG_SSL_ENABLE_CLIENT && CONFIG_SSL_FULL_MODE is not consistent with Variability Model
+       Assignments: [CONFIG_SSL_ENABLE_CLIENT == True, CONFIG_SSL_FULL_MODE == True]
+Source Code:
+       ./axtls-code/samples/c/axssl.c: 549 - 560
+       ./axtls-code/samples/c/axssl.c: 839 - 841
+
+Presence Condition: CONFIG_SSL_CERT_VERIFICATION && CONFIG_SSL_FULL_MODE is not consistent with Variability Model
+       Assignments: [CONFIG_SSL_CERT_VERIFICATION == True, CONFIG_SSL_FULL_MODE == True]
+Source Code:
+       ./axtls-code/ssl/tls1.c: 434 - 436
+       ./axtls-code/ssl/tls1.c: 446 - 447
+       ./axtls-code/ssl/tls1.c: 2049 - 2050
+
+Presence Condition: CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE is not consistent with Variability Model
+       Assignments: [CONFIG_SSL_FULL_MODE == True, CONFIG_SSL_SKELETON_MODE == True]
+Source Code:
+       ./axtls-code/ssl/loader.c: 99
+
+
+Presence Condition: CONFIG_SSL_ENABLE_CLIENT && CONFIG_SSL_FULL_MODE is conflicted with
+Requirements: ['AXTLS-4.1', 'AXTLS-4.1.1']
+    Sentence: Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))
+
+Presence Condition: CONFIG_SSL_CERT_VERIFICATION && CONFIG_SSL_FULL_MODE is conflicted with
+Requirements: ['AXTLS-4.1', 'AXTLS-4.1.1']
+    Sentence: Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))
+
+Presence Condition: CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE is conflicted with
+Requirements: ['AXTLS-4.1', 'AXTLS-4.1.1']
+    Sentence: Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))
+Remove 'unsat' presence condition assignments: [CONFIG_SSL_FULL_MODE == True, CONFIG_SSL_SKELETON_MODE == True]
+Remove 'unsat' presence condition assignments: [CONFIG_SSL_CERT_VERIFICATION == True, CONFIG_SSL_FULL_MODE == True]
+Remove 'unsat' presence condition assignments: [CONFIG_SSL_ENABLE_CLIENT == True, CONFIG_SSL_FULL_MODE == True]
+
+Total time for presence condition identification and analysis: 1.93 seconds
+
+Required Features NOT in source code:
+   feature: CONFIG_SSL_TEST               , requirements: ['AXTLS-4.1.1.2', 'AXTLS-27']
+   feature: CONFIG_PLATFORM_WIN32         , requirements: ['AXTLS-1.1', 'AXTLS-1.1.1', 'AXTLS-1.1.2', 'AXTLS-10', 'AXTLS-11', 'AXTLS-12', 'AXTLS-13', 'AXTLS-14', 'AXTLS-15', 'AXTLS-16']
+   feature: CONFIG_JAVA_SAMPLES           , requirements: ['AXTLS-8.4', 'AXTLS-24']
+   feature: CONFIG_C_SAMPLES              , requirements: ['AXTLS-8.1']
+   feature: CONFIG_HTTP_BUILD_LUA         , requirements: ['AXTLS-6.8.1.1']
+   feature: CONFIG_AXHTTPD                , requirements: ['AXTLS-6', 'AXTLS-6.1', 'AXTLS-6.2', 'AXTLS-6.3', 'AXTLS-6.4', 'AXTLS-6.5', 'AXTLS-6.6', 'AXTLS-6.7', 'AXTLS-6.8']
+   feature: CONFIG_SSL_PROT_HIGH          , requirements: ['AXTLS-4.2.1']
+   feature: CONFIG_VBNET_SAMPLES          , requirements: ['AXTLS-8.3', 'AXTLS-23']
+   feature: CONFIG_INTEGER_32BIT          , requirements: ['AXTLS-9.7.1']
+   feature: CONFIG_PERL_SAMPLES           , requirements: ['AXTLS-8.5', 'AXTLS-25']
+   feature: CONFIG_VISUAL_STUDIO_7_0      , requirements: ['AXTLS-1.1.2.1']
+   feature: CONFIG_CSHARP_SAMPLES         , requirements: ['AXTLS-8.2', 'AXTLS-22']
+   feature: CONFIG_VISUAL_STUDIO_8_0      , requirements: ['AXTLS-1.1.2.1']
+   feature: CONFIG_LUA_SAMPLES            , requirements: ['AXTLS-8.6', 'AXTLS-26']
+   feature: CONFIG_STRIP_UNWANTED_SECTIONS, requirements: ['AXTLS-3', 'AXTLS-21']
+   feature: CONFIG_BIGINT_CLASSICAL       , requirements: ['AXTLS-9.1.1']
+   feature: CONFIG_VISUAL_STUDIO_10_0     , requirements: ['AXTLS-1.1.2.1']
+   feature: CONFIG_PERFORMANCE_TESTING    , requirements: ['AXTLS-4.1.1.1']
+   feature: CONFIG_AXTLSWRAP              , requirements: ['AXTLS-5', 'AXTLS-13']
+   feature: CONFIG_SAMPLES                , requirements: ['AXTLS-8', 'AXTLS-8.1', 'AXTLS-8.2', 'AXTLS-8.3', 'AXTLS-8.4', 'AXTLS-8.5', 'AXTLS-8.6']
+   feature: CONFIG_CSHARP_BINDINGS        , requirements: ['AXTLS-7.1', 'AXTLS-22']
+   feature: CONFIG_JAVA_BINDINGS          , requirements: ['AXTLS-7.3', 'AXTLS-24']
+   feature: CONFIG_LUA_BINDINGS           , requirements: ['AXTLS-7.5', 'AXTLS-12', 'AXTLS-26']
+   feature: CONFIG_PERL_BINDINGS          , requirements: ['AXTLS-7.4', 'AXTLS-25']
+   feature: CONFIG_VBNET_BINDINGS         , requirements: ['AXTLS-7.2', 'AXTLS-23']
+   feature: CONFIG_HTTP_ENABLE_LUA        , requirements: ['AXTLS-6.8.1', 'AXTLS-6.8.1.1']
+   feature: CONFIG_HTTP_STATIC_BUILD      , requirements: ['AXTLS-6.1']
+Total Required Features in Variability Model: 62
+Total Required Feature NOT in source code: 27 (43.55%)
+
+Total textual requirements: 93
+Total textual requirements NOT implemented in source code: 48
+Textual requirements NOT implemented in source code:
+   AXTLS-1.1: The "OS Platform" shall use one and only one of the "Linux OS", "CygWin OS" or "Win32 OS"
+   AXTLS-1.1.1: The "Win32 OS" may use the "Win32 crypto library"
+   AXTLS-1.1.2: The "Win32 OS" shall use the "Visual Studio compiler"
+   AXTLS-1.1.2.1: The "Visual Studio compiler" shall use one and only one of the "compiler version 7.0", "compiler version 8.0" or "compiler version 10.0"
+   AXTLS-10: The "Win32 OS" excludes the "common gateway interface (CGI)"
+   AXTLS-11: The "Win32 OS" excludes the "IPv6"
+   AXTLS-12: The "Win32 OS" excludes the "LUA bindings"
+   AXTLS-13: The "Win32 OS" excludes the "axTLS wrap"
+   AXTLS-14: The "Win32 OS" excludes the "daemon process"
+   AXTLS-15: The "Win32 OS" excludes the "/dev/urandom"
+   AXTLS-16: The "Win32 OS" excludes the "different user"
+   AXTLS-21: The "debug mode" excludes the "unwanted section stripping"
+   AXTLS-22: The "C# language sample" requires the "C# bindings"
+   AXTLS-23: The "VB .NET language sample" requires the "VB .NET bindings"
+   AXTLS-24: The "Java language sample" requires the "Java bindings"
+   AXTLS-25: The "Perl language sample" requires the "Perl bindings"
+   AXTLS-26: The "LUA language sample" requires the "LUA bindings"
+   AXTLS-27: The "SSL_Testing" excludes the "X509_Cert_Generation"
+   AXTLS-3: The "axTLS" may select the "unwanted section stripping"
+   AXTLS-4.1.1.1: The "server only with verify" mode may select the "performance testing"
+   AXTLS-4.1.1.2: The "server and client full diagnostic" mode may select the "SSL testing"
+   AXTLS-4.2.1: The "SSL protocol" shall use one and only one of the "low security" protocol, the "medium security" protocol or the "high security" protocol
+   AXTLS-5: The "axTLS" may use the "axTLS wrap"
+   AXTLS-6: The "axTLS" may use the "Hypertext Transfer Protocol Secure (HTTPS) Web Server"
+   AXTLS-6.1: The "HTTPS Web Server" may use the "static build"
+   AXTLS-6.2: The "HTTPS Web Server" may select the "directory listing"
+   AXTLS-6.3: The "HTTPS Web Server" may use the "authorization"
+   AXTLS-6.4: The "HTTPS Web Server" may use the "IPv6"
+   AXTLS-6.5: The "HTTPS Web Server" may select the "different user"
+   AXTLS-6.6: The "HTTPS Web Server" may use the "verbose mode"
+   AXTLS-6.7: The "HTTPS Web Server" may select the "daemon process"
+   AXTLS-6.8: The "HTTPS Web Server" may use the "common gateway interface (CGI)"
+   AXTLS-6.8.1: The "common gateway interface (CGI)" may use the "HTTP library for LUA programming language"
+   AXTLS-6.8.1.1: The "HTTP library for LUA" may select the "LUA build and installation"
+   AXTLS-7.1: The "language bindings" may use the "C# bindings"
+   AXTLS-7.2: The "language bindings" may use the "VB .NET bindings"
+   AXTLS-7.3: The "language bindings" may use the "Java bindings"
+   AXTLS-7.4: The "language bindings" may use the "Perl bindings"
+   AXTLS-7.5: The "language bindings" may use the "LUA bindings"
+   AXTLS-8: The "axTLS" may select the "axSSL sample generation"
+   AXTLS-8.1: The "axSSL sample generation" may select the "C language sample"
+   AXTLS-8.2: The "axSSL sample generation" may select the "C# language sample"
+   AXTLS-8.3: The "axSSL sample generation" may select the "VB .NET language sample"
+   AXTLS-8.4: The "axSSL sample generation" may select the "Jave language sample"
+   AXTLS-8.5: The "axSSL sample generation" may select the "Perl language sample"
+   AXTLS-8.6: The "axSSL sample generation" may select the "LUA language sample"
+   AXTLS-9.1.1: The "reduction algorithm" shall use one and only one of the "Classical algorithm", the "Montgomery algorithm" or the "Barrett" algorithm
+   AXTLS-9.7.1: The "big-integer size" shall select one and only one of the "8-bit integer", the "16-bit integer" or the "32-bit integer"
+
+Finding min configuration sets. Please wait...
+
+                                   Feature     cfg1     cfg2     cfg3     cfg4     cfg5     cfg6     cfg7
+             CONFIG_SSL_GENERATE_X509_CERT     True    False    False    False      any    False    False
+                    CONFIG_PLATFORM_CYGWIN     True    False    False    False    False    False    False
+              CONFIG_BIGINT_SLIDING_WINDOW     True    False    False    False    False    False    False
+                CONFIG_SSL_USE_DEFAULT_KEY     True     True      any      any      any      any      any
+                      CONFIG_BIGINT_SQUARE     True     True    False    False    False    False    False
+                              CONFIG_DEBUG     True      any    False    False      any    False    False
+               CONFIG_WIN32_USE_CRYPTO_LIB    False    False     True    False      any    False    False
+             CONFIG_HTTP_HAS_AUTHORIZATION     True      any     True    False    False    False    False
+                       CONFIG_INTEGER_8BIT    False     True    False    False    False    False    False
+                    CONFIG_USE_DEV_URANDOM    False      any    False     True    False    False    False
+                    CONFIG_SSL_SERVER_ONLY    False    False    False    False    False    False     True
+                  CONFIG_BIGINT_MONTGOMERY     True    False    False    False    False    False    False
+              CONFIG_SSL_CERT_VERIFICATION     True    False    False    False    False    False    False
+                       CONFIG_HTTP_VERBOSE     True      any      any    False    False    False    False
+                      CONFIG_SSL_FULL_MODE    False    False     True    False    False     True    False
+                        CONFIG_SSL_HAS_PEM     True    False     True      any    False    False      any
+                     CONFIG_PLATFORM_LINUX    False     True    False     True    False    False     True
+                      CONFIG_INTEGER_16BIT    False    False    False    False    False    False    False
+                     CONFIG_SSL_USE_PKCS12     True      any     True      any    False      any      any
+                 CONFIG_OPENSSL_COMPATIBLE     True     True      any      any      any      any      any
+                   CONFIG_SSL_CTX_MUTEXING     True      any      any      any      any      any      any
+         CONFIG_HTTP_ENABLE_DIFFERENT_USER     True      any    False    False    False    False    False
+                     CONFIG_HTTP_IS_DAEMON     True      any    False    False    False    False    False
+                   CONFIG_BIGINT_KARATSUBA     True    False    False    False    False    False    False
+                       CONFIG_HTTP_HAS_CGI     True     True    False    False    False    False    False
+                  CONFIG_SSL_SKELETON_MODE    False    False    False    False     True    False    False
+                    CONFIG_SSL_PROT_MEDIUM    False    False     True    False    False    False    False
+                    CONFIG_BIGINT_CHECK_ON     True    False    False    False    False    False    False
+                         CONFIG_BIGINT_CRT     True    False    False    False    False    False    False
+                   CONFIG_HTTP_DIRECTORIES     True     True    False    False    False    False    False
+                       CONFIG_SSL_PROT_LOW    False     True    False    False    False    False    False
+                     CONFIG_BIGINT_BARRETT    False     True    False    False    False    False    False
+                           CONFIG_BINDINGS     True     True    False    False      any    False    False
+                  CONFIG_SSL_ENABLE_CLIENT    False     True    False     True    False    False    False
+                      CONFIG_HTTP_HAS_IPV6      any      any    False    False    False    False    False
+                                 INT16_MAX    False      any      any      any      any      any      any
+                                  INT8_MAX    False      any      any      any      any      any      any
+                   CONFIG_PLATFORM_SOLARIS    False      any      any      any      any      any      any
+               CONFIG_HTTP_HAS_DIRECTORIES     True     True      any      any      any      any      any
+                               YY_BUF_SIZE    False      any      any      any      any      any      any
+                            YY_SKIP_YYWRAP    False    False      any      any      any      any      any
+                                   AXDEBUG     True    False      any      any      any      any      any
+                       YY_START_STACK_INCR    False      any      any      any      any      any      any
+                                  __STDC__    False     True    False     True      any      any      any
+                                 INT32_MIN    False      any      any      any      any      any      any
+                                yyoverflow    False     True    False      any      any      any      any
+                                  INT8_MIN    False      any      any      any      any      any      any
+                             YY_EXTRA_TYPE    False      any      any      any      any      any      any
+                               YYINITDEPTH    False      any      any      any      any      any      any
+                          YYSTACK_RELOCATE     True      any    False      any      any      any      any
+                                 _STRING_H    False     True      any    False      any      any      any
+                                 __GLIBC__    False     True      any    False      any      any      any
+                                     NOMMU    False      any      any      any      any      any      any
+                                 INT32_MAX    False      any      any      any      any      any      any
+                            YY_NEED_STRLEN     True      any      any      any      any      any      any
+                        YYSTACK_USE_ALLOCA    False    False     True      any      any      any      any
+                              YY_USER_INIT     True      any      any      any      any      any      any
+                 YY_STRUCT_YY_BUFFER_STATE    False      any      any      any      any      any      any
+                                 FLEXINT_H    False      any      any      any      any      any      any
+                           YYERROR_VERBOSE     True     True     True     True    False      any      any
+                               __cplusplus    False     True    False    False      any      any      any
+                               _GNU_SOURCE    False     True      any    False      any      any      any
+                                  YYSIZE_T    False    False      any      any      any      any      any
+                YY_TYPEDEF_YY_BUFFER_STATE    False      any      any      any      any      any      any
+                               YYTOKENTYPE    False      any      any      any      any      any      any
+                                 INT16_MIN    False      any      any      any      any      any      any
+                                 UINT8_MAX    False      any      any      any      any      any      any
+                                UINT32_MAX    False      any      any      any      any      any      any
+                               YY_NO_INPUT    False    False      any      any      any      any      any
+                                   YYDEBUG     True     True    False      any      any      any      any
+                                   YY_DECL    False      any      any      any      any      any      any
+                               OLD_NCURSES     True    False      any      any      any      any      any
+                                    alloca    False     True      any      any      any      any      any
+                            YY_FATAL_ERROR    False      any      any      any      any      any      any
+                        YYSTYPE_IS_TRIVIAL     True      any      any      any      any      any      any
+                                  __GNUC__     True     True      any      any      any      any      any
+                                  YY_INPUT    False      any      any      any      any      any      any
+                                  yystrlen    False    False      any    False      any      any      any
+                      YY_TYPEDEF_YY_SIZE_T    False      any      any      any      any      any      any
+                                 YYFPRINTF    False      any      any      any      any      any      any
+                                  yystpcpy    False    False      any    False      any      any      any
+                                   YYPRINT     True      any      any      any      any      any      any
+                                UINT16_MAX    False      any      any      any      any      any      any
+                              STDIN_FILENO    False      any      any      any      any      any      any
+                             YYSTACK_ALLOC    False    False     True      any      any      any      any
+                              YY_USE_CONST     True    False      any      any      any      any      any
+                               yyterminate    False      any      any      any      any      any      any
+                               YYLEX_PARAM     True    False      any      any      any      any      any
+                            YYLLOC_DEFAULT    False      any      any      any      any      any      any
+                                YYMAXDEPTH    False      any      any      any      any      any      any
+                CONFIG_ENABLE_VERIFICATION     True      any      any      any    False      any      any
+                                yytext_ptr    False      any      any      any      any      any      any
+                                 _ALLOCA_H    False     True      any      any      any      any      any
+                                 HAVE_IPV6     True    False      any      any      any      any      any
+                           YY_DECL_IS_OURS     True      any      any      any      any      any      any
+                                    size_t     True      any      any      any      any      any      any
+                                  YY_BREAK    False      any      any      any      any      any      any
+                                   YYSTYPE    False      any      any      any      any      any      any
+                                     WIN32    False     True     True    False      any      any      any
+                             YYPARSE_PARAM    False    False     True     True      any      any      any
+                       YYSTYPE_IS_DECLARED    False      any      any      any      any      any      any
+                          YY_READ_BUF_SIZE    False      any      any      any      any      any      any
+                            YY_USER_ACTION    False      any      any      any      any      any      any
+                           YY_EXIT_FAILURE    False      any      any      any      any      any      any
+                                      ECHO    False      any      any      any      any      any      any
+                             __SIZE_TYPE__     True      any      any      any      any      any      any
+                                _WIN32_WCE      any    False     True      any      any      any      any
+
+Total time for min configuration sets finding: 3.28 seconds
+
+Total time for variability analysis: 13.04 seconds
+Completed analysis.
+###########################################################

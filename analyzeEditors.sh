@@ -33,22 +33,22 @@ else
 fi
 
 # filter these files
-echo "./busybox-1.37.0/coreutils/stty.c" >> $dir/$bzbox_filter
+# echo "./busybox-1.37.0/coreutils/stty.c" >> $dir/$bzbox_filter
 
 # transform these files
 vim -c "set encoding=cp437" -c "set fileencoding=cp437" -c "wq" ./$busybox_version/modutils/modutils-24.c
 sed -i 's:0xffffffffffffffff:0xffffffff:g' ./$busybox_version/networking/tls.c
 
-#bzbox_dir="$busybox_version/editors"
-bzbox_dir="$busybox_version/coreutils"
+bzbox_dir="$busybox_version/editors"
 #bzbox_dir="$busybox_version"
 # find all c files and generate file list
+echo
+echo "###########################################################"
 echo "Finding all c files in busybox"
 find ./$bzbox_dir -name "*.[ch]" > $dir/$file
 
-#python3 analyzeVar.py --path $dir --file $file --filter $bzbox_filter --rtw_file requirements/RTW_busybox_editors.txt --feature_map code_map/map_busybox_editors --project "busybox-editors"
-python3 analyzeVar.py --path $dir --file $file --filter $bzbox_filter --rtw_file requirements/RTW_busybox_coreutils.txt --feature_map code_map/map_busybox_coreutils --project "busybox-coreutils"
+python3 analyzeVar.py --path $dir --file $file --filter $bzbox_filter --rtw_file requirements/RTW_busybox_editors.txt --feature_map code_map/map_busybox_editors --project "busybox-editors"
 
 echo "Completed analysis."
-
+echo "###########################################################"
 

@@ -58,9 +58,8 @@ class SATSolver:
                 self.solver.add(assignment)
             status.append(self.runModelCheck())
 
-        print()
-        print(status)
-        print()
+        #print(status)
+        print("\nConsistency Checking:")
         if unsat in status:
             for i, s in enumerate(status):
                 #index = status.index(unsat)
@@ -71,28 +70,30 @@ class SATSolver:
                     print(f"Source Code:")
                     previous_line = -1
                     first_sequential = True
-                    strings = []
+                    code_strings = []
                     for loc in presence_cond_assignments[i][2]:
                         string = loc.split(":")
                         current_line = int(string[1].strip())
                         if current_line != previous_line + 1:
-                            strings.append(loc)
+                            code_strings.append(loc)
                             first_sequential = True
                         else:
-                            last_entry = len(strings) - 1
+                            last_entry = len(code_strings) - 1
                             if first_sequential:
-                                strings[last_entry] = strings[last_entry] + f" - {current_line}"    
+                                code_strings[last_entry] = code_strings[last_entry] + f" - {current_line}"    
                                 first_sequential = False
                             else:
-                                strings[last_entry] = strings[last_entry].replace(str(previous_line), str(current_line))
+                                code_strings[last_entry] = code_strings[last_entry].replace(str(previous_line), str(current_line))
                         previous_line = current_line
-                    for string in strings:
-                        print(f"{string}")
+                    for string in code_strings:
+                        print(f"       {string}")
                     print()
                     unsat_presence_conditions.append([i, presence_cond_assignments[i][0]])
         else:
             print(f"Presence Conditions are consistent with Variability Model\n")
         
+        self.findUnsatConflict(unsat_presence_conditions, assignment2presence_cond)
+
         i = len(unsat_presence_conditions) - 1
         while i >= 0:
             # remove unsat presence condition
@@ -100,11 +101,11 @@ class SATSolver:
             print(f"Remove 'unsat' presence condition assignments: {self.presenceConditionAssignments.pop(index)}")
             i -= 1    
         print()
-        self.findUnsatConflict(unsat_presence_conditions, assignment2presence_cond)
+        
 
     def findUnsatConflict(self, unsat_presence_conditions, assignment2presence_cond):
-        sentence_check_list = []
         for unsat in unsat_presence_conditions:
+            sentence_check_list = []
             pc = unsat[1]
             key = str(pc)
             print(f"\nPresence Condition: {assignment2presence_cond[key]} is conflicted with")
@@ -113,24 +114,33 @@ class SATSolver:
             for assignments in pc:
                 terms = str(assignments).split(' == ')
                 features.append(terms[0].strip())
+
             for item in self.feature_model:
                 sentence = item[0]
+                match = False
                 for feature in features:
                     if feature in str(sentence):
                         sentence_check_list.append(item) 
-                    else:
-                        self.solver.add(sentence)
+                        match = True
+                        break
+                if not match:
+                    self.solver.add(sentence)
+            
             for assignments in pc:
                 self.solver.add(assignments)
 
             if self.runModelCheck() == sat:
                 for item in sentence_check_list:
+                    solver_copy = Solver()
+                    solver_copy.add(self.solver.assertions())
                     sentence = item[0]
-                    self.solver.add(sentence)
-                    if self.runModelCheck() != sat:
+                    #self.solver.add(sentence)
+                    #if self.runModelCheck() != sat:
+                    solver_copy.add(sentence)
+                    if solver_copy.check() != sat:
                         print(f"Requirements: {item[1]}")
                         print(f"    Sentence: {sentence}")
-                        break
+                        #break
 
     def findMinConfigSet(self):
         # create check list and check all items with 'O'
@@ -169,7 +179,7 @@ class SATSolver:
                         print("Error in backtracking")   
             # add the solution to the list
             self.configSet.append(self.model)
-            print(pc_check_list)
+            #print(pc_check_list)
             self.configs_pc.append(config_pc)
             # revert back all 'X' item to 'O' and repeat the process
             while 'X' in pc_check_list:
@@ -186,7 +196,7 @@ class SATSolver:
                 for feature in config:
                     feature_str = str(feature)
                     if feature_str not in self.code_features:
-                        print(f"Min set: discard feature: {feature_str} (not in code)")
+                        #print(f"Min set: discard feature: {feature_str} (not in code)")
                         if feature_str not in self.feature_not_in_code:
                             self.feature_not_in_code.append(feature_str)
                         continue
@@ -206,11 +216,10 @@ class SATSolver:
                     self.config_table[feature].append('any')    
 
     def printConfigTable(self, feature_map):
-        print("\n  %30s " % "Feature", end =" ")
+        print("\n  %40s " % "Feature", end =" ")
         for i in range(len(self.configSet)):
             s = "cfg" + str(i+1)
             print(" %6s " % s, end =" ")
-        print("\n")
         user_config_table = {}
         code_config_table = {}
         for feature in self.config_table:
@@ -218,14 +227,14 @@ class SATSolver:
                 user_config_table[feature] = self.config_table[feature]
             else:
                 code_config_table[feature] = self.config_table[feature]
-
+        print()
         for feature in user_config_table:
-            print("  %30s " % feature, end =" ")
+            print("  %40s " % feature, end =" ")
             for count, setting in enumerate(user_config_table[feature]):
                 print(" %6s " % setting, end =" ")
             print()
         for feature in code_config_table:
-            print("  %30s " % feature, end =" ")
+            print("  %40s " % feature, end =" ")
             for count, setting in enumerate(code_config_table[feature]):
                 print(" %6s " % setting, end =" ")
             print()

@@ -1,0 +1,242 @@
+###########################################################
+Finding all c files in busybox
+
+Running ifnames tool to find c/cpp files that support variability. Please wait...
+Total time for finding cpp files and variability features: 0.21 seconds
+
+Running PCLocator tool to identify presence conditions from variability source code. Please wait...
+Variability source code:
+   ./busybox-1.37.0/editors/patch_bbox.c
+   ./busybox-1.37.0/editors/awk.c
+   ./busybox-1.37.0/editors/patch.c
+   ./busybox-1.37.0/editors/cmp.c
+   ./busybox-1.37.0/editors/sed.c
+   ./busybox-1.37.0/editors/diff.c
+   ./busybox-1.37.0/editors/vi.c
+Total time for running PCLocator: 1.55 seconds
+
+Generating feature model. Please wait...
+Total time for feature model generation: 0.00 seconds
+
+Analyzing presence conditions. Please wait...
+Presence Conditions Statistics:
+  Presence Conditions                                                                                                         Line Coverage       Line Coverage %
+  ENABLE_FEATURE_VI_COLON                                                                                                          544                 19.86 
+  ENABLE_FEATURE_VI_CRASHME                                                                                                        228                  8.32 
+  ENABLE_FEATURE_VI_UNDO                                                                                                           206                  7.52 
+  ENABLE_FEATURE_VI_YANKMARK                                                                                                       193                  7.05 
+  ENABLE_FEATURE_DIFF_DIR                                                                                                          148                  5.40 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH                                                                              136                  4.97 
+  ENABLE_FEATURE_VI_SETOPTS                                                                                                        123                  4.49 
+  ENABLE_FEATURE_VI_UNDO && ENABLE_FEATURE_VI_UNDO_QUEUE                                                                            93                  3.40 
+  ENABLE_FEATURE_VI_DOT_CMD                                                                                                         82                  2.99 
+  ENABLE_FEATURE_VI_SEARCH                                                                                                          77                  2.81 
+  ENABLE_FEATURE_VI_REGEX_SEARCH                                                                                                    65                  2.37 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SET && ENABLE_FEATURE_VI_SETOPTS                                                     58                  2.12 
+  !ENABLE_FEATURE_VI_COLON                                                                                                          55                  2.01 
+  ENABLE_FEATURE_VI_SEARCH && ENABLE_FEATURE_VI_REGEX_SEARCH                                                                        54                  1.97 
+  ENABLE_LONG_OPTS                                                                                                                  53                  1.94 
+  ENABLE_FEATURE_VI_USE_SIGNALS                                                                                                     53                  1.94 
+  ENABLE_FEATURE_CLEAN_UP                                                                                                           48                  1.75 
+  !debug_parse_print_tc                                                                                                             34                  1.24 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_YANKMARK                                                                             34                  1.24 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_COLON_EXPAND                                                                         34                  1.24 
+  ENABLE_FEATURE_VI_SEARCH && !ENABLE_FEATURE_VI_REGEX_SEARCH                                                                       33                  1.20 
+  ENABLE_DESKTOP                                                                                                                    22                  0.80 
+  ENABLE_FEATURE_DIFF_LONG_OPTIONS                                                                                                  21                  0.77 
+  ENABLE_LONG_OPTS && ENABLE_DESKTOP                                                                                                20                  0.73 
+  ENABLE_FEATURE_VI_COLON_EXPAND                                                                                                    20                  0.73 
+  ENABLE_FEATURE_VI_YANKMARK || (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) || ENABLE_FEATURE_VI_CRASHME                  19                  0.69 
+  ENABLE_FEATURE_VI_READONLY                                                                                                        18                  0.66 
+  ENABLE_FEATURE_VI_YANKMARK && ENABLE_FEATURE_VI_VERBOSE_STATUS                                                                    17                  0.62 
+  ENABLE_FEATURE_VI_ASK_TERMINAL                                                                                                    16                  0.58 
+  !ENABLE_FEATURE_VI_UNDO                                                                                                           16                  0.58 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH && ENABLE_FEATURE_VI_REGEX_SEARCH                                             15                  0.55 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_ALLOW_EXEC                                                                              14                  0.51 
+  REG_STARTEND                                                                                                                      13                  0.47 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SET                                                                                  12                  0.44 
+  !REG_STARTEND                                                                                                                     10                  0.37 
+  ENABLE_FEATURE_VI_WIN_RESIZE                                                                                                      10                  0.37 
+  !ENABLE_LONG_OPTS                                                                                                                 9                   0.33 
+  !0                                                                                                                                9                   0.33 
+  ENABLE_FEATURE_AWK_GNU_EXTENSIONS                                                                                                 8                   0.29 
+  ENABLE_FEATURE_VI_UNDO && ENABLE_FEATURE_VI_VERBOSE_STATUS                                                                        8                   0.29 
+  !ENABLE_LOCALE_SUPPORT                                                                                                            6                   0.22 
+  ENABLE_FEATURE_VI_SEARCH && !ENABLE_FEATURE_VI_REGEX_SEARCH && ENABLE_FEATURE_VI_SETOPTS                                          6                   0.22 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) && ENABLE_FEATURE_VI_REGEX_SEARCH                                           6                   0.22 
+  ENABLE_LOCALE_SUPPORT                                                                                                             5                   0.18 
+  !ENABLE_FEATURE_VI_READONLY                                                                                                       5                   0.18 
+  !ENABLE_FEATURE_VI_USE_SIGNALS                                                                                                    5                   0.18 
+  !ENABLE_FEATURE_VI_COLON_EXPAND                                                                                                   5                   0.18 
+  !ENABLE_FEATURE_VI_SETOPTS                                                                                                        4                   0.15 
+  ENABLE_FEATURE_VI_UNDO && !ENABLE_FEATURE_VI_UNDO_QUEUE                                                                           4                   0.15 
+  !ENABLE_FEATURE_VI_WIN_RESIZE                                                                                                     4                   0.15 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH && ENABLE_FEATURE_VI_VERBOSE_STATUS                                           4                   0.15 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_READONLY                                                                             4                   0.15 
+  NO_SUCH_APPLET_YET                                                                                                                4                   0.15 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SET) && ENABLE_FEATURE_VI_SETOPTS                                                   3                   0.11 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) && ENABLE_FEATURE_VI_VERBOSE_STATUS                                         3                   0.11 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) && !ENABLE_FEATURE_VI_REGEX_SEARCH                                          3                   0.11 
+  !ENABLE_FEATURE_AWK_GNU_EXTENSIONS                                                                                                2                   0.07 
+  !ENABLE_FEATURE_DIFF_LONG_OPTIONS                                                                                                 2                   0.07 
+  ENABLE_LOCALE_SUPPORT && ENABLE_FEATURE_VI_8BIT                                                                                   2                   0.07 
+  !ENABLE_FEATURE_VI_DOT_CMD                                                                                                        2                   0.07 
+  ENABLE_FEATURE_VI_SETOPTS && ENABLE_FEATURE_VI_UNDO                                                                               2                   0.07 
+  ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH && !ENABLE_FEATURE_VI_REGEX_SEARCH                                            2                   0.07 
+  ENABLE_FEATURE_VI_YANKMARK && ENABLE_FEATURE_VI_YANKMARK && ENABLE_FEATURE_VI_VERBOSE_STATUS                                      2                   0.07 
+  !debug_printf_walker                                                                                                              1                   0.04 
+  !debug_printf_eval                                                                                                                1                   0.04 
+  !debug_printf_parse                                                                                                               1                   0.04 
+  debug_printf_parse                                                                                                                1                   0.04 
+  !ENABLE_DESKTOP                                                                                                                   1                   0.04 
+  !ENABLE_FEATURE_CLEAN_UP                                                                                                          1                   0.04 
+  !ENABLE_FEATURE_DIFF_DIR                                                                                                          1                   0.04 
+  ENABLE_LOCALE_SUPPORT && !ENABLE_FEATURE_VI_8BIT                                                                                  1                   0.04 
+  !ENABLE_LOCALE_SUPPORT && ENABLE_FEATURE_VI_8BIT                                                                                  1                   0.04 
+  !ENABLE_LOCALE_SUPPORT && !ENABLE_FEATURE_VI_8BIT                                                                                 1                   0.04 
+  ENABLE_FEATURE_VI_UNDO_QUEUE                                                                                                      1                   0.04 
+  !ENABLE_FEATURE_VI_CRASHME                                                                                                        1                   0.04 
+  ENABLE_FEATURE_VI_SET                                                                                                             1                   0.04 
+  ENABLE_FEATURE_VI_DOT_CMD && ENABLE_FEATURE_VI_YANKMARK                                                                           1                   0.04 
+  ENABLE_FEATURE_VI_SETOPTS && !ENABLE_FEATURE_VI_UNDO                                                                              1                   0.04 
+  (ENABLE_FEATURE_VI_YANKMARK || (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) || ENABLE_FEATURE_VI_CRASHME) && !ENABLE_FEATURE_VI_UNDO          1                   0.04
+  (ENABLE_FEATURE_VI_YANKMARK || (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH) || ENABLE_FEATURE_VI_CRASHME) && ENABLE_FEATURE_VI_UNDO          1                   0.04
+  (ENABLE_FEATURE_VI_SEARCH && !ENABLE_FEATURE_VI_REGEX_SEARCH) && ENABLE_FEATURE_VI_SETOPTS                                        1                   0.04 
+  (ENABLE_FEATURE_VI_SEARCH && !ENABLE_FEATURE_VI_REGEX_SEARCH) && !ENABLE_FEATURE_VI_SETOPTS                                       1                   0.04 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_YANKMARK) || ENABLE_FEATURE_VI_SEARCH                                               1                   0.04 
+  ENABLE_FEATURE_VI_COLON && !ENABLE_FEATURE_VI_COLON_EXPAND                                                                        1                   0.04 
+  !ENABLE_FEATURE_VI_REGEX_SEARCH                                                                                                   1                   0.04 
+  (ENABLE_FEATURE_VI_COLON && ENABLE_FEATURE_VI_SEARCH && ENABLE_FEATURE_VI_REGEX_SEARCH) && ENABLE_FEATURE_VI_UNDO                 1                   0.04 
+  !ENABLE_FEATURE_VI_YANKMARK                                                                                                       1                   0.04 
+  ENABLE_FEATURE_VI_YANKMARK && ENABLE_FEATURE_VI_YANKMARK                                                                          1                   0.04 
+  ENABLE_FEATURE_VI_YANKMARK && ENABLE_FEATURE_VI_UNDO                                                                              1                   0.04 
+Total Presence Conditions: 89
+Total lines in variability source code: 2739
+total lines in source code: 12776
+
+Features in Source Code NOT specified in Requirements:
+     ENABLE_FEATURE_VI_CRASHME     : lines:  250 , coverage: 9.13%
+     debug_parse_print_tc          : lines:  34  , coverage: 1.24%
+     REG_STARTEND                  : lines:  23  , coverage: 0.84%
+     NO_SUCH_APPLET_YET            : lines:   4  , coverage: 0.15%
+     debug_printf_parse            : lines:   2  , coverage: 0.07%
+     debug_printf_eval             : lines:   1  , coverage: 0.04%
+     debug_printf_walker           : lines:   1  , coverage: 0.04%
+Total Features in Source Code NOT specified in Requirements: 7 (22.58%)
+Total lines not covered by Requirements: 315
+Total Features in Source Code: 31
+
+Features in Source Code specified in Requirements:
+    ENABLE_DESKTOP
+    ENABLE_LONG_OPTS
+    ENABLE_FEATURE_DIFF_DIR
+    ENABLE_FEATURE_DIFF_LONG_OPTIONS
+    ENABLE_FEATURE_AWK_GNU_EXTENSIONS
+    ENABLE_FEATURE_CLEAN_UP
+    ENABLE_FEATURE_ALLOW_EXEC
+    ENABLE_FEATURE_VI_8BIT
+    ENABLE_FEATURE_VI_ASK_TERMINAL
+    ENABLE_FEATURE_VI_COLON
+    ENABLE_FEATURE_VI_COLON_EXPAND
+    ENABLE_FEATURE_VI_DOT_CMD
+    ENABLE_FEATURE_VI_READONLY
+    ENABLE_FEATURE_VI_REGEX_SEARCH
+    ENABLE_FEATURE_VI_SEARCH
+    ENABLE_FEATURE_VI_SET
+    ENABLE_FEATURE_VI_SETOPTS
+    ENABLE_FEATURE_VI_UNDO
+    ENABLE_FEATURE_VI_UNDO_QUEUE
+    ENABLE_FEATURE_VI_USE_SIGNALS
+    ENABLE_FEATURE_VI_VERBOSE_STATUS
+    ENABLE_FEATURE_VI_WIN_RESIZE
+    ENABLE_FEATURE_VI_YANKMARK
+    ENABLE_LOCALE_SUPPORT
+Total Features in Source Code specified in Requirements: 24
+
+Consistency Checking:
+Presence Conditions are consistent with Variability Model
+
+
+Total time for presence condition identification and analysis: 0.45 seconds
+
+Required Features NOT in source code:
+   feature: CONFIG_PATCH                  , requirements: ['Busybox-2.5']
+   feature: CONFIG_ED                     , requirements: ['Busybox-2.4']
+   feature: CONFIG_CMP                    , requirements: ['Busybox-2.2']
+   feature: CONFIG_DIFF                   , requirements: ['Busybox-2.3', 'Busybox-2.3.1', 'Busybox-2.3.2']
+   feature: ENABLE_FEATURE_AWK_LIBM       , requirements: ['Busybox-2.1.1']
+   feature: CONFIG_SED                    , requirements: ['Busybox-2.6']
+   feature: CONFIG_AWK                    , requirements: ['Busybox-2.1', 'Busybox-2.1.1', 'Busybox-2.1.2', 'Busybox-2.10']
+   feature: CONFIG_VI                     , requirements: ['Busybox-2.7', 'Busybox-2.7.1', 'Busybox-2.7.2', 'Busybox-2.7.3', 'Busybox-2.7.4', 'Busybox-2.7.5', 'Busybox-2.7.6', 'Busybox-2.7.7', 'Busybox-2.7.8', 'Busybox-2.7.9', 'Busybox-2.7.10', 'Busybox-2.7.11', 'Busybox-2.7.12', 'Busybox-2.7.13', 'Busybox-2.10']
+Total Required Features in Variability Model: 32
+Total Required Feature NOT in source code: 8 (25.00%)
+
+Total textual requirements: 46
+Total textual requirements NOT implemented in source code: 25
+Textual requirements NOT implemented in source code:
+   Busybox-2.1: The Editors shall select AWK
+   Busybox-2.1.1: The AWK may select FEATURE_AWK_LIBM
+   Busybox-2.1.2: The AWK may select FEATURE_AWK_GNU_EXTENSIONS
+   Busybox-2.10: The FEATURE_ALLOW_EXEC requires VI or AWK
+   Busybox-2.2: The Editors shall select CMP
+   Busybox-2.3: The Editors shall select DIFF
+   Busybox-2.3.1: The DIFF may select FEATURE_DIFF_DIR
+   Busybox-2.3.2: The DIFF may select FEATURE_DIFF_LONG_OPTIONS
+   Busybox-2.4: The Editors shall select ED
+   Busybox-2.5: The Editors shall select PATCH
+   Busybox-2.6: The Editors shall select SED
+   Busybox-2.7: The Editors shall select VI
+   Busybox-2.7.1: The VI may select FEATURE_VI_8BIT
+   Busybox-2.7.10: The VI may select FEATURE_VI_WIN_RESIZE
+   Busybox-2.7.11: The VI may select FEATURE_VI_ASK_TERMINAL
+   Busybox-2.7.12: The VI may select FEATURE_VI_UNDO
+   Busybox-2.7.13: The VI may select FEATURE_VI_VERBOSE_STATUS
+   Busybox-2.7.2: The VI may select FEATURE_VI_COLON
+   Busybox-2.7.3: The VI may select FEATURE_VI_YANKMARK
+   Busybox-2.7.4: The VI may select FEATURE_VI_SEARCH
+   Busybox-2.7.5: The VI may select FEATURE_VI_USE_SIGNALS
+   Busybox-2.7.6: The VI may select FEATURE_VI_DOT_CMD
+   Busybox-2.7.7: The VI may select FEATURE_VI_READONLY
+   Busybox-2.7.8: The VI may select FEATURE_VI_SETOPTS
+   Busybox-2.7.9: The VI may select FEATURE_VI_SET
+
+Finding min configuration sets. Please wait...
+
+                                   Feature     cfg1     cfg2     cfg3     cfg4
+                ENABLE_FEATURE_VI_YANKMARK     True     True    False      any
+                     ENABLE_FEATURE_VI_SET     True    False      any      any
+                  ENABLE_FEATURE_VI_SEARCH     True     True     True     True
+                 ENABLE_FEATURE_VI_DOT_CMD     True    False      any      any
+             ENABLE_FEATURE_VI_USE_SIGNALS     True    False      any      any
+                   ENABLE_FEATURE_CLEAN_UP     True    False      any      any
+                 ENABLE_FEATURE_VI_SETOPTS     True     True    False      any
+         ENABLE_FEATURE_AWK_GNU_EXTENSIONS     True    False      any      any
+                     ENABLE_LOCALE_SUPPORT    False     True     True    False
+                ENABLE_FEATURE_VI_READONLY     True    False      any      any
+          ENABLE_FEATURE_VI_VERBOSE_STATUS     True    False      any      any
+            ENABLE_FEATURE_VI_COLON_EXPAND     True    False    False      any
+            ENABLE_FEATURE_VI_REGEX_SEARCH     True    False    False      any
+          ENABLE_FEATURE_DIFF_LONG_OPTIONS     True    False    False    False
+              ENABLE_FEATURE_VI_UNDO_QUEUE     True    False    False    False
+                          ENABLE_LONG_OPTS     True    False      any      any
+                   ENABLE_FEATURE_DIFF_DIR     True    False      any      any
+                 ENABLE_FEATURE_ALLOW_EXEC     True    False      any      any
+                    ENABLE_FEATURE_VI_8BIT     True     True    False    False
+            ENABLE_FEATURE_VI_ASK_TERMINAL     True    False      any      any
+                            ENABLE_DESKTOP     True    False      any      any
+                   ENABLE_FEATURE_VI_COLON     True    False     True     True
+              ENABLE_FEATURE_VI_WIN_RESIZE     True    False      any      any
+                    ENABLE_FEATURE_VI_UNDO     True    False     True    False
+                              REG_STARTEND     True    False      any      any
+                 ENABLE_FEATURE_VI_CRASHME     True     True    False      any
+                      debug_parse_print_tc    False      any      any      any
+                         debug_printf_eval    False      any      any      any
+                        debug_printf_parse    False     True      any      any
+                        NO_SUCH_APPLET_YET     True      any      any      any
+                       debug_printf_walker    False      any      any      any
+
+Total time for min configuration sets finding: 0.78 seconds
+
+Total time for variability analysis: 2.61 seconds
+Completed analysis.
+###########################################################

@@ -967,7 +967,7 @@ class RTW:
             return
         abstract_feature = 0
         req_not_covered = []
-        print("Features not in code:")
+        print("\nRequired Features NOT in source code:")
         for feature in features_not_in_code:
             if feature in self.features:
                 feature_node = self.features[feature]
@@ -978,22 +978,23 @@ class RTW:
                     continue
                 print(f"   feature: {feature:30s}, requirements: {feature_node.tracedReq}")
                 req_not_covered = req_not_covered + feature_node.tracedReq
-        print()
         total_features = 0
         for feature in self.features:
             feature_node = self.features[feature]
             if feature_node.valid == 1 and feature_node.abstract != True:
                 total_features += 1
         #total_features = len(self.features) - abstract_feature
-        print(f"Total features in Variability Model: {total_features}")
+        print(f"Total Required Features in Variability Model: {total_features}")
         if total_features != 0:
             total_features_not_in_code = len(features_not_in_code) - abstract_feature
-            print(f"Total feature not in code: {total_features_not_in_code} ({total_features_not_in_code*100/total_features:<0.2f}%)")
+            print(f"Total Required Feature NOT in source code: {total_features_not_in_code} ({total_features_not_in_code*100/total_features:<0.2f}%)")
             req_not_covered = list(set(req_not_covered))
-            print(f"Total requirements specified the features not in code: {len(req_not_covered)}, total requirements: {len(self.sentences)}")
+            print(f"\nTotal textual requirements: {len(self.sentences)}")
+            print(f"Total textual requirements NOT implemented in source code: {len(req_not_covered)}")
+            print(f"Textual requirements NOT implemented in source code:")
             req_not_covered.sort()
             for req in req_not_covered:
-                print(f"  {req}")
+                print(f"   {req}: {self.table[req].Req}")
 
     # --------------------------------------------------------------------------
     # the following methods are specific and depending on system's build system

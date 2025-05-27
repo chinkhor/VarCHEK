@@ -1,0 +1,669 @@
+###########################################################
+Finding all c files in busybox
+
+Running ifnames tool to find c/cpp files that support variability. Please wait...
+Filter file: ./busybox-1.37.0/coreutils/stty.c
+delete ./busybox-1.37.0/coreutils/stty.c
+Total time for finding cpp files and variability features: 1.98 seconds
+
+Running PCLocator tool to identify presence conditions from variability source code. Please wait...
+Variability source code:
+   ./busybox-1.37.0/coreutils/mknod.c
+   ./busybox-1.37.0/coreutils/uname.c
+   ./busybox-1.37.0/coreutils/expand.c
+   ./busybox-1.37.0/coreutils/df.c
+   ./busybox-1.37.0/coreutils/echo.c
+   ./busybox-1.37.0/coreutils/stat.c
+   ./busybox-1.37.0/coreutils/mv.c
+   ./busybox-1.37.0/coreutils/mkdir.c
+   ./busybox-1.37.0/coreutils/cp.c
+   ./busybox-1.37.0/coreutils/id.c
+   ./busybox-1.37.0/coreutils/ls.c
+   ./busybox-1.37.0/coreutils/libcoreutils/getopt_mk_fifo_nod.c
+   ./busybox-1.37.0/coreutils/install.c
+   ./busybox-1.37.0/coreutils/tail.c
+   ./busybox-1.37.0/coreutils/head.c
+   ./busybox-1.37.0/coreutils/factor.c
+   ./busybox-1.37.0/coreutils/od_bloaty.c
+   ./busybox-1.37.0/coreutils/od.c
+   ./busybox-1.37.0/coreutils/chown.c
+   ./busybox-1.37.0/coreutils/cksum.c
+   ./busybox-1.37.0/coreutils/tac.c
+   ./busybox-1.37.0/coreutils/du.c
+   ./busybox-1.37.0/coreutils/dd.c
+   ./busybox-1.37.0/coreutils/touch.c
+   ./busybox-1.37.0/coreutils/nl.c
+   ./busybox-1.37.0/coreutils/mktemp.c
+   ./busybox-1.37.0/coreutils/rmdir.c
+   ./busybox-1.37.0/coreutils/nproc.c
+   ./busybox-1.37.0/coreutils/date.c
+   ./busybox-1.37.0/coreutils/timeout.c
+   ./busybox-1.37.0/coreutils/shuf.c
+   ./busybox-1.37.0/coreutils/cat.c
+   ./busybox-1.37.0/coreutils/wc.c
+   ./busybox-1.37.0/coreutils/sort.c
+   ./busybox-1.37.0/coreutils/seq.c
+   ./busybox-1.37.0/coreutils/uudecode.c
+   ./busybox-1.37.0/coreutils/test.c
+   ./busybox-1.37.0/coreutils/md5_sha1_sum.c
+   ./busybox-1.37.0/coreutils/test_ptr_hack.c
+   ./busybox-1.37.0/coreutils/sync.c
+   ./busybox-1.37.0/coreutils/tsort.c
+   ./busybox-1.37.0/coreutils/sleep.c
+   ./busybox-1.37.0/coreutils/tee.c
+   ./busybox-1.37.0/coreutils/split.c
+   ./busybox-1.37.0/coreutils/expr.c
+   ./busybox-1.37.0/coreutils/libcoreutils/cp_mv_stat.c
+   ./busybox-1.37.0/coreutils/truncate.c
+   ./busybox-1.37.0/coreutils/cut.c
+Total time for running PCLocator: 8.78 seconds
+
+Generating feature model. Please wait...
+Total time for feature model generation: 0.03 seconds
+
+Analyzing presence conditions. Please wait...
+Presence Conditions Statistics:
+  Presence Conditions                                                                                                         Line Coverage       Line Coverage %
+  ENABLE_FEATURE_SORT_BIG                                                                                                          296                  8.45 
+  !ENABLE_DESKTOP                                                                                                                  194                  5.54 
+  ENABLE_LONG_OPTS                                                                                                                 184                  5.25 
+  ENABLE_FEATURE_STAT_FORMAT                                                                                                       179                  5.11 
+  ENABLE_UUDECODE                                                                                                                  141                  4.03 
+  ENABLE_FEATURE_DD_IBS_OBS                                                                                                        123                  3.51 
+  ENABLE_SELINUX                                                                                                                   110                  3.14 
+  ENABLE_FEATURE_STAT_FILESYSTEM                                                                                                    96                  2.74 
+  ENABLE_BASE32 || ENABLE_BASE64                                                                                                    83                  2.37 
+  ENABLE_FEATURE_CATV                                                                                                               82                  2.34 
+  ENABLE_FEATURE_FANCY_HEAD                                                                                                         81                  2.31 
+  VERSION_WITH_WRITEV                                                                                                               74                  2.11 
+  !ENABLE_FEATURE_STAT_FORMAT                                                                                                       70                  2.00 
+  TEST_DEBUG                                                                                                                        67                  1.91 
+  ENABLE_FEATURE_CP_LONG_OPTIONS                                                                                                    63                  1.80 
+  ENABLE_FEATURE_LS_COLOR                                                                                                           63                  1.80 
+  ENABLE_FEATURE_SORT_OPTIMIZE_MEMORY                                                                                               61                  1.74 
+  ENABLE_EXPAND                                                                                                                     57                  1.63 
+  ENABLE_FEATURE_LS_SORTFILES                                                                                                       56                  1.60 
+  ENABLE_DESKTOP                                                                                                                    56                  1.60 
+  ENABLE_FEATURE_HUMAN_READABLE                                                                                                     54                  1.54 
+  ENABLE_BASE32 || (ENABLE_BASE64 && ENABLE_BASE32)                                                                                 54                  1.54 
+  ENABLE_UNAME                                                                                                                      50                  1.43 
+  ENABLE_UNEXPAND                                                                                                                   45                  1.28 
+  ENABLE_FEATURE_DATE_NANO                                                                                                          45                  1.28 
+  ENABLE_FEATURE_STAT_FORMAT && ENABLE_FEATURE_STAT_FILESYSTEM                                                                      44                  1.26 
+  ENABLE_FEATURE_STAT_FORMAT && ENABLE_SELINUX                                                                                      43                  1.23 
+  ENABLE_FEATURE_TOUCH_SUSV3                                                                                                        42                  1.20 
+  BASH_TEST2                                                                                                                        42                  1.20 
+  VERSION_WITH_WRITEV && ENABLE_FEATURE_FANCY_ECHO                                                                                  33                  0.94 
+  COMMON_PREFIX_HACK                                                                                                                33                  0.94 
+  ENABLE_FEATURE_FANCY_ECHO                                                                                                         31                  0.88 
+  ENABLE_FEATURE_SYNC_FANCY || ENABLE_FSYNC                                                                                         31                  0.88 
+  !ENABLE_FEATURE_HUMAN_READABLE                                                                                                    30                  0.86 
+  ENABLE_FEATURE_LS_TIMESTAMPS                                                                                                      29                  0.83 
+  ENABLE_FEATURE_DD_THIRD_STATUS_LINE                                                                                               29                  0.83 
+  ENABLE_SHA3SUM                                                                                                                    26                  0.74 
+  ENABLE_FEATURE_STAT_FILESYSTEM && !ENABLE_FEATURE_STAT_FORMAT && ENABLE_SELINUX                                                   22                  0.63 
+  ENABLE_FEATURE_DATE_COMPAT                                                                                                        22                  0.63 
+  ENABLE_FEATURE_STAT_FORMAT && !ENABLE_SELINUX                                                                                     20                  0.57 
+  ENABLE_FEATURE_LS_FILETYPES                                                                                                       20                  0.57 
+  ENABLE_FEATURE_CATN                                                                                                               20                  0.57 
+  ENABLE_FEATURE_STAT_FILESYSTEM && !ENABLE_FEATURE_STAT_FORMAT                                                                     19                  0.54 
+  ENABLE_UNICODE_SUPPORT                                                                                                            18                  0.51 
+  ENABLE_FEATURE_INSTALL_LONG_OPTIONS                                                                                               18                  0.51 
+  ENABLE_FEATURE_DD_IBS_OBS && O_DIRECT                                                                                             17                  0.49 
+  ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_FEATURE_STAT_FORMAT && ENABLE_SELINUX                                                    16                  0.46 
+  ENABLE_FEATURE_LS_RECURSIVE                                                                                                       15                  0.43 
+  ENABLE_UNAME && ENABLE_LONG_OPTS                                                                                                  13                  0.37 
+  ENABLE_FEATURE_LS_FILETYPES || ENABLE_FEATURE_LS_COLOR                                                                            13                  0.37 
+  ENABLE_FEATURE_TEE_USE_BLOCK_IO                                                                                                   13                  0.37 
+  ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_SELINUX                                                                                  12                  0.34 
+  ENABLE_FEATURE_CP_LONG_OPTIONS && ENABLE_FEATURE_CP_REFLINK                                                                       12                  0.34 
+  ENABLE_CKSUM                                                                                                                      12                  0.34 
+  ENABLE_FEATURE_STAT_FILESYSTEM && !ENABLE_FEATURE_STAT_FORMAT && !ENABLE_SELINUX                                                  11                  0.31 
+  ENABLE_FTPD                                                                                                                       11                  0.31 
+  !ENABLE_FEATURE_SORT_BIG                                                                                                          11                  0.31 
+  ENABLE_UNAME && ENABLE_FEDORA_COMPAT                                                                                              10                  0.29 
+  ENABLE_FEATURE_LS_USERNAME                                                                                                        10                  0.29 
+  !ENABLE_FEATURE_FANCY_HEAD                                                                                                        10                  0.29 
+  ENABLE_INCLUDE_SUSv2 || ENABLE_FEATURE_FANCY_HEAD                                                                                 10                  0.29 
+  ENABLE_FEATURE_DD_STATUS                                                                                                          10                  0.29 
+  ENABLE_FEATURE_HUMAN_READABLE && ENABLE_DESKTOP                                                                                   9                   0.26 
+  ENABLE_FEATURE_CLEAN_UP                                                                                                           9                   0.26 
+  !ENABLE_FEATURE_TEE_USE_BLOCK_IO                                                                                                  9                   0.26 
+  WHY_WE_DO_IT_FOR_DEV_ROOT_ONLY                                                                                                    8                   0.23 
+  ENABLE_INCLUDE_SUSv2 || ENABLE_FEATURE_FANCY_TAIL                                                                                 8                   0.23 
+  DEBUG                                                                                                                             8                   0.23 
+  ENABLE_FEATURE_CHOWN_LONG_OPTIONS                                                                                                 8                   0.23 
+  VERSION_WITH_WRITEV && !ENABLE_FEATURE_FANCY_ECHO                                                                                 7                   0.20 
+  !BB_MMU                                                                                                                           7                   0.20 
+  ENABLE_FEATURE_CATV && ENABLE_FEATURE_CATN                                                                                        7                   0.20 
+  ENABLE_SYNC                                                                                                                       7                   0.20 
+  ENABLE_SYNC && ENABLE_FEATURE_SYNC_FANCY                                                                                          7                   0.20 
+  ENABLE_FSYNC                                                                                                                      7                   0.20 
+  ENABLE_FEATURE_SPLIT_FANCY                                                                                                        7                   0.20 
+  __sparc__ && __linux__                                                                                                            6                   0.17 
+  ENABLE_UNEXPAND && ENABLE_UNICODE_SUPPORT                                                                                         6                   0.17 
+  !ENABLE_UNICODE_SUPPORT                                                                                                           6                   0.17 
+  !ENABLE_FEATURE_FANCY_ECHO                                                                                                        6                   0.17 
+  ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_FEATURE_STAT_FORMAT                                                                      6                   0.17 
+  ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_FEATURE_STAT_FORMAT && !ENABLE_SELINUX                                                   6                   0.17 
+  !ENABLE_FEATURE_STAT_FORMAT && ENABLE_SELINUX                                                                                     6                   0.17 
+  !ENABLE_FEATURE_CP_LONG_OPTIONS                                                                                                   6                   0.17 
+  ENABLE_FEATURE_LS_TIMESTAMPS || ENABLE_FEATURE_LS_SORTFILES                                                                       6                   0.17 
+  ENABLE_FEATURE_LS_WIDTH                                                                                                           6                   0.17 
+  GCC_COMBINE                                                                                                                       6                   0.17 
+  ENABLE_FEATURE_SYNC_FANCY || (ENABLE_FSYNC && ENABLE_FEATURE_SYNC_FANCY)                                                          6                   0.17 
+  ENABLE_FEATURE_FANCY_TAIL                                                                                                         5                   0.14 
+  ENABLE_FEATURE_DD_THIRD_STATUS_LINE && ENABLE_FEATURE_DD_STATUS                                                                   5                   0.14 
+  !ENABLE_LOCALE_SUPPORT                                                                                                            5                   0.14 
+  ENABLE_LOCALE_SUPPORT                                                                                                             5                   0.14 
+  !TEST_DEBUG                                                                                                                       5                   0.14 
+  !GCC_COMBINE                                                                                                                      5                   0.14 
+  ENABLE_FEATURE_FANCY_SLEEP                                                                                                        5                   0.14 
+  ENABLE_EXPR_MATH_SUPPORT_64                                                                                                       5                   0.14 
+  !ENABLE_EXPR_MATH_SUPPORT_64                                                                                                      5                   0.14 
+  ENABLE_FEATURE_CHOWN_LONG_OPTIONS && ENABLE_DESKTOP                                                                               4                   0.11 
+  S_IFLNK                                                                                                                           4                   0.11 
+  ENABLE_SYNC && !ENABLE_FEATURE_SYNC_FANCY                                                                                         4                   0.11 
+  ENABLE_FEATURE_VERBOSE_CP_MESSAGE                                                                                                 4                   0.11 
+  !ENABLE_FEATURE_CUT_REGEX                                                                                                         4                   0.11 
+  ENABLE_FEATURE_STAT_FILESYSTEM || ENABLE_SELINUX                                                                                  3                   0.09 
+  ENABLE_FEATURE_INSTALL_LONG_OPTIONS && ENABLE_SELINUX                                                                             3                   0.09 
+  ENABLE_LFS                                                                                                                        3                   0.09 
+  !ENABLE_LFS                                                                                                                       3                   0.09 
+  !ENABLE_FEATURE_HUMAN_READABLE && !ENABLE_FEATURE_DU_DEFAULT_BLOCKSIZE_1K                                                         3                   0.09 
+  !ENABLE_FEATURE_TOUCH_SUSV3                                                                                                       3                   0.09 
+  ENABLE_FLOAT_DURATION                                                                                                             3                   0.09 
+  ENABLE_FEATURE_CATV || ENABLE_FEATURE_CATN                                                                                        3                   0.09 
+  ENABLE_TEST2 || (ENABLE_ASH_BASH_COMPAT && ENABLE_ASH_TEST) || (ENABLE_HUSH_BASH_COMPAT && ENABLE_HUSH_TEST)                      3                   0.09 
+  ENABLE_FEATURE_TEST_64                                                                                                            3                   0.09 
+  !ENABLE_FEATURE_TEST_64                                                                                                           3                   0.09 
+  ENABLE_FEATURE_LS_FILETYPES || (ENABLE_FEATURE_LS_COLOR && ENABLE_FEATURE_LS_COLOR)                                               2                   0.06 
+  !ENABLE_FEATURE_LS_SORTFILES                                                                                                      2                   0.06 
+  !ENABLE_FEATURE_INSTALL_LONG_OPTIONS                                                                                              2                   0.06 
+  !ENABLE_LONG_OPTS                                                                                                                 2                   0.06 
+  !ENABLE_FEATURE_DD_IBS_OBS                                                                                                        2                   0.06 
+  ENABLE_FEATURE_DD_IBS_OBS && !O_DIRECT                                                                                            2                   0.06 
+  !ENABLE_FEATURE_DATE_NANO                                                                                                         2                   0.06 
+  !COMMON_PREFIX_HACK                                                                                                               2                   0.06 
+  ENABLE_FEATURE_WC_LARGE                                                                                                           2                   0.06 
+  !ENABLE_FEATURE_WC_LARGE                                                                                                          2                   0.06 
+  !ENABLE_FEATURE_FANCY_SLEEP                                                                                                       2                   0.06 
+  __linux__                                                                                                                         1                   0.03 
+  ENABLE_EXPAND && ENABLE_UNICODE_SUPPORT                                                                                           1                   0.03 
+  ENABLE_EXPAND && !ENABLE_UNICODE_SUPPORT                                                                                          1                   0.03 
+  ENABLE_UNEXPAND && !ENABLE_UNICODE_SUPPORT                                                                                        1                   0.03 
+  ENABLE_FEATURE_HUMAN_READABLE && ENABLE_FEATURE_DF_FANCY                                                                          1                   0.03 
+  S_TYPEISMQ                                                                                                                        1                   0.03 
+  S_TYPEISSEM                                                                                                                       1                   0.03 
+  S_TYPEISSHM                                                                                                                       1                   0.03 
+  S_TYPEISTMO                                                                                                                       1                   0.03 
+  (ENABLE_FEATURE_STAT_FORMAT && ENABLE_FEATURE_STAT_FILESYSTEM) && ENABLE_SELINUX                                                  1                   0.03 
+  ENABLE_FEATURE_STAT_FORMAT && ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_SELINUX                                                    1                   0.03 
+  (ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_FEATURE_STAT_FORMAT) && !ENABLE_SELINUX                                                 1                   0.03 
+  (ENABLE_FEATURE_STAT_FILESYSTEM && ENABLE_FEATURE_STAT_FORMAT) && ENABLE_SELINUX                                                  1                   0.03 
+  (ENABLE_FEATURE_STAT_FILESYSTEM && !ENABLE_FEATURE_STAT_FORMAT) && !ENABLE_SELINUX                                                1                   0.03 
+  (ENABLE_FEATURE_STAT_FILESYSTEM && !ENABLE_FEATURE_STAT_FORMAT) && ENABLE_SELINUX                                                 1                   0.03 
+  ENABLE_FEATURE_VERBOSE                                                                                                            1                   0.03 
+  !ENABLE_FEATURE_LS_COLOR                                                                                                          1                   0.03 
+  !ENABLE_FEATURE_LS_WIDTH                                                                                                          1                   0.03 
+  (ENABLE_FEATURE_LS_FILETYPES || ENABLE_FEATURE_LS_COLOR) && ENABLE_FEATURE_LS_FILETYPES                                           1                   0.03 
+  (ENABLE_FEATURE_LS_FILETYPES || ENABLE_FEATURE_LS_COLOR) && ENABLE_FEATURE_LS_COLOR                                               1                   0.03 
+  !ENABLE_FEATURE_LS_RECURSIVE                                                                                                      1                   0.03 
+  !ENABLE_FEATURE_FANCY_TAIL                                                                                                        1                   0.03 
+  !0                                                                                                                                1                   0.03 
+  !FLT_DIG                                                                                                                          1                   0.03 
+  !DBL_DIG                                                                                                                          1                   0.03 
+  !LDBL_DIG                                                                                                                         1                   0.03 
+  !ENABLE_FEATURE_CHOWN_LONG_OPTIONS                                                                                                1                   0.03 
+  ENABLE_FEATURE_DD_SIGNAL_HANDLING                                                                                                 1                   0.03 
+  !ENABLE_FEATURE_SORT_OPTIMIZE_MEMORY                                                                                              1                   0.03 
+  (ENABLE_BASE32 || ENABLE_BASE64) && ENABLE_BASE32                                                                                 1                   0.03 
+  (ENABLE_BASE32 || ENABLE_BASE64) && !ENABLE_BASE32                                                                                1                   0.03 
+  !(ENABLE_TEST2 || (ENABLE_ASH_BASH_COMPAT && ENABLE_ASH_TEST) || (ENABLE_HUSH_BASH_COMPAT && ENABLE_HUSH_TEST))                   1                   0.03 
+  TEST_DEBUG && BASH_TEST2                                                                                                          1                   0.03 
+  S_IFIFO                                                                                                                           1                   0.03 
+  !S_IFIFO                                                                                                                          1                   0.03 
+  S_IFSOCK                                                                                                                          1                   0.03 
+  !S_IFSOCK                                                                                                                         1                   0.03 
+  !ENABLE_SHA3SUM                                                                                                                   1                   0.03 
+  (ENABLE_FEATURE_SYNC_FANCY || ENABLE_FSYNC) && ENABLE_FEATURE_SYNC_FANCY                                                          1                   0.03 
+  !TINY                                                                                                                             1                   0.03 
+  ENABLE_FEATURE_CUT_REGEX                                                                                                          1                   0.03 
+Total Presence Conditions: 165
+Total lines in variability source code: 3503
+total lines in source code: 14835
+
+Features in Source Code NOT specified in Requirements:
+     VERSION_WITH_WRITEV           : lines:  114 , coverage: 3.25%
+     DEBUG                         : lines:  81  , coverage: 2.31%
+     TEST_DEBUG                    : lines:  73  , coverage: 2.08%
+     BASH_TEST2                    : lines:  43  , coverage: 1.23%
+     COMMON_PREFIX_HACK            : lines:  35  , coverage: 1.00%
+     O_DIRECT                      : lines:  19  , coverage: 0.54%
+     ENABLE_FTPD                   : lines:  11  , coverage: 0.31%
+     GCC_COMBINE                   : lines:  11  , coverage: 0.31%
+     WHY_WE_DO_IT_FOR_DEV_ROOT_ONLY: lines:   8  , coverage: 0.23%
+     __linux__                     : lines:   7  , coverage: 0.20%
+     BB_MMU                        : lines:   7  , coverage: 0.20%
+     __sparc__                     : lines:   6  , coverage: 0.17%
+     ENABLE_LFS                    : lines:   6  , coverage: 0.17%
+     ENABLE_ASH_BASH_COMPAT        : lines:   4  , coverage: 0.11%
+     ENABLE_ASH_TEST               : lines:   4  , coverage: 0.11%
+     ENABLE_HUSH_BASH_COMPAT       : lines:   4  , coverage: 0.11%
+     ENABLE_HUSH_TEST              : lines:   4  , coverage: 0.11%
+     S_IFLNK                       : lines:   4  , coverage: 0.11%
+     ENABLE_FEATURE_VERBOSE_CP_MESSAGE: lines:   4  , coverage: 0.11%
+     ENABLE_FLOAT_DURATION         : lines:   3  , coverage: 0.09%
+     S_IFIFO                       : lines:   2  , coverage: 0.06%
+     S_IFSOCK                      : lines:   2  , coverage: 0.06%
+     DBL_DIG                       : lines:   2  , coverage: 0.06%
+     S_TYPEISMQ                    : lines:   1  , coverage: 0.03%
+     S_TYPEISSEM                   : lines:   1  , coverage: 0.03%
+     S_TYPEISSHM                   : lines:   1  , coverage: 0.03%
+     S_TYPEISTMO                   : lines:   1  , coverage: 0.03%
+     TINY                          : lines:   1  , coverage: 0.03%
+     FLT_DIG                       : lines:   1  , coverage: 0.03%
+     LDBL_DIG                      : lines:   1  , coverage: 0.03%
+Total Features in Source Code NOT specified in Requirements: 30 (34.09%)
+Total lines not covered by Requirements: 461
+Total Features in Source Code: 88
+
+Features in Source Code specified in Requirements:
+    ENABLE_EXPAND
+    ENABLE_UNEXPAND
+    ENABLE_UNICODE_SUPPORT
+    ENABLE_FEATURE_FANCY_ECHO
+    ENABLE_FEATURE_STAT_FILESYSTEM
+    ENABLE_FEATURE_STAT_FORMAT
+    ENABLE_SELINUX
+    ENABLE_FEATURE_FANCY_TAIL
+    ENABLE_INCLUDE_SUSv2
+    ENABLE_DESKTOP
+    ENABLE_FEATURE_TOUCH_SUSV3
+    ENABLE_LONG_OPTS
+    ENABLE_FEATURE_CHOWN_LONG_OPTIONS
+    ENABLE_FEATURE_FANCY_HEAD
+    ENABLE_FEATURE_CATN
+    ENABLE_FEATURE_CATV
+    ENABLE_CKSUM
+    ENABLE_FEATURE_VERBOSE
+    ENABLE_FEATURE_CP_LONG_OPTIONS
+    ENABLE_FEATURE_CP_REFLINK
+    ENABLE_FEDORA_COMPAT
+    ENABLE_UNAME
+    ENABLE_FEATURE_DF_FANCY
+    ENABLE_FEATURE_HUMAN_READABLE
+    ENABLE_FEATURE_WC_LARGE
+    ENABLE_LOCALE_SUPPORT
+    ENABLE_BASE32
+    ENABLE_BASE64
+    ENABLE_UUDECODE
+    ENABLE_FEATURE_TEST_64
+    ENABLE_TEST2
+    ENABLE_SHA3SUM
+    ENABLE_FEATURE_LS_COLOR
+    ENABLE_FEATURE_LS_FILETYPES
+    ENABLE_FEATURE_LS_RECURSIVE
+    ENABLE_FEATURE_LS_SORTFILES
+    ENABLE_FEATURE_LS_TIMESTAMPS
+    ENABLE_FEATURE_LS_USERNAME
+    ENABLE_FEATURE_LS_WIDTH
+    ENABLE_FEATURE_SYNC_FANCY
+    ENABLE_FSYNC
+    ENABLE_SYNC
+    ENABLE_FEATURE_CLEAN_UP
+    ENABLE_FEATURE_FANCY_SLEEP
+    ENABLE_FEATURE_TEE_USE_BLOCK_IO
+    ENABLE_FEATURE_SPLIT_FANCY
+    ENABLE_EXPR_MATH_SUPPORT_64
+    ENABLE_FEATURE_SORT_BIG
+    ENABLE_FEATURE_SORT_OPTIMIZE_MEMORY
+    ENABLE_FEATURE_INSTALL_LONG_OPTIONS
+    ENABLE_FEATURE_DU_DEFAULT_BLOCKSIZE_1K
+    ENABLE_FEATURE_DATE_COMPAT
+    ENABLE_FEATURE_DATE_NANO
+    ENABLE_FEATURE_DD_IBS_OBS
+    ENABLE_FEATURE_DD_SIGNAL_HANDLING
+    ENABLE_FEATURE_DD_STATUS
+    ENABLE_FEATURE_DD_THIRD_STATUS_LINE
+    ENABLE_FEATURE_CUT_REGEX
+Total Features in Source Code specified in Requirements: 58
+
+Consistency Checking:
+Presence Conditions are consistent with Variability Model
+
+
+Total time for presence condition identification and analysis: 1.18 seconds
+
+Required Features NOT in source code:
+   feature: CONFIG_NICE                   , requirements: ['Busybox-Coreutils-1.49']
+   feature: CONFIG_SHUF                   , requirements: ['Busybox-Coreutils-1.64']
+   feature: CONFIG_DATE                   , requirements: ['Busybox-Coreutils-1.15', 'Busybox-Coreutils-1.15.1', 'Busybox-Coreutils-1.15.2', 'Busybox-Coreutils-1.15.3']
+   feature: CONFIG_LN                     , requirements: ['Busybox-Coreutils-1.36']
+   feature: CONFIG_CHMOD                  , requirements: ['Busybox-Coreutils-1.7']
+   feature: CONFIG_CHGRP                  , requirements: ['Busybox-Coreutils-1.6']
+   feature: CONFIG_LS                     , requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.38', 'Busybox-Coreutils-1.38.1', 'Busybox-Coreutils-1.38.2', 'Busybox-Coreutils-1.38.3', 'Busybox-Coreutils-1.38.4', 'Busybox-Coreutils-1.38.5', 'Busybox-Coreutils-1.38.6', 'Busybox-Coreutils-1.38.7', 'Busybox-Coreutils-1.38.8']
+   feature: CONFIG_LINK                   , requirements: ['Busybox-Coreutils-1.35']
+   feature: ENABLE_FEATURE_LS_FOLLOWLINKS , requirements: ['Busybox-Coreutils-1.38.2']
+   feature: CONFIG_TR                     , requirements: ['Busybox-Coreutils-1.81', 'Busybox-Coreutils-1.81.1', 'Busybox-Coreutils-1.81.2']
+   feature: CONFIG_WC                     , requirements: ['Busybox-Coreutils-1.95', 'Busybox-Coreutils-1.95.1']
+   feature: CONFIG_TEST                   , requirements: ['Busybox-Coreutils-1.76', 'Busybox-Coreutils-1.78.2']
+   feature: CONFIG_MV                     , requirements: ['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.48']
+   feature: CONFIG_TTY                    , requirements: ['Busybox-Coreutils-1.85']
+   feature: CONFIG_SHA256SUM              , requirements: ['Busybox-Coreutils-1.41', 'Busybox-Coreutils-1.43.1.1']
+   feature: CONFIG_COMM                   , requirements: ['Busybox-Coreutils-1.12']
+   feature: CONFIG_EXPR                   , requirements: ['Busybox-Coreutils-1.26', 'Busybox-Coreutils-1.26.1']
+   feature: CONFIG_INSTALL                , requirements: ['Busybox-Coreutils-1.34', 'Busybox-Coreutils-1.34.1']
+   feature: CONFIG_TIMEOUT                , requirements: ['Busybox-Coreutils-1.79']
+   feature: CONFIG_WHOAMI                 , requirements: ['Busybox-Coreutils-1.99']
+   feature: CONFIG_RM                     , requirements: ['Busybox-Coreutils-1.60']
+   feature: CONFIG_CUT                    , requirements: ['Busybox-Coreutils-1.14', 'Busybox-Coreutils-1.14.1']
+   feature: CONFIG_MKDIR                  , requirements: ['Busybox-Coreutils-1.44']
+   feature: CONFIG_SLEEP                  , requirements: ['Busybox-Coreutils-1.65', 'Busybox-Coreutils-1.65.1']
+   feature: ENABLE_FEATURE_TR_CLASSES     , requirements: ['Busybox-Coreutils-1.81.1']
+   feature: CONFIG_LOGNAME                , requirements: ['Busybox-Coreutils-1.37']
+   feature: CONFIG_DOS2UNIX               , requirements: ['Busybox-Coreutils-1.19']
+   feature: CONFIG_FALSE                  , requirements: ['Busybox-Coreutils-1.28']
+   feature: CONFIG_OD                     , requirements: ['Busybox-Coreutils-1.53']
+   feature: CONFIG_BASENAME               , requirements: ['Busybox-Coreutils-1.4']
+   feature: CONFIG_DD                     , requirements: ['Busybox-Coreutils-1.16', 'Busybox-Coreutils-1.16.1', 'Busybox-Coreutils-1.16.2', 'Busybox-Coreutils-1.16.3']
+   feature: CONFIG_PWD                    , requirements: ['Busybox-Coreutils-1.57']
+   feature: CONFIG_PRINTENV               , requirements: ['Busybox-Coreutils-1.55']
+   feature: CONFIG_USERS                  , requirements: ['Busybox-Coreutils-1.98']
+   feature: ENABLE_FEATURE_DATE_ISOFMT    , requirements: ['Busybox-Coreutils-1.15.1']
+   feature: CONFIG_GROUPS                 , requirements: ['Busybox-Coreutils-1.33']
+   feature: CONFIG_DIRNAME                , requirements: ['Busybox-Coreutils-1.18']
+   feature: CONFIG_TRUNCATE               , requirements: ['Busybox-Coreutils-1.83']
+   feature: CONFIG_READLINK               , requirements: ['Busybox-Coreutils-1.58', 'Busybox-Coreutils-1.58.1']
+   feature: CONFIG_CHOWN                  , requirements: ['Busybox-Coreutils-1.8', 'Busybox-Coreutils-1.8.1']
+   feature: CONFIG_SHA1SUM                , requirements: ['Busybox-Coreutils-1.40', 'Busybox-Coreutils-1.43.1.1']
+   feature: CONFIG_UNIX2DOS               , requirements: ['Busybox-Coreutils-1.20']
+   feature: CONFIG_SEQ                    , requirements: ['Busybox-Coreutils-1.62']
+   feature: CONFIG_CHROOT                 , requirements: ['Busybox-Coreutils-1.9']
+   feature: ENABLE_FEATURE_PRESERVE_HARDLINKS, requirements: ['Busybox-Coreutils-1.2', 'Busybox-Coreutils-1.2.1']
+   feature: ENABLE_FEATURE_SKIP_ROOTFS    , requirements: ['Busybox-Coreutils-1.17.2']
+   feature: CONFIG_TAC                    , requirements: ['Busybox-Coreutils-1.73']
+   feature: CONFIG_ENV                    , requirements: ['Busybox-Coreutils-1.23']
+   feature: CONFIG_TAIL                   , requirements: ['Busybox-Coreutils-1.74', 'Busybox-Coreutils-1.74.1']
+   feature: CONFIG_TRUE                   , requirements: ['Busybox-Coreutils-1.82']
+   feature: CONFIG_SUM                    , requirements: ['Busybox-Coreutils-1.70']
+   feature: ENABLE_FEATURE_LS_COLOR_IS_DEFAULT, requirements: ['Busybox-Coreutils-1.38.8.1']
+   feature: CONFIG_SORT                   , requirements: ['Busybox-Coreutils-1.66', 'Busybox-Coreutils-1.66.1', 'Busybox-Coreutils-1.66.2']
+   feature: CONFIG_ID                     , requirements: ['Busybox-Coreutils-1.32']
+   feature: CONFIG_YES                    , requirements: ['Busybox-Coreutils-1.100']
+   feature: CONFIG_HEAD                   , requirements: ['Busybox-Coreutils-1.30', 'Busybox-Coreutils-1.30.1']
+   feature: CONFIG_MKTEMP                 , requirements: ['Busybox-Coreutils-1.47']
+   feature: CONFIG_ECHO                   , requirements: ['Busybox-Coreutils-1.22', 'Busybox-Coreutils-1.22.1']
+   feature: CONFIG_MKNOD                  , requirements: ['Busybox-Coreutils-1.46']
+   feature: CONFIG_FOLD                   , requirements: ['Busybox-Coreutils-1.29']
+   feature: CONFIG_RMDIR                  , requirements: ['Busybox-Coreutils-1.61']
+   feature: CONFIG_TOUCH                  , requirements: ['Busybox-Coreutils-1.80', 'Busybox-Coreutils-1.80.1']
+   feature: CONFIG_USLEEP                 , requirements: ['Busybox-Coreutils-1.90']
+   feature: CONFIG_CAT                    , requirements: ['Busybox-Coreutils-1.5', 'Busybox-Coreutils-1.5.1', 'Busybox-Coreutils-1.5.2']
+   feature: CONFIG_WHO                    , requirements: ['Busybox-Coreutils-1.96']
+   feature: CONFIG_STTY                   , requirements: ['Busybox-Coreutils-1.69']
+   feature: CONFIG_W                      , requirements: ['Busybox-Coreutils-1.97']
+   feature: ENABLE_FEATURE_MD5_SHA1_SUM_CHECK, requirements: ['Busybox-Coreutils-1.43.1', 'Busybox-Coreutils-1.43.1.1']
+   feature: CONFIG_PASTE                  , requirements: ['Busybox-Coreutils-1.54']
+   feature: CONFIG_UNLINK                 , requirements: ['Busybox-Coreutils-1.89']
+   feature: CONFIG_CRC32                  , requirements: ['Busybox-Coreutils-1.11']
+   feature: CONFIG_MKFIFO                 , requirements: ['Busybox-Coreutils-1.45']
+   feature: CONFIG_CP                     , requirements: ['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.13', 'Busybox-Coreutils-1.13.1']
+   feature: ENABLE_FEATURE_TR_EQUIV       , requirements: ['Busybox-Coreutils-1.81.2']
+   feature: CONFIG_SHA512SUM              , requirements: ['Busybox-Coreutils-1.42', 'Busybox-Coreutils-1.43.1.1']
+   feature: CONFIG_NL                     , requirements: ['Busybox-Coreutils-1.50']
+   feature: CONFIG_UNIQ                   , requirements: ['Busybox-Coreutils-1.88']
+   feature: CONFIG_FACTOR                 , requirements: ['Busybox-Coreutils-1.27']
+   feature: CONFIG_NPROC                  , requirements: ['Busybox-Coreutils-1.52']
+   feature: CONFIG_MD5SUM                 , requirements: ['Busybox-Coreutils-1.39', 'Busybox-Coreutils-1.43.1.1']
+   feature: CONFIG_REALPATH               , requirements: ['Busybox-Coreutils-1.59']
+   feature: CONFIG_SHRED                  , requirements: ['Busybox-Coreutils-1.63']
+   feature: CONFIG_BB_ARCH                , requirements: ['Busybox-Coreutils-1.87']
+   feature: CONFIG_PRINTF                 , requirements: ['Busybox-Coreutils-1.56']
+   feature: CONFIG_DU                     , requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.21', 'Busybox-Coreutils-1.21.1']
+   feature: CONFIG_NOHUP                  , requirements: ['Busybox-Coreutils-1.51']
+   feature: CONFIG_STAT                   , requirements: ['Busybox-Coreutils-1.68', 'Busybox-Coreutils-1.68.1', 'Busybox-Coreutils-1.68.2']
+   feature: CONFIG_HOSTID                 , requirements: ['Busybox-Coreutils-1.31']
+   feature: CONFIG_SPLIT                  , requirements: ['Busybox-Coreutils-1.67', 'Busybox-Coreutils-1.67.1']
+   feature: CONFIG_TEE                    , requirements: ['Busybox-Coreutils-1.75', 'Busybox-Coreutils-1.75.1']
+   feature: CONFIG_DF                     , requirements: ['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.17', 'Busybox-Coreutils-1.17.1', 'Busybox-Coreutils-1.17.2']
+   feature: CONFIG_TEST1                  , requirements: ['Busybox-Coreutils-1.77', 'Busybox-Coreutils-1.78.2']
+   feature: ENABLE_UUENCODE               , requirements: ['Busybox-Coreutils-1.94']
+   feature: ENABLE_FEATURE_READLINK_FOLLOW, requirements: ['Busybox-Coreutils-1.58.1']
+   feature: CONFIG_TSORT                  , requirements: ['Busybox-Coreutils-1.84']
+Total Required Features in Variability Model: 153
+Total Required Feature NOT in source code: 95 (62.09%)
+
+Total textual requirements: 254
+Total textual requirements NOT implemented in source code: 132
+Textual requirements NOT implemented in source code:
+   Busybox-Coreutils-1.100: The Coreutils shall select YES
+   Busybox-Coreutils-1.11: The Coreutils shall select CRC32
+   Busybox-Coreutils-1.12: The Coreutils shall select COMM
+   Busybox-Coreutils-1.13: The Coreutils shall select CP
+   Busybox-Coreutils-1.13.1: The CP may select FEATURE_CP_LONG_OPTIONS
+   Busybox-Coreutils-1.14: The Coreutils shall select CUT
+   Busybox-Coreutils-1.14.1: The CUT may select FEATURE_CUT_REGEX
+   Busybox-Coreutils-1.15: The Coreutils shall select DATE
+   Busybox-Coreutils-1.15.1: The DATE may select FEATURE_DATE_ISOFMT
+   Busybox-Coreutils-1.15.2: The DATE may select FEATURE_DATE_NANO
+   Busybox-Coreutils-1.15.3: The DATE may select FEATURE_DATE_COMPAT
+   Busybox-Coreutils-1.16: The Coreutils shall select DD
+   Busybox-Coreutils-1.16.1: The DD may select FEATURE_DD_SIGNAL_HANDLING
+   Busybox-Coreutils-1.16.2: The DD may select FEATURE_DD_IBS_OBS
+   Busybox-Coreutils-1.16.3: The DD may select FEATURE_DD_STATUS
+   Busybox-Coreutils-1.17: The Coreutils shall select DF
+   Busybox-Coreutils-1.17.1: The DF may select FEATURE_DF_FANCY
+   Busybox-Coreutils-1.17.2: The DF may select FEATURE_SKIP_ROOTFS
+   Busybox-Coreutils-1.18: The Coreutils shall select DIRNAME
+   Busybox-Coreutils-1.19: The Coreutils shall select DOS2UNIX
+   Busybox-Coreutils-1.2: The Coreutils may select FEATURE_PRESERVE_HARDLINKS
+   Busybox-Coreutils-1.2.1: The FEATURE_PRESERVE_HARDLINKS requires CP or MV
+   Busybox-Coreutils-1.20: The Coreutils shall select UNIX2DOS
+   Busybox-Coreutils-1.21: The Coreutils shall select DU
+   Busybox-Coreutils-1.21.1: The DU may select FEATURE_DU_DEFAULT_BLOCKSIZE_1K
+   Busybox-Coreutils-1.22: The Coreutils shall select ECHO
+   Busybox-Coreutils-1.22.1: The ECHO may select FEATURE_FANCY_ECHO
+   Busybox-Coreutils-1.23: The Coreutils shall select ENV
+   Busybox-Coreutils-1.26: The Coreutils shall select EXPR
+   Busybox-Coreutils-1.26.1: The EXPR may select EXPR_MATH_SUPPORT_64
+   Busybox-Coreutils-1.27: The Coreutils shall select FACTOR
+   Busybox-Coreutils-1.28: The Coreutils shall select FALSE
+   Busybox-Coreutils-1.29: The Coreutils shall select FOLD
+   Busybox-Coreutils-1.3.1: The FEATURE_HUMAN_READABLE requires DF, DU or LS
+   Busybox-Coreutils-1.30: The Coreutils shall select HEAD
+   Busybox-Coreutils-1.30.1: The HEAD may select FEATURE_FANCY_HEAD
+   Busybox-Coreutils-1.31: The Coreutils shall select HOSTID
+   Busybox-Coreutils-1.32: The Coreutils shall select ID
+   Busybox-Coreutils-1.33: The Coreutils shall select GROUPS
+   Busybox-Coreutils-1.34: The Coreutils shall select INSTALL
+   Busybox-Coreutils-1.34.1: The INSTALL may select FEATURE_INSTALL_LONG_OPTIONS
+   Busybox-Coreutils-1.35: The Coreutils shall select LINK
+   Busybox-Coreutils-1.36: The Coreutils shall select LN
+   Busybox-Coreutils-1.37: The Coreutils shall select LOGNAME
+   Busybox-Coreutils-1.38: The Coreutils shall select LS
+   Busybox-Coreutils-1.38.1: The LS may select FEATURE_LS_FILETYPES
+   Busybox-Coreutils-1.38.2: The LS may select FEATURE_LS_FOLLOWLINKS
+   Busybox-Coreutils-1.38.3: The LS may select FEATURE_LS_RECURSIVE
+   Busybox-Coreutils-1.38.4: The LS may select FEATURE_LS_WIDTH
+   Busybox-Coreutils-1.38.5: The LS may select FEATURE_LS_SORTFILES
+   Busybox-Coreutils-1.38.6: The LS may select FEATURE_LS_TIMESTAMPS
+   Busybox-Coreutils-1.38.7: The LS may select FEATURE_LS_USERNAME
+   Busybox-Coreutils-1.38.8: The LS may select FEATURE_LS_COLOR
+   Busybox-Coreutils-1.38.8.1: The FEATURE_LS_COLOR may select FEATURE_LS_COLOR_IS_DEFAULT
+   Busybox-Coreutils-1.39: The Coreutils shall select MD5SUM
+   Busybox-Coreutils-1.4: The Coreutils shall select BASENAME
+   Busybox-Coreutils-1.40: The Coreutils may select SHA1SUM
+   Busybox-Coreutils-1.41: The Coreutils may select SHA256SUM
+   Busybox-Coreutils-1.42: The Coreutils may select SHA512SUM
+   Busybox-Coreutils-1.43.1: The SHA3SUM may select FEATURE_MD5_SHA1_SUM_CHECK
+   Busybox-Coreutils-1.43.1.1: The FEATURE_MD5_SHA1_SUM_CHECK requires MD5SUM, SHA1SUM, SHA256SUM, SHA512SUM OR SHA3SUM
+   Busybox-Coreutils-1.44: The Coreutils shall select MKDIR
+   Busybox-Coreutils-1.45: The Coreutils shall select MKFIFO
+   Busybox-Coreutils-1.46: The Coreutils shall select MKNOD
+   Busybox-Coreutils-1.47: The Coreutils shall select MKTEMP
+   Busybox-Coreutils-1.48: The Coreutils shall select MV
+   Busybox-Coreutils-1.49: The Coreutils shall select NICE
+   Busybox-Coreutils-1.5: The Coreutils shall select CAT
+   Busybox-Coreutils-1.5.1: The CAT may select FEATURE_CATN
+   Busybox-Coreutils-1.5.2: The CAT may select FEATURE_CATV
+   Busybox-Coreutils-1.50: The Coreutils shall select NL
+   Busybox-Coreutils-1.51: The Coreutils shall select NOHUP
+   Busybox-Coreutils-1.52: The Coreutils shall select NPROC
+   Busybox-Coreutils-1.53: The Coreutils shall select OD
+   Busybox-Coreutils-1.54: The Coreutils shall select PASTE
+   Busybox-Coreutils-1.55: The Coreutils shall select PRINTENV
+   Busybox-Coreutils-1.56: The Coreutils shall select PRINTF
+   Busybox-Coreutils-1.57: The Coreutils shall select PWD
+   Busybox-Coreutils-1.58: The Coreutils shall select READLINK
+   Busybox-Coreutils-1.58.1: The READLINK may select FEATURE_READLINK_FOLLOW
+   Busybox-Coreutils-1.59: The Coreutils shall select REALPTH
+   Busybox-Coreutils-1.6: The Coreutils shall select CHGRP
+   Busybox-Coreutils-1.60: The Coreutils shall select RM
+   Busybox-Coreutils-1.61: The Coreutils shall select RMDIR
+   Busybox-Coreutils-1.62: The Coreutils shall select SEQ
+   Busybox-Coreutils-1.63: The Coreutils shall select SHRED
+   Busybox-Coreutils-1.64: The Coreutils shall select SHUF
+   Busybox-Coreutils-1.65: The Coreutils shall select SLEEP
+   Busybox-Coreutils-1.65.1: The SLEEP may select FEATURE_FANCY_SLEEP
+   Busybox-Coreutils-1.66: The Coreutils shall select SORT
+   Busybox-Coreutils-1.66.1: The SORT may select FEATURE_SORT_BIG
+   Busybox-Coreutils-1.66.2: The SORT may select FEATURE_SORT_OPTIMIZE_MEMORY
+   Busybox-Coreutils-1.67: The Coreutils shall select SPLIT
+   Busybox-Coreutils-1.67.1: The SPLIT may select FEATURE_SPLIT_FANCY
+   Busybox-Coreutils-1.68: The Coreutils shall select STAT
+   Busybox-Coreutils-1.68.1: The STAT may select FEATURE_STAT_FORMAT
+   Busybox-Coreutils-1.68.2: The STAT may select FEATURE_STAT_FILESYSTEM
+   Busybox-Coreutils-1.69: The Coreutils shall select STTY
+   Busybox-Coreutils-1.7: The Coreutils shall select CHMOD
+   Busybox-Coreutils-1.70: The Coreutils shall select SUM
+   Busybox-Coreutils-1.73: The Coreutils shall select TAC
+   Busybox-Coreutils-1.74: The Coreutils shall select TAIL
+   Busybox-Coreutils-1.74.1: The TAIL may select FEATURE_FANCY_TAIL
+   Busybox-Coreutils-1.75: The Coreutils shall select TEE
+   Busybox-Coreutils-1.75.1: The TEE may select FEATURE_TEE_USE_BLOCK_IO
+   Busybox-Coreutils-1.76: The Coreutils may select TEST
+   Busybox-Coreutils-1.77: The Coreutils may select TEST1
+   Busybox-Coreutils-1.78.2: The FEATURE_TEST_64 requires TEST, TEST1 or TEST2
+   Busybox-Coreutils-1.79: The Coreutils shall select TIMEOUT
+   Busybox-Coreutils-1.8: The Coreutils shall select CHOWN
+   Busybox-Coreutils-1.8.1: The CHOWN may select FEATURE_CHOWN_LONG_OPTIONS
+   Busybox-Coreutils-1.80: The Coreutils shall select TOUCH
+   Busybox-Coreutils-1.80.1: The TOUCH may select FEATURE_TOUCH_SUSV3
+   Busybox-Coreutils-1.81: The Coreutils shall select TR
+   Busybox-Coreutils-1.81.1: The TR may select FEATURE_TR_CLASSES
+   Busybox-Coreutils-1.81.2: The TR may select FEATURE_TR_EQUIV
+   Busybox-Coreutils-1.82: The Coreutils shall select TRUE
+   Busybox-Coreutils-1.83: The Coreutils shall select TRUNCATE
+   Busybox-Coreutils-1.84: The Coreutils shall select TSORT
+   Busybox-Coreutils-1.85: The Coreutils shall select TTY
+   Busybox-Coreutils-1.87: The Coreutils shall select BB_ARCH
+   Busybox-Coreutils-1.88: The Coreutils shall select UNIQ
+   Busybox-Coreutils-1.89: The Coreutils shall select UNLINK
+   Busybox-Coreutils-1.9: The Coreutils shall select CHROOT
+   Busybox-Coreutils-1.90: The Coreutils shall select USLEEP
+   Busybox-Coreutils-1.94: The Coreutils shall select UUENCODE
+   Busybox-Coreutils-1.95: The Coreutils shall select WC
+   Busybox-Coreutils-1.95.1: The WC may select FEATURE_WC_LARGE
+   Busybox-Coreutils-1.96: The Coreutils shall select WHO
+   Busybox-Coreutils-1.97: The Coreutils shall select W
+   Busybox-Coreutils-1.98: The Coreutils shall select USERS
+   Busybox-Coreutils-1.99: The Coreutils shall select WHOAMI
+
+Finding min configuration sets. Please wait...
+
+                                   Feature     cfg1     cfg2     cfg3     cfg4
+              ENABLE_FEATURE_LS_TIMESTAMPS     True      any      any    False
+    ENABLE_FEATURE_DU_DEFAULT_BLOCKSIZE_1K    False    False      any    False
+                             ENABLE_BASE32     True    False      any    False
+                    ENABLE_FEATURE_VERBOSE     True      any      any    False
+               ENABLE_FEATURE_LS_SORTFILES     True    False      any    False
+                           ENABLE_UUDECODE     True     True     True     True
+                   ENABLE_FEATURE_SORT_BIG     True    False      any    False
+                ENABLE_FEATURE_LS_USERNAME     True      any      any    False
+                       ENABLE_FEATURE_CATV     True      any      any    False
+                   ENABLE_FEATURE_CLEAN_UP     True      any      any    False
+                ENABLE_FEATURE_TOUCH_SUSV3     True    False      any    False
+                ENABLE_FEATURE_DATE_COMPAT     True      any      any    False
+         ENABLE_FEATURE_DD_SIGNAL_HANDLING     True      any      any    False
+                   ENABLE_FEATURE_LS_COLOR     True    False    False    False
+               ENABLE_FEATURE_LS_RECURSIVE     True    False      any    False
+                    ENABLE_UNICODE_SUPPORT     True    False      any    False
+                ENABLE_FEATURE_SPLIT_FANCY     True      any      any    False
+                               ENABLE_SYNC     True     True     True     True
+                          ENABLE_LONG_OPTS     True     True    False    False
+                           ENABLE_UNEXPAND     True     True     True     True
+            ENABLE_FEATURE_STAT_FILESYSTEM     True     True     True     True
+             ENABLE_FEATURE_HUMAN_READABLE     True    False     True    False
+                 ENABLE_FEATURE_CP_REFLINK     True    False    False    False
+                       ENABLE_FEATURE_CATN     True      any      any    False
+                   ENABLE_FEATURE_DF_FANCY     True      any      any    False
+            ENABLE_FEATURE_CP_LONG_OPTIONS     True    False    False    False
+       ENABLE_FEATURE_DD_THIRD_STATUS_LINE     True    False    False    False
+               ENABLE_FEATURE_LS_FILETYPES     True      any      any    False
+                      ENABLE_INCLUDE_SUSv2     True      any      any    False
+                              ENABLE_CKSUM     True     True     True     True
+                              ENABLE_UNAME     True     True     True     True
+                  ENABLE_FEATURE_DATE_NANO     True    False      any    False
+                 ENABLE_FEATURE_SYNC_FANCY     True    False      any    False
+                 ENABLE_FEATURE_DD_IBS_OBS     True     True    False    False
+                              ENABLE_FSYNC     True     True     True     True
+               ENABLE_EXPR_MATH_SUPPORT_64     True    False      any    False
+                   ENABLE_FEATURE_LS_WIDTH     True    False      any    False
+                 ENABLE_FEATURE_FANCY_ECHO     True    False      any    False
+                            ENABLE_DESKTOP    False     True     True    False
+                 ENABLE_FEATURE_FANCY_HEAD     True    False      any    False
+                ENABLE_FEATURE_FANCY_SLEEP     True    False      any    False
+                             ENABLE_BASE64     True     True      any    False
+                ENABLE_FEATURE_STAT_FORMAT     True    False     True    False
+           ENABLE_FEATURE_TEE_USE_BLOCK_IO     True    False      any    False
+                      ENABLE_FEDORA_COMPAT     True      any      any    False
+                   ENABLE_FEATURE_WC_LARGE     True    False      any    False
+                  ENABLE_FEATURE_CUT_REGEX    False     True      any    False
+                     ENABLE_LOCALE_SUPPORT    False     True      any    False
+                             ENABLE_EXPAND     True     True     True     True
+                    ENABLE_FEATURE_TEST_64     True    False    False    False
+                 ENABLE_FEATURE_FANCY_TAIL     True    False      any    False
+                            ENABLE_SELINUX     True     True    False    False
+                            ENABLE_SHA3SUM     True    False      any    False
+         ENABLE_FEATURE_CHOWN_LONG_OPTIONS     True     True    False    False
+                              ENABLE_TEST2     True    False      any    False
+       ENABLE_FEATURE_INSTALL_LONG_OPTIONS     True    False    False    False
+       ENABLE_FEATURE_SORT_OPTIMIZE_MEMORY     True    False      any    False
+                  ENABLE_FEATURE_DD_STATUS     True      any      any    False
+                          ENABLE_HUSH_TEST     True    False      any      any
+                               S_TYPEISSEM     True      any      any      any
+                                  S_IFSOCK     True    False      any      any
+                    ENABLE_ASH_BASH_COMPAT     True    False      any      any
+                                   S_IFLNK     True      any      any      any
+                                     DEBUG     True      any      any      any
+                                    BB_MMU    False      any      any      any
+                           ENABLE_ASH_TEST     True    False      any      any
+                                   DBL_DIG    False      any      any      any
+                        COMMON_PREFIX_HACK     True    False      any      any
+                                TEST_DEBUG     True    False      any      any
+                               S_TYPEISSHM     True      any      any      any
+                                ENABLE_LFS     True    False      any      any
+                                 __sparc__     True      any      any      any
+                       VERSION_WITH_WRITEV     True     True      any      any
+                               GCC_COMBINE     True    False      any      any
+                                   FLT_DIG    False      any      any      any
+                                  LDBL_DIG    False      any      any      any
+         ENABLE_FEATURE_VERBOSE_CP_MESSAGE     True      any      any      any
+                               ENABLE_FTPD     True      any      any      any
+                                  O_DIRECT     True    False      any      any
+                   ENABLE_HUSH_BASH_COMPAT     True    False      any      any
+                               S_TYPEISTMO     True      any      any      any
+                     ENABLE_FLOAT_DURATION     True      any      any      any
+            WHY_WE_DO_IT_FOR_DEV_ROOT_ONLY     True      any      any      any
+                                S_TYPEISMQ     True      any      any      any
+                                      TINY    False      any      any      any
+                                BASH_TEST2     True      any      any      any
+                                 __linux__     True      any      any      any
+                                   S_IFIFO     True    False      any      any
+
+Total time for min configuration sets finding: 1.81 seconds
+
+Total time for variability analysis: 12.71 seconds
+Completed analysis.
+###########################################################

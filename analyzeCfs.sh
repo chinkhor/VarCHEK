@@ -25,8 +25,11 @@ fi
 # analysis cFS cfe time module
 cfs_dir="cFS/cfe/modules/time/fsw/src"
 # find all cpp files and generate file list
+echo
+echo "###########################################################"
 echo "Finding all c files in cFS time module"
 find ./$cfs_dir -name "*.[ch]" > $dir/$file
 
 python3 analyzeVar.py --path $dir --file $file --filter $cfs_filter --rtw_file requirements/RTW_cfs.txt --feature_map code_map/map_cfs --project "cfs"
 echo "Completed analysis."
+echo "###########################################################"
