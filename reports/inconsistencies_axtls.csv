@@ -1,0 +1,5 @@
+1) Presence Condition:,CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE
+   Assignments:,"[CONFIG_SSL_FULL_MODE == True, CONFIG_SSL_SKELETON_MODE == True]"
+   Source Code location:,./axtls-code/ssl/loader.c: 99
+   Conflicted Requirement ID:,['AXTLS-4.1.1.7']
+   Conflicted Requirement Sentence:,"Implies(CONFIG_SSL_SKELETON_MODE, Not(CONFIG_SSL_FULL_MODE))"

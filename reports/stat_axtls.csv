@@ -1,0 +1,14 @@
+0_Statistics,axtls
+Required Features in Source Code,35
+Required Features NOT in Source Code,27
+Total Required Features,62
+Textual Requirements NOT Implemented in Source Code,48
+Total Textual Requirements,103
+Features in Source Code Specified in Requirements,35
+Features in Source Code NOT Specified in Requirements,69
+Total Features in Source Code,104
+Total Presence Conditions in Source Code,196
+Implemented Lines NOT Specified by Requirements,1902
+Total variability lines of code,7270
+Total lines of code,22270
+Are Variability Requirements and Source Code Consistent?,No
