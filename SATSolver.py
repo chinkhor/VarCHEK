@@ -2,16 +2,18 @@ from z3 import *
 import csv
 
 class SATSolver:    
-    def __init__(self, feature_model, features, project="axtls"):
-        self.feature_model = feature_model
+    def __init__(self, rtw, pc, project="axtls"):
+        self.feature_model = rtw.sat_formula
         self.model = None
         self.solver = None
         self.presenceConditionAssignments = []
         self.configSet = []
         self.config_table = {}
-        self.code_features = features
+        self.code_features = pc.features_dict
         self.assignment2presence_cond = {}
         self.project = project
+        self.pc = pc
+        self.rtw = rtw
 
     def buildModel(self):
         self.solver = Solver()
@@ -46,24 +48,31 @@ class SATSolver:
         print(f"\nModel: ")
         print(self.model)    
 
-    def showInconsistencies(self, inconsistencies_dict, stat, rtw_table):
-        for i, item in enumerate(inconsistencies_dict):
-            print(f"{i+1}) Presence Condition: {item}")
-            i_dict = inconsistencies_dict[item]
-            print(f"   Assignments: {i_dict['Assignments']}")
-            stat.inconsistencies.append([f"{i+1}) Presence Condition:", item])
+    def verify_req_id(self, req_ids, presence_condition):
+        rtw_table = self.rtw.table
+        features = self.pc.getFeatures(presence_condition)
+        new_req_ids = []
+        for req_id in req_ids:
+            rtw_entry = rtw_table[req_id]
+            entry_features = [rtw_entry.Parent] + rtw_entry.Children
+            if any(feature in entry_features for feature in features):
+                new_req_ids.append(req_id)
+        return new_req_ids
+
+    def showInconsistencies(self, inconsistencies_dict):
+        stat = self.pc.stat
+        for i, pc in enumerate(inconsistencies_dict):
+            i_dict = inconsistencies_dict[pc]
+            stat.inconsistencies.append([f"{i+1}) Presence Condition:", pc])
             stat.inconsistencies.append(["   Assignments:", i_dict['Assignments']])
             src_locations = i_dict["Source Code location"]
             for src_location in src_locations:
-                print(f"   Source Code location: {src_location}")
                 stat.inconsistencies.append(["   Source Code location:", src_location])
             requirement_ids = i_dict["Requirement ID"]
             requirement_sentences = i_dict["Requirement Sentence"]
             for i, req_id in enumerate(requirement_ids):
-                print(f"   Conflicted Requirement ID: {req_id}")
                 sentence = requirement_sentences[i]
-                print(f"   Conflicted Requirement Sentence: {sentence}")
-                req_id = self.verify_id(req_id, presence_condition, rtw_table)
+                req_id = self.verify_req_id(req_id, pc)
                 stat.inconsistencies.append(["   Conflicted Requirement ID:", req_id])
                 stat.inconsistencies.append(["   Conflicted Requirement Sentence:", sentence])
         print()
@@ -71,7 +80,7 @@ class SATSolver:
             print(item)
         print()
 
-    def evalPresenceCondition(self, presence_cond_assignments, assignment2presence_cond, stat, rtw_table):
+    def evalPresenceCondition(self, presence_cond_assignments, assignment2presence_cond):
         self.assignment2presence_cond = assignment2presence_cond
         status = []
         self.presenceConditionAssignments = []
@@ -93,13 +102,11 @@ class SATSolver:
                 #index = status.index(unsat)
                 if s == unsat:
                     key = str(presence_cond_assignments[i][0])
-                    print(f"Presence Condition: {self.assignment2presence_cond[key]} is not consistent with Variability Model")
-                    print(f"       Assignments: {presence_cond_assignments[i][0]}")
+                    #print(f"Presence Condition: {self.assignment2presence_cond[key]} is not consistent with Variability Model")
+                    #print(f"       Assignments: {presence_cond_assignments[i][0]}")
                     inconsistencies_dict[self.assignment2presence_cond[key]] = {"Assignments": presence_cond_assignments[i][0]}
-                    #stat.inconsistencies.append([f"{count}) Presence Condition:", self.assignment2presence_cond[key]])
                     count += 1
-                    #stat.inconsistencies.append(["   Assignments:", presence_cond_assignments[i][0]])
-                    print(f"Source Code:")
+                    #print(f"Source Code:")
                     previous_line = -1
                     first_sequential = True
                     code_strings = []
@@ -120,14 +127,12 @@ class SATSolver:
                     if len(code_strings) > 0:
                         inconsistencies_dict[self.assignment2presence_cond[key]]["Source Code location"] = []
                     for string in code_strings:
-                        print(f"       {string}")
-                        #stat.inconsistencies.append(["   Source Code location:", string])
+                        #print(f"       {string}")
                         inconsistencies_dict[self.assignment2presence_cond[key]]["Source Code location"].append(string)
-                    print()
                     unsat_presence_conditions.append([i, presence_cond_assignments[i][0]])
         else:
             print(f"Presence Conditions are consistent with Variability Model\n")
-            stat.requirements_code_consistent = True
+            self.pc.stat.requirements_code_consistent = True
         
         self.findUnsatConflict(unsat_presence_conditions, assignment2presence_cond, inconsistencies_dict)
 
@@ -138,7 +143,7 @@ class SATSolver:
             print(f"Remove 'unsat' presence condition assignments: {self.presenceConditionAssignments.pop(index)}")
             i -= 1    
         print()
-        self.showInconsistencies(inconsistencies_dict, stat, rtw_table)
+        self.showInconsistencies(inconsistencies_dict)
         
 
     def findUnsatConflict(self, unsat_presence_conditions, assignment2presence_cond, inconsistencies_dict):
@@ -146,7 +151,7 @@ class SATSolver:
             sentence_check_list = []
             pc = unsat[1]
             key = str(pc)
-            print(f"\nPresence Condition: {assignment2presence_cond[key]} is conflicted with")
+            #print(f"\nPresence Condition: {assignment2presence_cond[key]} is conflicted with")
             features = []
             self.solver = Solver()
             for assignments in pc:
@@ -179,10 +184,8 @@ class SATSolver:
                     #if self.runModelCheck() != sat:
                     solver_copy.add(sentence)
                     if solver_copy.check() != sat:
-                        print(f"Requirements: {item[1]}")
-                        print(f"    Sentence: {sentence}")
-                        #stat.inconsistencies.append(["   Conflicted Requirement ID:", item[1]])
-                        #stat.inconsistencies.append(["   Conflicted Requirement Sentence:", sentence])
+                        #print(f"Requirements: {item[1]}")
+                        #print(f"    Sentence: {sentence}")
                         inconsistencies_dict[self.assignment2presence_cond[key]]["Requirement ID"].append(item[1])
                         inconsistencies_dict[self.assignment2presence_cond[key]]["Requirement Sentence"].append(sentence)
                         #break
