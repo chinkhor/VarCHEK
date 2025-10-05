@@ -299,14 +299,15 @@ def main(rtwFile, mapFile, path, file, filter, project):
     pc.cleanup()
     cur_time = time.time()
     sat_solver = SATSolver(rtw.sat_formula, pc.features_dict, project=project)
-    sat_solver.evalPresenceCondition(pc.assignment_list_weight, pc.assignment2presence_cond)
+    sat_solver.evalPresenceCondition(pc.assignment_list_weight, pc.assignment2presence_cond, pc.stat)
     print(f"Total time for presence condition identification and analysis: {(time.time() - cur_time):.2f} seconds")
     sat_solver.getMinConfigSet()
-    rtw.showFeaturesNotInCode(sat_solver.feature_not_in_code)
+    rtw.showFeaturesNotInCode(sat_solver.feature_not_in_code, pc.stat)
     print("\nFinding min configuration sets. Please wait...")
-    sat_solver.printConfigTable(rtw.code2feature_map)
+    sat_solver.printConfigTable(rtw.code2feature_map, pc.stat)
     print(f"\nTotal time for min configuration sets finding: {(time.time() - cur_time):.2f} seconds")
     print(f"\nTotal time for variability analysis: {(time.time() - start):.2f} seconds")
+    pc.stat.printStat(project)
     exit()
     if project == "axtls":
         for cfg in range(len(sat_solver.configSet)):

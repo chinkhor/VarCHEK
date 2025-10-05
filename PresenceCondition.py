@@ -3,6 +3,7 @@ from sympy import *
 import subprocess
 import os
 import re
+import csv
 
 def getFileLines(filename):
     try:
@@ -21,6 +22,79 @@ def writeFile(filename, lines):
         return lines
     except:
         raise Exception(f"Failed to write file {filename}")
+
+class VarCHEKStat:
+    def __init__(self):
+        self.total_requirements = 0
+        self.requirements_not_in_code = 0
+        self.total_required_features =0
+        self.required_features_not_in_code = 0
+        self.required_features_in_code = 0
+        self.loc = 0
+        self.var_loc = 0
+        self.implemented_lines_not_in_requirements = 0
+        self.total_presence_conditions = 0
+        self.total_code_features = 0
+        self.code_features_in_requirements = 0
+        self.code_features_not_in_requirements = 0
+        self.requirements_code_consistent = False
+        self.code_features_not_in_requirements_list = []
+        self.required_features_not_in_code_list = []
+        self.presence_conditions_list = []
+        self.min_set_configurations = []
+        self.inconsistencies = []
+
+    def printStat(self, project):
+        bmap = {True: "Yes", False: "No"}
+        if self.requirements_code_consistent:
+            if not (self.required_features_in_code == self.total_required_features == code_features_in_requirements):
+                self.requirements_code_consistent = False
+        #print(f"Are Variability Requirements and Source Code Consistent? {bmap[self.requirements_code_consistent]}")
+
+        stat_data = [['0_Statistics', project]]
+        stat_data.append(["Required Features in Source Code", self.required_features_in_code])
+        stat_data.append(["Required Features NOT in Source Code",self.required_features_not_in_code])
+        stat_data.append(["Total Required Features",self.total_required_features])
+        stat_data.append(["Textual Requirements NOT Implemented in Source Code",self.requirements_not_in_code])
+        stat_data.append(["Total Textual Requirements",self.total_requirements])
+        stat_data.append(["Features in Source Code Specified in Requirements",self.code_features_in_requirements])
+        stat_data.append(["Features in Source Code NOT Specified in Requirements",self.code_features_not_in_requirements])
+        stat_data.append(["Total Features in Source Code",self.total_code_features])
+        stat_data.append(["Total Presence Conditions in Source Code",self.total_presence_conditions])
+        stat_data.append(["Implemented Lines NOT Specified by Requirements",self.implemented_lines_not_in_requirements])
+        stat_data.append(["Total variability lines of code",self.var_loc])
+        stat_data.append(["Total lines of code",self.loc])
+        stat_data.append(["Are Variability Requirements and Source Code Consistent?",bmap[self.requirements_code_consistent]])
+        for item in stat_data:
+            print(f"{item[0]:60s} {item[1]}")
+        with open(f'reports/stat_{project}.csv', 'w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile)
+            csv_writer.writerows(stat_data)
+
+        if len(self.required_features_not_in_code_list) > 0:
+            with open(f'reports/required_features_not_in_code_{project}.csv', 'w', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                csv_writer.writerows(self.required_features_not_in_code_list)
+    
+        if len(self.code_features_not_in_requirements_list) > 0:
+            with open(f'reports/code_features_not_in_requirements_{project}.csv', 'w', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                csv_writer.writerows(self.code_features_not_in_requirements_list)
+     
+        if len(self.presence_conditions_list) > 0: 
+            with open(f'reports/presence_condition_{project}.csv', 'w', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                csv_writer.writerows(self.presence_conditions_list)
+
+        if len(self.min_set_configurations) > 0:
+            with open(f'reports/min_set_{project}.csv', 'w', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                csv_writer.writerows(self.min_set_configurations)
+
+        if len(self.inconsistencies) > 0:
+            with open(f'reports/inconsistencies_{project}.csv', 'w', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                csv_writer.writerows(self.inconsistencies)
 
 class PresenceCondition:    
     def __init__(self, path, filename, filter):
@@ -42,6 +116,7 @@ class PresenceCondition:
         self.var_file_pc = {}
         self.assignment2presence_cond = {}
         self.total_loc = 0
+        self.stat = VarCHEKStat()
 
     # delete all *.cpp1/*.c1 and *.txt files generated for analysis
     def cleanup(self):
@@ -410,17 +485,24 @@ class PresenceCondition:
                 print(f'    {line}')
                 
     def showPresenceConditionsStat(self):
+        if len(self.presence_condition_dict) > 0:
+            self.stat.presence_conditions_list.append(['01_Presence Condition', '02_Total Lines in Code', '03_Line Coverage Precentage'])
         print("Presence Conditions Statistics: ")
         self.var_total_lines = 0
         for pc in self.presence_condition_dict:
             self.var_total_lines = self.var_total_lines + len(self.presence_condition_dict[pc])
         print("  {:120s} {:^20s} {:^20s}".format("Presence Conditions", "Line Coverage", "Line Coverage %"))
         for pc in self.presence_condition_dict:
-            lines = len(self.presence_condition_dict[pc])                     
-            print("  {:120s} {:^20d} {:^20.2f}".format(pc, lines, lines/self.var_total_lines*100))
+            lines = len(self.presence_condition_dict[pc])
+            lines_percentage = round(lines/self.var_total_lines*100,2)                     
+            print("  {:120s} {:^20d} {:^20.2f}".format(pc, lines, lines_percentage))
+            self.stat.presence_conditions_list.append([pc, lines, lines_percentage])
         print(f"Total Presence Conditions: {len(self.presence_condition_dict)}")
+        self.stat.total_presence_conditions = len(self.presence_condition_dict)
         print(f"Total lines in variability source code: {self.var_total_lines}")
+        self.stat.var_loc = self.var_total_lines
         print(f"total lines in source code: {self.total_loc}")
+        self.stat.loc = self.total_loc
 
     def discardNumericals(self):
         discard_pc = []
@@ -599,16 +681,23 @@ class PresenceCondition:
         x = self.feature_not_in_code_coverage
         self.feature_not_in_code_coverage = dict(sorted(x.items(), key=lambda item: item[1],reverse=True))
         total_lines = 0
+        if len(self.feature_not_in_code_coverage) > 0:
+            self.stat.code_features_not_in_requirements_list.append(["01_Features in Source Code", "Code Lines by Feature", "Feature Codes %"])
         for feature in self.feature_not_in_code_coverage:
-            coverage = self.feature_not_in_code_coverage[feature]*100/self.var_total_lines
+            coverage = round(self.feature_not_in_code_coverage[feature]*100/self.var_total_lines, 2)
             print(f"     {feature:30s}: lines: {self.feature_not_in_code_coverage[feature]:^5d}, coverage: {coverage:<.2f}%")
+            self.stat.code_features_not_in_requirements_list.append([feature, self.feature_not_in_code_coverage[feature], coverage])
             total_lines = total_lines + self.feature_not_in_code_coverage[feature]
         if total_features == 0:
             print(f"Total Features in Source Code NOT specified in Requirements: {total_features_not_in_fm}")
         else:
             print(f"Total Features in Source Code NOT specified in Requirements: {total_features_not_in_fm} ({total_features_not_in_fm*100/total_features:<.2f}%)")
+        self.stat.code_features_not_in_requirements = total_features_not_in_fm
         print(f"Total lines not covered by Requirements: {total_lines}")
+        self.stat.implemented_lines_not_in_requirements = total_lines
         print(f"Total Features in Source Code: {total_features}")
+        self.stat.total_code_features = total_features
+
 
     def findFeaturesInFeatureModel(self):
         print("\nFeatures in Source Code specified in Requirements:")
@@ -619,6 +708,7 @@ class PresenceCondition:
                 total_features_in_fm += 1
                 print(f"    {feature}")
         print(f"Total Features in Source Code specified in Requirements: {total_features_in_fm}")
+        self.stat.code_features_in_requirements = total_features_in_fm
                
     
     

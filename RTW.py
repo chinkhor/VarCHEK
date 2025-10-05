@@ -962,12 +962,14 @@ class RTW:
             print("  {}: {}".format(status, self.dict_result[status]))
         print()
   
-    def showFeaturesNotInCode(self, features_not_in_code):
+    def showFeaturesNotInCode(self, features_not_in_code, stat):
         if features_not_in_code is None:
             return
         abstract_feature = 0
         req_not_covered = []
         print("\nRequired Features NOT in source code:")
+        if len(features_not_in_code) > 0:
+            stat.required_features_not_in_code_list.append(["01_Required Features", "Associated Requirement(s)"])
         for feature in features_not_in_code:
             if feature in self.features:
                 feature_node = self.features[feature]
@@ -977,6 +979,7 @@ class RTW:
                     abstract_feature += 1
                     continue
                 print(f"   feature: {feature:30s}, requirements: {feature_node.tracedReq}")
+                stat.required_features_not_in_code_list.append([feature, feature_node.tracedReq])
                 req_not_covered = req_not_covered + feature_node.tracedReq
         total_features = 0
         for feature in self.features:
@@ -985,12 +988,17 @@ class RTW:
                 total_features += 1
         #total_features = len(self.features) - abstract_feature
         print(f"Total Required Features in Variability Model: {total_features}")
+        stat.total_required_features = total_features
         if total_features != 0:
             total_features_not_in_code = len(features_not_in_code) - abstract_feature
             print(f"Total Required Feature NOT in source code: {total_features_not_in_code} ({total_features_not_in_code*100/total_features:<0.2f}%)")
+            stat.required_features_not_in_code = total_features_not_in_code
+            stat.required_features_in_code = stat.total_required_features - stat.required_features_not_in_code
             req_not_covered = list(set(req_not_covered))
             print(f"\nTotal textual requirements: {len(self.sentences)}")
+            stat.total_requirements = len(self.sentences)
             print(f"Total textual requirements NOT implemented in source code: {len(req_not_covered)}")
+            stat.requirements_not_in_code = len(req_not_covered)
             print(f"Textual requirements NOT implemented in source code:")
             req_not_covered.sort()
             for req in req_not_covered:
