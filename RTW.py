@@ -216,33 +216,6 @@ class RTW:
     # extract cross-tree constraints from RTW table, maintain in "self.constraints" dictionary
     # key of dictionary: requirement ID 
     # value of dictionary: propositional logic formula
-    def constructRTWConstraints1(self):
-        self.constraints = {}
-        for ID in self.table:
-            entry = self.table[ID]
-            if entry.Rule == 'R7':
-                if not entry.Valid:
-                    continue
-                if "exclusively" in entry.Req.lower():
-                    # to-do: support multiple children
-                    children_logic = "(" + entry.Children[0] + " && !" + entry.Children[1] + ")"
-                    children_logic = children_logic + " || (!" + entry.Children[0] + " && " + entry.Children[1] + ")"
-                    self.constraints[ID] = entry.Parent + " => " + children_logic
-                    print(self.constraints[ID])
-                    continue
-                # currently, only handle "two" children in 'or' and 'exclusively or' logical relationship
-                if len(entry.Children) > 1 and 'or' in entry.Req.lower():
-                    children_logic = "(" 
-                    for child in entry.Children:
-                        children_logic = children_logic + child + " || "
-                    children_logic = children_logic[:-4] +")"
-                else:
-                    children_logic = entry.Children[0]
-                if 'require' in entry.Req.lower():
-                    self.constraints[ID] = entry.Parent + " => " + children_logic
-                elif 'exclude' in entry.Req.lower():
-                    self.constraints[ID] = entry.Parent + " => !" + children_logic
-
     def constructRTWConstraints(self):
         self.constraints = {}
         for ID in self.table:
@@ -288,34 +261,6 @@ class RTW:
                 children_logic = Or(children_logic1, children_logic2)
                 self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
    
-    def constructSATConstraints1(self):
-        for ID in self.table:
-            entry = self.table[ID]
-            if entry.Rule == 'R7':
-                if not entry.Valid:
-                    continue
-                if "exclusively" in entry.Req.lower():
-                    # to-do: support multiple children
-                    children_logic1 = And(Bool(entry.Children[0]), Not(Bool(entry.Children[1])))
-                    children_logic2 = And(Not(Bool(entry.Children[0])), Bool(entry.Children[1]))
-                    children_logic = Or(children_logic1, children_logic2)
-                    self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
-                    continue
-                # currently, only handle multiple children in 'or' logical relationship
-                if len(entry.Children) > 1 and 'or' in entry.Req.lower():
-                    children_logic = [] 
-                    for child in entry.Children:
-                        children_logic.append(Bool(child))
-                    children_logic = Or(children_logic)
-                else:
-                    children_logic = Bool(entry.Children[0])
-        
-                if 'require' in entry.Req.lower():
-                    self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
-                else:
-                    self.sat_formula.append([Implies(Bool(entry.Parent), Not(children_logic)), [ID]])
-
-
     # extract features from RTW table, maintain in "self.features" dictionary
     # key of dictionary: feature (name)
     # valud of dictionary: RTW node (object) corresponding to the feature
