@@ -1,0 +1,15 @@
+01_Feature,cfg1,cfg2,cfg3,cfg4,cfg5,cfg6,cfg7,cfg8
+CFE_MISSION_TIME_CFG_DEFAULT_TAI,False,True,False,True,False,False,False,True
+CFE_PLATFORM_TIME_CFG_CLIENT,False,False,False,True,False,False,False,False
+CFE_PLATFORM_TIME_CFG_SRC_MET,False,False,True,False,False,True,False,False
+CFE_PLATFORM_TIME_CFG_SERVER,True,True,True,False,True,True,True,True
+CFE_PLATFORM_TIME_CFG_SRC_GPS,False,True,False,False,True,False,False,False
+CFE_MISSION_TIME_CFG_DEFAULT_UTC,True,False,True,False,True,True,True,False
+CFE_MISSION_TIME_AT_TONE_WILL_BE,True,True,True,False,False,False,False,True
+CFE_MISSION_TIME_AT_TONE_WAS,False,False,False,True,True,True,True,False
+CFE_PLATFORM_TIME_CFG_SOURCE,True,True,True,False,True,True,True,False
+CFE_PLATFORM_TIME_CFG_BIGENDIAN,True,False,True,any,True,False,False,any
+CFE_MISSION_TIME_CFG_FAKE_TONE,False,False,False,True,False,False,False,False
+CFE_PLATFORM_TIME_CFG_VIRTUAL,True,True,True,True,True,True,True,False
+CFE_PLATFORM_TIME_CFG_SRC_TIME,True,False,False,False,False,False,True,False
+CFE_PLATFORM_TIME_CFG_SIGNAL,True,False,any,any,any,any,any,any

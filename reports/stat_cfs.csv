@@ -1,0 +1,14 @@
+0_Statistics,cfs
+Required Features in Source Code,14
+Required Features NOT in Source Code,0
+Total Required Features,14
+Textual Requirements NOT Implemented in Source Code,0
+Total Textual Requirements,30
+Features in Source Code Specified in Requirements,14
+Features in Source Code NOT Specified in Requirements,0
+Total Features in Source Code,14
+Total Presence Conditions in Source Code,40
+Implemented Lines NOT Specified by Requirements,0
+Total variability lines of code,1143
+Total lines of code,4584
+Are Variability Requirements and Source Code Consistent?,Yes
