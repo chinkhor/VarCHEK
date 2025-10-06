@@ -1,0 +1,8 @@
+01_Features in Source Code,Code Lines by Feature,Feature Codes %
+ENABLE_FEATURE_VI_CRASHME,250,9.13
+debug_parse_print_tc,34,1.24
+REG_STARTEND,23,0.84
+NO_SUCH_APPLET_YET,4,0.15
+debug_printf_parse,2,0.07
+debug_printf_eval,1,0.04
+debug_printf_walker,1,0.04

@@ -1,0 +1,9 @@
+01_Required Features,Associated Requirement(s)
+CONFIG_PATCH,['Busybox-2.5']
+CONFIG_ED,['Busybox-2.4']
+CONFIG_CMP,['Busybox-2.2']
+CONFIG_DIFF,"['Busybox-2.3', 'Busybox-2.3.1', 'Busybox-2.3.2']"
+ENABLE_FEATURE_AWK_LIBM,['Busybox-2.1.1']
+CONFIG_SED,['Busybox-2.6']
+CONFIG_AWK,"['Busybox-2.1', 'Busybox-2.1.1', 'Busybox-2.1.2', 'Busybox-2.10']"
+CONFIG_VI,"['Busybox-2.7', 'Busybox-2.7.1', 'Busybox-2.7.2', 'Busybox-2.7.3', 'Busybox-2.7.4', 'Busybox-2.7.5', 'Busybox-2.7.6', 'Busybox-2.7.7', 'Busybox-2.7.8', 'Busybox-2.7.9', 'Busybox-2.7.10', 'Busybox-2.7.11', 'Busybox-2.7.12', 'Busybox-2.7.13', 'Busybox-2.10']"

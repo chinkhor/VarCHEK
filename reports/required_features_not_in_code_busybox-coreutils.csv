@@ -1,0 +1,96 @@
+01_Required Features,Associated Requirement(s)
+CONFIG_NICE,['Busybox-Coreutils-1.49']
+CONFIG_SHUF,['Busybox-Coreutils-1.64']
+CONFIG_DATE,"['Busybox-Coreutils-1.15', 'Busybox-Coreutils-1.15.1', 'Busybox-Coreutils-1.15.2', 'Busybox-Coreutils-1.15.3']"
+CONFIG_LN,['Busybox-Coreutils-1.36']
+CONFIG_CHMOD,['Busybox-Coreutils-1.7']
+CONFIG_CHGRP,['Busybox-Coreutils-1.6']
+CONFIG_LS,"['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.38', 'Busybox-Coreutils-1.38.1', 'Busybox-Coreutils-1.38.2', 'Busybox-Coreutils-1.38.3', 'Busybox-Coreutils-1.38.4', 'Busybox-Coreutils-1.38.5', 'Busybox-Coreutils-1.38.6', 'Busybox-Coreutils-1.38.7', 'Busybox-Coreutils-1.38.8']"
+CONFIG_LINK,['Busybox-Coreutils-1.35']
+ENABLE_FEATURE_LS_FOLLOWLINKS,['Busybox-Coreutils-1.38.2']
+CONFIG_TR,"['Busybox-Coreutils-1.81', 'Busybox-Coreutils-1.81.1', 'Busybox-Coreutils-1.81.2']"
+CONFIG_WC,"['Busybox-Coreutils-1.95', 'Busybox-Coreutils-1.95.1']"
+CONFIG_TEST,"['Busybox-Coreutils-1.76', 'Busybox-Coreutils-1.78.2']"
+CONFIG_MV,"['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.48']"
+CONFIG_TTY,['Busybox-Coreutils-1.85']
+CONFIG_SHA256SUM,"['Busybox-Coreutils-1.41', 'Busybox-Coreutils-1.43.1.1']"
+CONFIG_COMM,['Busybox-Coreutils-1.12']
+CONFIG_EXPR,"['Busybox-Coreutils-1.26', 'Busybox-Coreutils-1.26.1']"
+CONFIG_INSTALL,"['Busybox-Coreutils-1.34', 'Busybox-Coreutils-1.34.1']"
+CONFIG_TIMEOUT,['Busybox-Coreutils-1.79']
+CONFIG_WHOAMI,['Busybox-Coreutils-1.99']
+CONFIG_RM,['Busybox-Coreutils-1.60']
+CONFIG_CUT,"['Busybox-Coreutils-1.14', 'Busybox-Coreutils-1.14.1']"
+CONFIG_MKDIR,['Busybox-Coreutils-1.44']
+CONFIG_SLEEP,"['Busybox-Coreutils-1.65', 'Busybox-Coreutils-1.65.1']"
+ENABLE_FEATURE_TR_CLASSES,['Busybox-Coreutils-1.81.1']
+CONFIG_LOGNAME,['Busybox-Coreutils-1.37']
+CONFIG_DOS2UNIX,['Busybox-Coreutils-1.19']
+CONFIG_FALSE,['Busybox-Coreutils-1.28']
+CONFIG_OD,['Busybox-Coreutils-1.53']
+CONFIG_BASENAME,['Busybox-Coreutils-1.4']
+CONFIG_DD,"['Busybox-Coreutils-1.16', 'Busybox-Coreutils-1.16.1', 'Busybox-Coreutils-1.16.2', 'Busybox-Coreutils-1.16.3']"
+CONFIG_PWD,['Busybox-Coreutils-1.57']
+CONFIG_PRINTENV,['Busybox-Coreutils-1.55']
+CONFIG_USERS,['Busybox-Coreutils-1.98']
+ENABLE_FEATURE_DATE_ISOFMT,['Busybox-Coreutils-1.15.1']
+CONFIG_GROUPS,['Busybox-Coreutils-1.33']
+CONFIG_DIRNAME,['Busybox-Coreutils-1.18']
+CONFIG_TRUNCATE,['Busybox-Coreutils-1.83']
+CONFIG_READLINK,"['Busybox-Coreutils-1.58', 'Busybox-Coreutils-1.58.1']"
+CONFIG_CHOWN,"['Busybox-Coreutils-1.8', 'Busybox-Coreutils-1.8.1']"
+CONFIG_SHA1SUM,"['Busybox-Coreutils-1.40', 'Busybox-Coreutils-1.43.1.1']"
+CONFIG_UNIX2DOS,['Busybox-Coreutils-1.20']
+CONFIG_SEQ,['Busybox-Coreutils-1.62']
+CONFIG_CHROOT,['Busybox-Coreutils-1.9']
+ENABLE_FEATURE_PRESERVE_HARDLINKS,"['Busybox-Coreutils-1.2', 'Busybox-Coreutils-1.2.1']"
+ENABLE_FEATURE_SKIP_ROOTFS,['Busybox-Coreutils-1.17.2']
+CONFIG_TAC,['Busybox-Coreutils-1.73']
+CONFIG_ENV,['Busybox-Coreutils-1.23']
+CONFIG_TAIL,"['Busybox-Coreutils-1.74', 'Busybox-Coreutils-1.74.1']"
+CONFIG_TRUE,['Busybox-Coreutils-1.82']
+CONFIG_SUM,['Busybox-Coreutils-1.70']
+ENABLE_FEATURE_LS_COLOR_IS_DEFAULT,['Busybox-Coreutils-1.38.8.1']
+CONFIG_SORT,"['Busybox-Coreutils-1.66', 'Busybox-Coreutils-1.66.1', 'Busybox-Coreutils-1.66.2']"
+CONFIG_ID,['Busybox-Coreutils-1.32']
+CONFIG_YES,['Busybox-Coreutils-1.100']
+CONFIG_HEAD,"['Busybox-Coreutils-1.30', 'Busybox-Coreutils-1.30.1']"
+CONFIG_MKTEMP,['Busybox-Coreutils-1.47']
+CONFIG_ECHO,"['Busybox-Coreutils-1.22', 'Busybox-Coreutils-1.22.1']"
+CONFIG_MKNOD,['Busybox-Coreutils-1.46']
+CONFIG_FOLD,['Busybox-Coreutils-1.29']
+CONFIG_RMDIR,['Busybox-Coreutils-1.61']
+CONFIG_TOUCH,"['Busybox-Coreutils-1.80', 'Busybox-Coreutils-1.80.1']"
+CONFIG_USLEEP,['Busybox-Coreutils-1.90']
+CONFIG_CAT,"['Busybox-Coreutils-1.5', 'Busybox-Coreutils-1.5.1', 'Busybox-Coreutils-1.5.2']"
+CONFIG_WHO,['Busybox-Coreutils-1.96']
+CONFIG_STTY,['Busybox-Coreutils-1.69']
+CONFIG_W,['Busybox-Coreutils-1.97']
+ENABLE_FEATURE_MD5_SHA1_SUM_CHECK,"['Busybox-Coreutils-1.43.1', 'Busybox-Coreutils-1.43.1.1']"
+CONFIG_PASTE,['Busybox-Coreutils-1.54']
+CONFIG_UNLINK,['Busybox-Coreutils-1.89']
+CONFIG_CRC32,['Busybox-Coreutils-1.11']
+CONFIG_MKFIFO,['Busybox-Coreutils-1.45']
+CONFIG_CP,"['Busybox-Coreutils-1.2.1', 'Busybox-Coreutils-1.13', 'Busybox-Coreutils-1.13.1']"
+ENABLE_FEATURE_TR_EQUIV,['Busybox-Coreutils-1.81.2']
+CONFIG_SHA512SUM,"['Busybox-Coreutils-1.42', 'Busybox-Coreutils-1.43.1.1']"
+CONFIG_NL,['Busybox-Coreutils-1.50']
+CONFIG_UNIQ,['Busybox-Coreutils-1.88']
+CONFIG_FACTOR,['Busybox-Coreutils-1.27']
+CONFIG_NPROC,['Busybox-Coreutils-1.52']
+CONFIG_MD5SUM,"['Busybox-Coreutils-1.39', 'Busybox-Coreutils-1.43.1.1']"
+CONFIG_REALPATH,['Busybox-Coreutils-1.59']
+CONFIG_SHRED,['Busybox-Coreutils-1.63']
+CONFIG_BB_ARCH,['Busybox-Coreutils-1.87']
+CONFIG_PRINTF,['Busybox-Coreutils-1.56']
+CONFIG_DU,"['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.21', 'Busybox-Coreutils-1.21.1']"
+CONFIG_NOHUP,['Busybox-Coreutils-1.51']
+CONFIG_STAT,"['Busybox-Coreutils-1.68', 'Busybox-Coreutils-1.68.1', 'Busybox-Coreutils-1.68.2']"
+CONFIG_HOSTID,['Busybox-Coreutils-1.31']
+CONFIG_SPLIT,"['Busybox-Coreutils-1.67', 'Busybox-Coreutils-1.67.1']"
+CONFIG_TEE,"['Busybox-Coreutils-1.75', 'Busybox-Coreutils-1.75.1']"
+CONFIG_DF,"['Busybox-Coreutils-1.3.1', 'Busybox-Coreutils-1.17', 'Busybox-Coreutils-1.17.1', 'Busybox-Coreutils-1.17.2']"
+CONFIG_TEST1,"['Busybox-Coreutils-1.77', 'Busybox-Coreutils-1.78.2']"
+ENABLE_UUENCODE,['Busybox-Coreutils-1.94']
+ENABLE_FEATURE_READLINK_FOLLOW,['Busybox-Coreutils-1.58.1']
+CONFIG_TSORT,['Busybox-Coreutils-1.84']

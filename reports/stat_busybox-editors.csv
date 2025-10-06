@@ -1,0 +1,14 @@
+0_Statistics,busybox-editors
+Required Features in Source Code,24
+Required Features NOT in Source Code,8
+Total Required Features,32
+Textual Requirements NOT Implemented in Source Code,25
+Total Textual Requirements,46
+Features in Source Code Specified in Requirements,24
+Features in Source Code NOT Specified in Requirements,7
+Total Features in Source Code,31
+Total Presence Conditions in Source Code,89
+Implemented Lines NOT Specified by Requirements,315
+Total variability lines of code,2739
+Total lines of code,12776
+Are Variability Requirements and Source Code Consistent?,No
