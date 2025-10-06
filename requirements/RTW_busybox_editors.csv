@@ -36,4 +36,4 @@ Requirement ID,Requirement Specification,Rule,Parent Feature,Children Features,S
 "Busybox-2.7.13","The VI may select FEATURE_VI_VERBOSE_STATUS","R3","CONFIG_VI","ENABLE_FEATURE_VI_VERBOSE_STATUS","synthesized from busybox-1.36.1 menuconfig"
 "Busybox-2.8","The Editors may select FEATURE_ALLOW_EXEC","R3","Editors","ENABLE_FEATURE_ALLOW_EXEC","synthesized from busybox-1.36.1 menuconfig"
 "Busybox-2.9","The FEATURE_DIFF_LONG_OPTIONS requires LONG_OPTS","R7","ENABLE_FEATURE_DIFF_LONG_OPTIONS","ENABLE_LONG_OPTS","synthesized from busybox-1.36.1 menuconfig"
-"Busybox-2.10","The FEATURE_ALLOW_EXEC requires VI or AWK","R7","ENABLE_FEATURE_ALLOW_EXEC","CONFIG_VI, CONFIG_AWK","synthesized from busybox-1.36.1 menuconfig"
+"Busybox-2.10","The FEATURE_ALLOW_EXEC requires VI or AWK","R9","ENABLE_FEATURE_ALLOW_EXEC","CONFIG_VI, CONFIG_AWK","synthesized from busybox-1.36.1 menuconfig"

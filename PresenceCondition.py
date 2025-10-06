@@ -47,7 +47,7 @@ class VarCHEKStat:
     def printStat(self, project):
         bmap = {True: "Yes", False: "No"}
         if self.requirements_code_consistent:
-            if not (self.required_features_in_code == self.total_required_features == code_features_in_requirements):
+            if not (self.required_features_in_code == self.total_required_features == self.code_features_in_requirements):
                 self.requirements_code_consistent = False
         #print(f"Are Variability Requirements and Source Code Consistent? {bmap[self.requirements_code_consistent]}")
 

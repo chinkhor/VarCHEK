@@ -17,11 +17,11 @@ class RTW_Entry:
         # R4: alternative child, select only one
         # R5: either child, select at least one
         # R6: combinations of R2 and R3
-        # R7: cross-tree constraint, only use for features of different parents
+        # R7, R8, R9, R10: cross-tree constraint, only use for features of different parents
         self.Rule = ""
-        # parent feature, for R7 it represents first feature
+        # parent feature, for R7, R8, R9, R10 it represents first feature
         self.Parent = ""
-        # children features, for R7 it represents second feature
+        # children features, for R7, R8, R9, R10, it/they represents second feature or subsequent features
         self.Children = []
         # requirement specification
         self.Req = ""
@@ -216,7 +216,7 @@ class RTW:
     # extract cross-tree constraints from RTW table, maintain in "self.constraints" dictionary
     # key of dictionary: requirement ID 
     # value of dictionary: propositional logic formula
-    def constructRTWConstraints(self):
+    def constructRTWConstraints1(self):
         self.constraints = {}
         for ID in self.table:
             entry = self.table[ID]
@@ -243,8 +243,52 @@ class RTW:
                 elif 'exclude' in entry.Req.lower():
                     self.constraints[ID] = entry.Parent + " => !" + children_logic
 
+    def constructRTWConstraints(self):
+        self.constraints = {}
+        for ID in self.table:
+            entry = self.table[ID]
+            if not entry.Valid:
+                continue
+            if entry.Rule == 'R7':
+                self.constraints[ID] = entry.Parent + " => " + entry.Children[0]
+            elif entry.Rule == 'R8':
+                self.constraints[ID] = entry.Parent + " => !" + entry.Children[0]
+            elif entry.Rule == 'R9':
+                children_logic = "(" 
+                for child in entry.Children:
+                    children_logic = children_logic + child + " || "
+                children_logic = children_logic[:-4] +")"
+                self.constraints[ID] = entry.Parent + " => " + children_logic
+            elif entry.Rule == 'R10':
+                # to-do: support multiple children
+                children_logic = "(" + entry.Children[0] + " && !" + entry.Children[1] + ")"
+                children_logic = children_logic + " || (!" + entry.Children[0] + " && " + entry.Children[1] + ")"
+                self.constraints[ID] = entry.Parent + " => " + children_logic
+
     # extract cross-tree constraints from RTW table and add them to "self.sat_formula" list (in comply with z3)
     def constructSATConstraints(self):
+        for ID in self.table:
+            entry = self.table[ID]
+            if not entry.Valid:
+                continue
+            if entry.Rule == 'R7':
+                self.sat_formula.append([Implies(Bool(entry.Parent), Bool(entry.Children[0])), [ID]])
+            elif entry.Rule == 'R8':
+                self.sat_formula.append([Implies(Bool(entry.Parent), Not(Bool(entry.Children[0]))), [ID]])
+            elif entry.Rule == 'R9':
+                children_logic = [] 
+                for child in entry.Children:
+                    children_logic.append(Bool(child))
+                children_logic = Or(children_logic)
+                self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
+            elif entry.Rule == 'R10':
+                # to-do: support multiple children
+                children_logic1 = And(Bool(entry.Children[0]), Not(Bool(entry.Children[1])))
+                children_logic2 = And(Not(Bool(entry.Children[0])), Bool(entry.Children[1]))
+                children_logic = Or(children_logic1, children_logic2)
+                self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
+   
+    def constructSATConstraints1(self):
         for ID in self.table:
             entry = self.table[ID]
             if entry.Rule == 'R7':
@@ -270,7 +314,8 @@ class RTW:
                     self.sat_formula.append([Implies(Bool(entry.Parent), children_logic), [ID]])
                 else:
                     self.sat_formula.append([Implies(Bool(entry.Parent), Not(children_logic)), [ID]])
-   
+
+
     # extract features from RTW table, maintain in "self.features" dictionary
     # key of dictionary: feature (name)
     # valud of dictionary: RTW node (object) corresponding to the feature
@@ -327,7 +372,7 @@ class RTW:
         for ID in self.table:
             entry = self.table[ID]
             # exclude constraints, which are tracked using "self.constraints" dictionary 
-            if entry.Rule == 'R7':
+            if entry.Rule in ['R7', 'R8', 'R9', 'R10']:
                 continue
             # identify the root feature
             if entry.Rule == 'R1':
@@ -494,7 +539,7 @@ class RTW:
             
     # construct sentences for feature model (FM)
     # sentence is a propositional logic expression for parent-child relationship or cross-tree constraint releationship
-    # the propositional logic definition is based on rules (R2, R3, R4, R5 and R7)
+    # the propositional logic definition is based on rules (R2, R3, R4, R5 and R7, R8, R9, R10)
     def constructFMSentences(self):
         self.sat_formula = []
         root = self.root.name

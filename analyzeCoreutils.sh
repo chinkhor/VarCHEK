@@ -1,10 +1,12 @@
 #!/bin/bash
 # make sure the dependencies of PCLocator and busybox are installed
 sudo apt-get update
+sudo apt-get install make
+sudo apt-get install -y python3 python3-pip
 sudo apt-get --yes --force-yes install autoconf
 sudo apt-get --yes --force-yes install default-jre
-pip install z3-solver
-pip install sympy
+sudo apt-get install python3-z3
+sudo apt-get install python3-sympy
 
 busybox_version="busybox-1.37.0"
 dir="bzbox_data"
@@ -50,5 +52,8 @@ find ./$bzbox_dir -name "*.[ch]" > $dir/$file
 python3 analyzeVar.py --path $dir --file $file --filter $bzbox_filter --rtw_file requirements/RTW_busybox_coreutils.txt --feature_map code_map/map_busybox_coreutils --project "busybox-coreutils"
 
 echo "Completed analysis."
+git add reports/*.csv && git commit -m "update $(date)" && git push origin main
+echo
+echo "Updated repository."
 echo "###########################################################"
 

@@ -288,7 +288,7 @@ Source --> synthesized from busybox-1.36.1 menuconfig
 
 ID --> Busybox-2.10
 Valid --> 1
-Rule --> R7
+Rule --> R9
 Parent --> FEATURE_ALLOW_EXEC
 Child --> VI, AWK
 Req --> The FEATURE_ALLOW_EXEC requires VI or AWK

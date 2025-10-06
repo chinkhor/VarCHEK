@@ -64,7 +64,7 @@ Source --> cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal
 
 ID --> TIME-4.2
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Fake_Tone
 Child --> External_Time_Source
 Req --> The "fake tone" excludes the "external time source"

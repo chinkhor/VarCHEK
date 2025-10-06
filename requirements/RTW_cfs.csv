@@ -8,7 +8,7 @@ Requirement ID,Requirement Specification,Rule,Parent Feature,Children Features,S
 "TIME-3.1","The tone and data order shall use one and only one of the data preceding tone order or the data following tone order","R4","Tone_Data_Order","CFE_MISSION_TIME_AT_TONE_WILL_BE, CFE_MISSION_TIME_AT_TONE_WAS","cfe-userguide, section: 1.22.4.3 Selecting Tone and Data Ordering"
 "TIME-4","The cFS Time may use the fake tone","R3","CFS_Time","CFE_MISSION_TIME_CFG_FAKE_TONE","cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal"
 "TIME-4.1","The fake tone requires the virtual MET","R7","CFE_MISSION_TIME_CFG_FAKE_TONE","CFE_PLATFORM_TIME_CFG_VIRTUAL","cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal"
-"TIME-4.2","The fake tone excludes the external time source","R7","CFE_MISSION_TIME_CFG_FAKE_TONE","CFE_PLATFORM_TIME_CFG_SOURCE","cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal"
+"TIME-4.2","The fake tone excludes the external time source","R8","CFE_MISSION_TIME_CFG_FAKE_TONE","CFE_PLATFORM_TIME_CFG_SOURCE","cfe-userguide, section: 1.22.4.2 Enabling Fake Tone Signal"
 "TIME-5","The cFS Time shall select the time operation mode","R2","CFS_Time","Time_Operation_Mode","cfe-userguide, section: 1.22.4 Time Configuration"
 "TIME-5.1","The time operation mode shall use one and only one of the time server or the time client","R4","Time_Operation_Mode","CFE_PLATFORM_TIME_CFG_SERVER, CFE_PLATFORM_TIME_CFG_CLIENT","cfe-userguide, section: 1.22.4.5 Specifying Time Server/Client"
 "TIME-6","The cFS Time may use the virtual MET","R3","CFS_Time","CFE_PLATFORM_TIME_CFG_VIRTUAL","cfe-userguide, section: 1.22.4.7 Virtual MET"

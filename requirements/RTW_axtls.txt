@@ -128,7 +128,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.6
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> Server_Only_Verify
 Req --> The Skeleton_Mode mode excludes "Server_Only_Verify"
@@ -136,7 +136,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.7
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> Server_Client_Full_Diagnostic
 Req --> The Skeleton_Mode mode excludes Server_Client_Full_Diagnostic
@@ -144,7 +144,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.8
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> Server_Only
 Req --> The Skeleton_Mode mode excludes Server_Only
@@ -152,7 +152,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.9
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> Server_Client
 Req --> The Skeleton_Mode mode excludes Server_Client
@@ -160,7 +160,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.10
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Server_Only
 Child --> Server_Only_Verify
 Req --> The Server_Only mode excludes Server_Only_Verify
@@ -168,7 +168,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.11
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Server_Only
 Child --> Server_Client_Full_Diagnostic
 Req --> The Server_Only mode excludes Server_Client_Full_Diagnostic
@@ -176,7 +176,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.12
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Server_Only
 Child --> Server_Client
 Req --> The Server_Only mode excludes Server_Client
@@ -184,7 +184,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-4.1.1.13
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Server_Only
 Child --> Skeleton_Mode
 Req --> The Server_Only mode excludes Skeleton_Mode
@@ -544,7 +544,7 @@ Source --> synthesized from axTLS-2.1.5 menuconfig
 
 ID --> AXTLS-10
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> CGI
 Req --> The "Win32 OS" excludes the "common gateway interface (CGI)"
@@ -552,7 +552,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-11
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> IPv6
 Req --> The "Win32 OS" excludes the "IPv6"
@@ -560,7 +560,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-12
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> LUA_Bindings
 Req --> The "Win32 OS" excludes the "LUA bindings"
@@ -568,7 +568,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-13
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> axTLS_Wrap
 Req --> The "Win32 OS" excludes the "axTLS wrap"
@@ -576,7 +576,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-14
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> Daemon_Process
 Req --> The "Win32 OS" excludes the "daemon process"
@@ -584,7 +584,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-15
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> dev_urandom
 Req --> The "Win32 OS" excludes the "/dev/urandom"
@@ -592,7 +592,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-16
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Win32_OS
 Child --> Different_User
 Req --> The "Win32 OS" excludes the "different user"
@@ -600,7 +600,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-17
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> PEM_Format
 Req --> The "skeleton mode" excludes the "PEM format"
@@ -608,7 +608,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-18
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> PKCS12_Format
 Req --> The "skeleton mode" excludes the "PKCS12 format"
@@ -616,7 +616,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-19
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> Big_Integer_Options
 Req --> The "skeleton mode" excludes the "big-integer options"
@@ -624,7 +624,7 @@ Source --> synthesized from axTLS-2.1.5 BigIntConfig.In
 
 ID --> AXTLS-20
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Skeleton_Mode
 Child --> SSL_Protocol
 Req --> The "skeleton mode" excludes the "SSL protocol"
@@ -632,7 +632,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-21
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> Debug_Mode
 Child --> Unwanted_Section_Stripping
 Req --> The "debug mode" excludes the "unwanted section stripping"
@@ -680,7 +680,7 @@ Source --> synthesized from axTLS-2.1.5 Config.In
 
 ID --> AXTLS-27
 Valid --> 1
-Rule --> R7
+Rule --> R8
 Parent --> SSL_Testing
 Child --> X509_Cert_Generation
 Req --> The "SSL_Testing" excludes the "X509_Cert_Generation"

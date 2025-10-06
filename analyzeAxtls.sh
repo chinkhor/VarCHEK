@@ -40,8 +40,8 @@ echo "###########################################################"
 echo "Finding all c files in axTLS"
 find ./$axtls_dir -name "*.[ch]" > $dir/$file
 
-python3 analyzeVar.py --path $dir --file $file --filter $axtls_filter --rtw_file requirements/RTW_axtls_Kconfig.txt --feature_map code_map/map_axtls --project "axtls"
-#python3 analyzeVar.py --path $dir --file $file --filter $axtls_filter --rtw_file requirements/RTW_axtls.txt --feature_map code_map/map_axtls --project "axtls"
+#python3 analyzeVar.py --path $dir --file $file --filter $axtls_filter --rtw_file requirements/RTW_axtls_Kconfig.txt --feature_map code_map/map_axtls --project "axtls"
+python3 analyzeVar.py --path $dir --file $file --filter $axtls_filter --rtw_file requirements/RTW_axtls.txt --feature_map code_map/map_axtls --project "axtls"
 echo "Completed analysis."
 git add reports/*.csv && git commit -m "update $(date)" && git push origin main
 echo
