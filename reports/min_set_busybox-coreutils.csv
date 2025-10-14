@@ -46,7 +46,7 @@ ENABLE_FEATURE_TEE_USE_BLOCK_IO,True,False,any,False
 ENABLE_FEDORA_COMPAT,True,any,any,False
 ENABLE_FEATURE_WC_LARGE,True,False,any,False
 ENABLE_FEATURE_CUT_REGEX,False,True,any,False
-ENABLE_LOCALE_SUPPORT,True,False,any,False
+ENABLE_LOCALE_SUPPORT,False,True,any,False
 ENABLE_EXPAND,True,True,True,True
 ENABLE_FEATURE_TEST_64,True,False,False,False
 ENABLE_FEATURE_FANCY_TAIL,True,False,any,False
