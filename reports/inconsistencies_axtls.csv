@@ -1,5 +1,93 @@
-1) Presence Condition:,CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE
+1) Presence Condition:,CONFIG_SSL_ENABLE_CLIENT && CONFIG_SSL_FULL_MODE
+   Assignments:,"[CONFIG_SSL_ENABLE_CLIENT == True, CONFIG_SSL_FULL_MODE == True]"
+   Source Code location:,./axtls-code/samples/c/axssl.c: 549 - 560
+   Source Code location:,./axtls-code/samples/c/axssl.c: 839 - 841
+   Conflicted Requirement ID:,['AXTLS-4.1.1']
+   Conflicted Requirement Sentence:,"Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))"
+2) Presence Condition:,CONFIG_SSL_CERT_VERIFICATION && CONFIG_SSL_FULL_MODE
+   Assignments:,"[CONFIG_SSL_CERT_VERIFICATION == True, CONFIG_SSL_FULL_MODE == True]"
+   Source Code location:,./axtls-code/ssl/tls1.c: 434 - 436
+   Source Code location:,./axtls-code/ssl/tls1.c: 446 - 447
+   Source Code location:,./axtls-code/ssl/tls1.c: 2049 - 2050
+   Conflicted Requirement ID:,['AXTLS-4.1.1']
+   Conflicted Requirement Sentence:,"Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))"
+3) Presence Condition:,CONFIG_SSL_SKELETON_MODE && CONFIG_SSL_FULL_MODE
    Assignments:,"[CONFIG_SSL_FULL_MODE == True, CONFIG_SSL_SKELETON_MODE == True]"
    Source Code location:,./axtls-code/ssl/loader.c: 99
-   Conflicted Requirement ID:,['AXTLS-4.1.1.7']
-   Conflicted Requirement Sentence:,"Implies(CONFIG_SSL_SKELETON_MODE, Not(CONFIG_SSL_FULL_MODE))"
+   Conflicted Requirement ID:,['AXTLS-4.1.1']
+   Conflicted Requirement Sentence:,"Implies(SSL_Mode,
+        Or(And(CONFIG_SSL_SERVER_ONLY,
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               CONFIG_SSL_CERT_VERIFICATION,
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               CONFIG_SSL_ENABLE_CLIENT,
+               Not(CONFIG_SSL_FULL_MODE),
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               CONFIG_SSL_FULL_MODE,
+               Not(CONFIG_SSL_SKELETON_MODE)),
+           And(Not(CONFIG_SSL_SERVER_ONLY),
+               Not(CONFIG_SSL_CERT_VERIFICATION),
+               Not(CONFIG_SSL_ENABLE_CLIENT),
+               Not(CONFIG_SSL_FULL_MODE),
+               CONFIG_SSL_SKELETON_MODE)))"
