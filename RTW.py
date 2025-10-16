@@ -985,8 +985,12 @@ class RTW:
             stat.required_features_not_in_code = total_features_not_in_code
             stat.required_features_in_code = stat.total_required_features - stat.required_features_not_in_code
             req_not_covered = list(set(req_not_covered))
-            print(f"\nTotal textual requirements: {len(self.sentences)}")
-            stat.total_requirements = len(self.sentences)
+            stat.total_requirements = len(self.table)
+            total_constraints = 0
+            for entry in self.table:
+                if self.table[entry].Rule in ['R7', 'R8', 'R9', 'R10']:
+                    total_constraints += 1
+            print(f"\nTotal textual requirements: {len(self.table)}, constraints: {total_constraints}")
             print(f"Total textual requirements NOT implemented in source code: {len(req_not_covered)}")
             stat.requirements_not_in_code = len(req_not_covered)
             print(f"Textual requirements NOT implemented in source code:")
