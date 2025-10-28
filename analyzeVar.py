@@ -318,6 +318,8 @@ def main(rtwFile, mapFile, path, file, filter, project):
     print(f"  find presence condition and analysis: {find_pc_time + pc_identify_analysis_time} s")
     print(f"  find min set time: {find_min_set_time} s")
     print(f"##########################")
+    with open(f"var_perf_{project}.csv", "a") as f:
+    	f.write(f"{find_var_src_code_time}, {find_pc_time + pc_identify_analysis_time}, {find_min_set_time}\n")
     exit()
     if project == "axtls":
         for cfg in range(len(sat_solver.configSet)):
