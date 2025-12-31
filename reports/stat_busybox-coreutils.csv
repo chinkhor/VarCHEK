@@ -1,14 +1,14 @@
 0_Statistics,busybox-coreutils
-Required Features in Source Code,58
-Required Features NOT in Source Code,95
+Required Features in Source Code,10
+Required Features NOT in Source Code,143
 Total Required Features,153
-Textual Requirements NOT Implemented in Source Code,132
+Textual Requirements NOT Implemented in Source Code,157
 Total Textual Requirements,164
-Features in Source Code Specified in Requirements,58
-Features in Source Code NOT Specified in Requirements,30
-Total Features in Source Code,88
-Total Presence Conditions in Source Code,165
-Implemented Lines NOT Specified by Requirements,461
-Total variability lines of code,3503
-Total lines of code,14835
+Features in Source Code Specified in Requirements,10
+Features in Source Code NOT Specified in Requirements,2
+Total Features in Source Code,12
+Total Presence Conditions in Source Code,21
+Implemented Lines NOT Specified by Requirements,15
+Total variability lines of code,305
+Total lines of code,1368
 Are Variability Requirements and Source Code Consistent?,No
